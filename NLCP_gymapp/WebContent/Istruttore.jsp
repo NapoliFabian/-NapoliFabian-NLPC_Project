@@ -32,12 +32,9 @@
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
-    <th></th>
  	<th>nome</th>
  	<th>cognome</th>
  	<th>telefono</th>
- 	<th></th>
- 	<th></th>
  </tr>
  
  <% for(i=0;i<elenco.size();i++) 
