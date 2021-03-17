@@ -12,7 +12,7 @@
  <br><br><a href="menu.jsp">Home</a><br><br>
  
 <form action="Gestore" method="POST">
-<table border="3" bordercolor="red" bgcolor="white">
+<table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
     <td>Nome Corso</td>
