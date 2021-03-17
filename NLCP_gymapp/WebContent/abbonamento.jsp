@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<table border="3" bordercolor="red" bgcolor="white">
+<table border="3" bordercolor="yellow" bgcolor="white">
  
  <tr>
     <th></th>
