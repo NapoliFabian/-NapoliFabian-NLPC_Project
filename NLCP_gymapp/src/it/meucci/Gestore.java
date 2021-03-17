@@ -57,6 +57,19 @@ public class Gestore extends HttpServlet {
 			}
 			
 		}
+		if(cmd.equals("allsoc")) {
+			ArrayList<socio> soci = new ArrayList<socio>();
+			try {
+				db = new DBManager();
+				soci= db.allSocio();
+				request.getSession().setAttribute("ELENCO_SOCI",soci);
+				response.sendRedirect("socio.jsp");
+						
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+			
+		}
 		
 	}
 
@@ -64,8 +77,7 @@ public class Gestore extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }

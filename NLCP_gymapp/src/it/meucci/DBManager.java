@@ -57,4 +57,28 @@ public class DBManager {
 		rs.close();
 		return allenamenti;
 	}
+	public ArrayList<Corso> allCorsi() throws SQLException {
+		String cmd = "select * from corso";
+		ArrayList<Corso> corsi = new ArrayList<Corso>();
+		rs=query.executeQuery(cmd);
+		Corso c;
+		while(rs.next()) {
+			c = new Corso(rs.getString(1),rs.getInt(2),rs.getString(3));
+			corsi.add(c);
+		}
+		rs.close();
+		return corsi;
+	}
+	public ArrayList<socio> allSocio() throws SQLException{
+		String cmd = "select * from socio";
+		ArrayList<socio> soci = new ArrayList<socio>();
+		rs=query.executeQuery(cmd);
+		socio s;
+		while(rs.next()) {
+			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6));
+			soci.add(s);
+		}
+		rs.close();
+		return soci;
+	}
 }
