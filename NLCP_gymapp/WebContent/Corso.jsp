@@ -42,9 +42,9 @@
  
   <tr>
 
- 	<td><%=co.getnomecorso()%></td>
- 	<td><%=co.getprezzo() %></td>
- 	<td><%=co.getdescrizione() %></td>
+ 	<td><%=co.getNomecorso()%></td>
+ 	<td><%=co.getPrezzo() %></td>
+ 	<td><%=co.getDescrizione() %></td>
 
  </tr>
  
