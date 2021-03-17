@@ -8,9 +8,7 @@ nome varchar(50),
 cognome varchar(50),
 telefono varchar(50),
 sesso varchar(50),
-dataNascita date,
-username varchar (50),
-password varchar (50)
+dataNascita date
 );
 
 
