@@ -8,8 +8,8 @@
 </head>
 <body class="bg-img">
 <h1>INSERIMENTO CORSO</h1>
- <br><br><a href="prodotti.jsp">Elenco Corsi</a><br><br>
- <br><br><a href="menu.jsp">Home</a><br><br>
+ <br><br><a href="Corso.jsp">Elenco Corsi</a><br><br>
+ <br><br><a href="dashboard.html">Home</a><br><br>
  
 <form action="Gestore" method="POST">
 <table border="3" bordercolor="brown" bgcolor="white">
