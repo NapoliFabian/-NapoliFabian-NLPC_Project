@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>Inserisci Soci</title>
 </head>
-<body bgcolor="pink">
+<body bgcolor="red">
 	 <h1>Inserimento soci</h1>
  <br><br><a href="socio.jsp">Home</a><br><br>
  
