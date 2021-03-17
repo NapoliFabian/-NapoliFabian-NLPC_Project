@@ -24,10 +24,10 @@
  
  <tr>
     <th></th>
- 	<th>COGNOME</th>
- 	<th>NOME</th>
- 	<th>TELEFONO</th>
- 	<th>DATA DI NASCITA</th>
+ 	<th>COD. FISCALE</th>
+ 	<th>INIZIO ABBONAMENTO</th>
+ 	<th>INIZIO ABBONAMENTO</th>
+ 	<th>NOME CORSO</th>
  	<th></th>
  	<th></th>
  </tr>
