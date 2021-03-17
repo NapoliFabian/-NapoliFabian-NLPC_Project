@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Inserisci Abbonamenti</title>
+<title>Inserisci Abbonamento</title>
 </head>
 <body bgcolor="green">
 	 <h1>Inserimento Abbonamenti</h1>
- <br><br><a href="socio.jsp">Home</a><br><br>
+ <br><br><a href="dashboard.html">Home</a><br><br>
  
 <form method="POST" action="GestioneProdotti">
  <table border="3" bordercolor="brown" bgcolor="white">
@@ -17,27 +17,27 @@
      
   <tr>
 	<td>ID abbonamento</td>
-	<td><input type="text" name="IdIstruttore" required  ></td>
+	<td><input type="text" name="IdAbbonamento" required  ></td>
  </tr>
  
   <tr>
-	<td>inizio</td>
-	<td><input type="text" name="Nome" required  ></td>
+	<td>Inizio</td>
+	<td><input type="text" name="inizioabb" required  ></td>
  </tr>
  
   <tr>
-	<td>fine</td>
-	<td><input type="text" name="Cognome" required  ></td>
+	<td>Fine</td>
+	<td><input type="text" name="fineabb" required  ></td>
  </tr>
  
   <tr>
 	<td>Codice Fiscale</td>
-	<td><input type="text" name="Telefono" required ></td>
+	<td><input type="text" name="CodF" required ></td>
  </tr>
  
   <tr>
 	<td>Nome corso</td>
-	<td><input type="text" name="Sesso" required ></td>
+	<td><input type="text" name="NomeCorso" required ></td>
  </tr>
 
 

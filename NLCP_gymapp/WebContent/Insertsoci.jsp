@@ -17,7 +17,7 @@
      
   <tr>
 	<td>ID Socio</td>
-	<td><input type="text" name="IdIstruttore" required  ></td>
+	<td><input type="text" name="IdSocio" required  ></td>
  </tr>
  
   <tr>

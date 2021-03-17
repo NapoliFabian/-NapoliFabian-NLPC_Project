@@ -23,27 +23,27 @@
 -->
   <tr>
 	<td>Id allenamento</td>
-	<td><input type="text" name="idAllenamento" required maxlength="30" size="60"></td>
+	<td><input type="text" name="idAllenamento" required ></td>
  </tr>
  
   <tr>
 	<td>Data allenamento</td>
-	<td><input type="text" name="dataAllenamento" required maxlength="1" size="60"></td>
+	<td><input type="text" name="dataAllenamento" required "></td>
  </tr>
  
   <tr>
 	<td>Nome del corso</td>
-	<td><input type="text" name="nomeCorso" required maxlength="1" size="60"></td>
+	<td><input type="text" name="nomeCorso" required ></td>
  </tr>
  
   <tr>
 	<td>Id istruttore</td>
-	<td><input type="text" name="idIstruttore" required maxlength="60" size="60"></td>
+	<td><input type="text" name="idIstruttore" required ></td>
  </tr>
  
   <tr>
 	<td>Durata allenamento</td>
-	<td><input type="text" name="durataAllenamento" maxlength="15" size="60"></td>
+	<td><input type="text" name="durataAllenamento" ></td>
  </tr>
 
   <tr>
