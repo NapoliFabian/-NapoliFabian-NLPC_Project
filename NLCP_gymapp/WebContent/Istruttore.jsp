@@ -22,14 +22,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/dashboard.css" rel="stylesheet"  type="text/css">
+
 <meta charset="ISO-8859-1">
 <title>Gestione Istruttore</title>
 </head>
-<body bgcolor="pink">
- <h1>ELENCO ISTRUTTORE</h1>
- <br><br><a href="dashboard.jsp">Home</a><br><br>
- 
- <table border="3" bordercolor="brown" bgcolor="white">
+<body>
+ <a href="dashboard.html">Home</a>
+ <a href = "insertIstruttori.jsp">Aggiungi</a>
+ <div align="center">
+ <table table border="1" style="width:60%; border-collapse: collapse;">
  
  <tr>
  	<th>nome</th>
@@ -55,5 +57,6 @@
      }
  %>
  </table>
+ </div>
 </body>
 </html>

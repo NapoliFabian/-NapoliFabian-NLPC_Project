@@ -7,7 +7,7 @@ public class Istruttore {
 	private String cognome;
 	private String telefono;
 	private String sesso;
-	private Date datanascita;
+	private String datanascita;
 	
 	
 	public Istruttore() {
@@ -15,7 +15,7 @@ public class Istruttore {
 	}
     
 
-	public Istruttore(String ids, String nome, String cognome, String telefono, String sesso, Date datanascita) {
+	public Istruttore(String ids, String nome, String cognome, String telefono, String sesso, String datanascita) {
 		super();
 		this.ids = ids;
 		this.nome = nome;
@@ -76,12 +76,12 @@ public class Istruttore {
 	}
 
 
-	public Date getDatanascita() {
+	public String getDatanascita() {
 		return datanascita;
 	}
 
 
-	public void setDatanascita(Date datanascita) {
+	public void setDatanascita(String datanascita) {
 		this.datanascita = datanascita;
 	}
 	

@@ -4,6 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/dashboard.css" rel="stylesheet"  type="text/css">
+<link href="css/elenchi.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>Inserisci Istruttori</title>
 </head>
@@ -11,7 +13,7 @@
 	 <h1>Inserimento Prodotti</h1>
  <br><br><a href="socio.jsp">Home</a><br><br>
  
-<form method="POST" action="GestioneProdotti">
+<form method="POST" action="Gestore">
  <table border="3" bordercolor="brown" bgcolor="white">
 
      
@@ -48,7 +50,7 @@
  
   <tr>
 	<td>Data di nascita</td>
-	<td><input type="text" name="DataDiNascita"></td>
+	<td><input type="date" name="DataDiNascita"></td>
  </tr>
  
 

@@ -37,7 +37,7 @@ public class DBManager {
 		rs=query.executeQuery(cmd);
 		Istruttore s;
 		while(rs.next()) {
-			s = new Istruttore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6));
+			s = new Istruttore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
 			istruttori.add(s);
 		
 		}
@@ -80,5 +80,24 @@ public class DBManager {
 		}
 		rs.close();
 		return soci;
+	}
+	public String insertIstruttore(Istruttore is) throws SQLException {
+		String ris = "n";
+		String comando = "insert into Istruttore values(?,?,?,?,?,?)";
+		PreparedStatement ps = connessione.prepareStatement(comando);
+		System.out.println(is.getIds());
+		ps.setString(1,is.getIds());
+		ps.setString(2,is.getNome());
+		ps.setString(3,is.getCognome());
+		ps.setString(4,is.getTelefono());
+		ps.setString(5,is.getSesso());
+		ps.setString(6,is.getDatanascita());
+		try {
+			ps.executeUpdate();	
+			ris="y";
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return ris;
 	}
 }

@@ -77,7 +77,26 @@ public class Gestore extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	try {
+		DBManager db = new DBManager();
+		String id = request.getParameter("IdIstruttore");
+		String nome = request.getParameter("Nome");
+		String cognome = request.getParameter("Cognome");
+		String telefono = request.getParameter("Telefono");
+		String sesso = request.getParameter("Sesso");
+		String data = request.getParameter("DataDiNascita");
 		
+		Istruttore i = new Istruttore(id, nome, cognome, telefono, sesso,data);
+		db.insertIstruttore(i);
+		request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
+		ArrayList<Istruttore>istruttori = new ArrayList<Istruttore>();
+		istruttori = db.allIstruttori();
+		request.getSession().setAttribute("ELENCO_ISTRUTTORI", istruttori);
+		response.sendRedirect("Istruttore.jsp");
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}	
 	}
 
 }
