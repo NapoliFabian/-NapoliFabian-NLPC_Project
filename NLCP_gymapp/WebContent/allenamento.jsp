@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+   <%@ page import="java.util.*"%>
+<%@ page import="it.meucci.*"%> 
     
     <%!
   ArrayList<allenamento> elenco;
@@ -8,7 +9,6 @@
   allenamento a;
 %>
 <%
-
 	elenco = (ArrayList<allenamento>)session.getAttribute("ELENCO_ALLENAMENTI");
 %>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@
 <body bgcolor="pink">
  <h1>ELENCO ALLENAMENTI</h1>
  <br><br><a href="dashboard.html">Home</a><br><br>
- 
+ <h1></h1>
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
@@ -43,8 +43,8 @@
 
  	<td><%=a.getIdallenamento()%></td>
  	<td><%=a.getDataallenamento() %></td>
- 	<td><%= c.getNomecorso() %></td>
- 	<td><%= c.getDurata() %></td>
+ 	<td><%= a.getNomecorso() %></td>
+ 	<td><%= a.getDurata() %></td>
 
  </tr>
  

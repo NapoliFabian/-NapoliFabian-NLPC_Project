@@ -31,4 +31,17 @@ public class DBManager {
 		query = connessione.createStatement();
 		
 	}
+	public ArrayList<Istruttore> allIstruttori() throws SQLException{
+		String cmd = "select * from Istruttore";
+		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+		rs=query.executeQuery(cmd);
+		Istruttore s;
+		while(rs.next()) {
+			s = new Istruttore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6));
+			istruttori.add(s);
+		
+		}
+		rs.close();
+		return istruttori;
+	}
 }
