@@ -14,7 +14,7 @@ public class DBManager {
 	private String pwdDB;
 	private ResultSet rs;
 	public DBManager() throws Exception{
-		urlDB="jdbc:mysql://localhost:3306/Northwind?serverTimezone=UTC";
+		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
 		pwdDB=null;
 		//Creazione della connessione
@@ -43,5 +43,18 @@ public class DBManager {
 		}
 		rs.close();
 		return istruttori;
+	}
+	public ArrayList<allenamento> allAllenamenti() throws SQLException {
+		String cmd = "select * from Allenamento";
+		ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
+		rs=query.executeQuery(cmd);
+		allenamento l;
+		while(rs.next()) {
+			l = new allenamento(rs.getInt(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			allenamenti.add(l);
+		
+		}
+		rs.close();
+		return allenamenti;
 	}
 }

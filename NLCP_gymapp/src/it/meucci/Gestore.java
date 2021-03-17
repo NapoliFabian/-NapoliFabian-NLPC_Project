@@ -36,10 +36,24 @@ public class Gestore extends HttpServlet {
 			try {
 				db = new DBManager();
 				istruttori = db.allIstruttori();
-				response.sendRedirect("istruttore.jsp");
+				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
+				response.sendRedirect("Istruttore.jsp");
 						
 			} catch (Exception e) {
-				// TODO: handle exception
+				System.out.println(e.getMessage());
+			}
+			
+		}
+		if(cmd.equals("allal")) {
+			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
+			try {
+				db = new DBManager();
+				allenamenti= db.allAllenamenti();
+				request.getSession().setAttribute("ELENCO_ISTRUTTORI",allenamenti);
+				response.sendRedirect("allenamento.jsp");
+						
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 			
 		}

@@ -14,7 +14,7 @@
 
 <%
 
-	elenco = (ArrayList<Istruttore>)session.getAttribute("ELENCO_ISTRUTTORE");
+	elenco = (ArrayList<Istruttore>)session.getAttribute("ELENCO_ISTRUTTORI");
 %>
 
 
@@ -48,9 +48,9 @@
  
   <tr>
 
- 	<td><%=is.getnome()%></td>
- 	<td><%=is.cognome() %></td>
- 	<td><%=is.telefono() %></td>
+ 	<td><%=is.getNome()%></td>
+ 	<td><%=is.getCognome() %></td>
+ 	<td><%=is.getTelefono() %></td>
 
  </tr>
  

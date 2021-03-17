@@ -20,7 +20,7 @@
 <body bgcolor="pink">
  <h1>ELENCO ALLENAMENTI</h1>
  <br><br><a href="dashboard.html">Home</a><br><br>
- <h1></h1>
+ <h1>ALLENAMENTI:<%=elenco.size()%></h1>
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
