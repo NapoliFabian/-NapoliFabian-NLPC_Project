@@ -3,19 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/dashboard.css" rel="stylesheet"  type="text/css">
-
 <%
 Istruttore is;
 is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 %>
-<style>
-
-</style>
-
-
 
 <meta charset="ISO-8859-1">
+<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 <title>DETTAGLIO</title>
 </head>
 <body>
@@ -29,6 +23,14 @@ is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
     <h1 class="titolo">GYM APP</h1>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <table>
 
 <tr><th>ID</th><td><%=is.getIds()%> </td></tr>
