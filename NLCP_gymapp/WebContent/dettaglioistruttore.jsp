@@ -1,16 +1,15 @@
-<%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*,it.meucci.*"
+	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/dashboard.css" rel="stylesheet"  type="text/css">
+<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 
 <%
 Istruttore is;
 is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 %>
 <style>
-
 </style>
 
 
@@ -19,24 +18,42 @@ is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 <title>DETTAGLIO</title>
 </head>
 <body>
-<div class="header">
-<div class="icon">
+	<div class="header">
+		<div class="icon">
 
-<img src="img\nuovaicona.png" width="100" height="70">
+			<img src="img\nuovaicona.png" width="100" height="70">
 
-</div>
-<div class="logo">
-    <h1 class="titolo">GYM APP</h1>
-    </div>
-</div>
-<table>
+		</div>
+		<div class="logo">
+			<h1 class="titolo">GYM APP</h1>
+		</div>
+	</div>
+	<table>
 
-<tr><th>ID</th><td><%=is.getIds()%> </td></tr>
-<tr><th>NOME</th><td><%=is.getNome()%> </td></tr>
-<tr><th>COGNOME</th><td><%=is.getCognome()%> </td></tr>
-<tr><th>TELEFONO</th><td><%=is.getTelefono()%> </td></tr>
-<tr><th>SESSO</th><td><%=is.getSesso()%> </td></tr>
-<tr><th>DATA NASCITA</th><td><%=is.getDatanascita()%> </td></tr>
-</table>
+		<tr>
+			<th>ID</th>
+			<td><%=is.getIds()%></td>
+		</tr>
+		<tr>
+			<th>NOME</th>
+			<td><%=is.getNome()%></td>
+		</tr>
+		<tr>
+			<th>COGNOME</th>
+			<td><%=is.getCognome()%></td>
+		</tr>
+		<tr>
+			<th>TELEFONO</th>
+			<td><%=is.getTelefono()%></td>
+		</tr>
+		<tr>
+			<th>SESSO</th>
+			<td><%=is.getSesso()%></td>
+		</tr>
+		<tr>
+			<th>DATA NASCITA</th>
+			<td><%=is.getDatanascita()%></td>
+		</tr>
+	</table>
 </body>
 </html>
