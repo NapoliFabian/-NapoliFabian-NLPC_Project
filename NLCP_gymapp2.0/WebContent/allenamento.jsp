@@ -4,12 +4,12 @@
 <%@ page import="it.meucci.*"%> 
     
     <%!
-  ArrayList<allenamento> elenco;
+  ArrayList<allenamento> elenco1;
   int i;
   allenamento a;
 %>
 <%
-	elenco = (ArrayList<allenamento>)session.getAttribute("ELENCO_ALLENAMENTI");
+	elenco1 = (ArrayList<allenamento>)session.getAttribute("ELENCO_ALLENAMENTI");
 %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@
 <body bgcolor="pink">
  <h1>ELENCO ALLENAMENTI</h1>
  <br><br><a href="dashboard.html">Home</a><br><br>
- <h1>ALLENAMENTI:<%=elenco.size()%></h1>
+ <h1>ALLENAMENTI:<%=elenco1.size()%></h1>
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
@@ -33,9 +33,9 @@
  	<th></th>
  </tr>
  
- <% for(i=0;i<elenco.size();i++) 
+ <% for(i=0;i<elenco1.size();i++) 
     {
-	 a=(allenamento)elenco.get(i);
+	 a=(allenamento)elenco1.get(i);
     
  %>
  
