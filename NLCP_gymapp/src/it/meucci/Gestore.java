@@ -70,6 +70,22 @@ public class Gestore extends HttpServlet {
 			}
 			
 		}
+		//////////////////////////////////////////////////////////////////////////////////////////
+		//comandi per dettaglio
+		if(cmd.equals("dettagliois")) {
+			String id = request.getParameter("id");
+			ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+			istruttori =(ArrayList<Istruttore>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
+		    Istruttore is;
+			for(int i=0;i<istruttori.size();i++) {
+				is = istruttori.get(i);
+				if(is.getIds().equals(id)) {
+				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
+				response.sendRedirect("dettaglioistruttore.jsp");
+				}
+			}//fine for
+		}// fine if
+		
 		
 	}
 
@@ -77,6 +93,8 @@ public class Gestore extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String submit = request.getParameter("INSERT");	
+		if(submit.equals("INSERT_ISTRUTTORE")) {
 	try {
 		DBManager db = new DBManager();
 		String id = request.getParameter("IdIstruttore");
@@ -98,5 +116,5 @@ public class Gestore extends HttpServlet {
 		e.printStackTrace();
 	}	
 	}
-
+	}
 }

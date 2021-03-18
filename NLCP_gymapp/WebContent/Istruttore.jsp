@@ -50,7 +50,7 @@
  	<td><%=is.getNome()%></td>
  	<td><%=is.getCognome() %></td>
  	<td><%=is.getTelefono() %></td>
-
+    <td><a href="Gestore?cmd=dettagliois&id=<%=is.getIds()%>">Visualizza</a> </td>
  </tr>
  
  <%

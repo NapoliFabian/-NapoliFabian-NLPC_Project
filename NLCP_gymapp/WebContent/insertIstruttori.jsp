@@ -55,7 +55,7 @@
  
 
   <tr>
-	<td colspan="2"><input type="submit" value="INVIA"> <input type="submit" value="ANNULLA"></td>
+	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_ISTRUTTORE"> <input type="submit" value="ANNULLA"></td>
  </tr>
 
  </table>
