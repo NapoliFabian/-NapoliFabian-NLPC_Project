@@ -16,8 +16,8 @@
 
      
   <tr>
-	<td>ID Socio</td>
-	<td><input type="text" name="IdSocio" required  ></td>
+	<td>CODICE FISCALE</td>
+	<td><input type="text" name="IdSocio" required maxlength="16" ></td>
  </tr>
  
   <tr>
