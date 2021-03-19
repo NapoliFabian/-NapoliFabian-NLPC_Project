@@ -30,7 +30,7 @@ s = (socio)session.getAttribute("SOCIO_DETTAGLIO");
 </div>
 <table>
 
-<tr><th>CODICE FISCALE</th><td><%=s.getcodf()%> </td></tr>
+<tr><th>CODICE FISCALE</th><td><%=s.getCodf()%> </td></tr>
 <tr><th>NOME</th><td><%=s.getNome()%> </td></tr>
 <tr><th>COGNOME</th><td><%=s.getCognome()%> </td></tr>
 <tr><th>TELEFONO</th><td><%=s.getTelefono()%> </td></tr>
