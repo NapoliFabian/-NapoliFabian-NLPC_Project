@@ -21,17 +21,21 @@
 </head>
 <body bgcolor="pink">
  <h1>ELENCO corsi</h1>
- <br><br><a href="dashboard.jsp">Home</a><br><br>
- 
+ <br><br><a href="dashboard.jsp">Home</a><a href="insertCorsi.jsp">INSERISCI</a><br><br>
+
+ <% if(elenco.isEmpty()) {
+ %>
+ <h1>Nessun corso inserito</h1>
+  <%
+     }
+ %>
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
-    <th></th>
+
  	<th>nomecorso</th>
  	<th>prezzo</th>
  	<th>descrizione</th>
- 	<th></th>
- 	<th></th>
  </tr>
  
  <% for(i=0;i<elenco.size();i++) 

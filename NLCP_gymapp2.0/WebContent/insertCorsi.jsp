@@ -16,7 +16,7 @@
  
  <tr>
     <td>Nome Corso</td>
- 	<td><input type="number" name ="NomeCorso" required ></td>
+ 	<td><input type="text" name ="NomeCorso" required ></td>
  </tr>
  <tr>
     <td>Prezzo</td>
@@ -26,7 +26,9 @@
     <td>Descrizione</td>
  	<td><input type="text" name ="Descrizione" required ></td>
  </tr>
- 
+ <tr>
+ <td><input type="submit" name="INSERT" value="INSERT_CORSO"></td>
+ </tr>
  </table>
 </form>
 </body>
