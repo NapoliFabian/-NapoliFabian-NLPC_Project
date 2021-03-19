@@ -1,43 +1,41 @@
 <%@ page language="java" import="java.util.*,it.meucci.*"  contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%!
- socio s;
-%>
-<%
-
-	s = (socio)session.getAttribute("SOCIO_SESSIONE");
-%>
-
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+<%
+socio s;
+s = (socio)session.getAttribute("SOCIO_DETTAGLIO");
+%>
+<style>
+
+</style>
+
+
+
 <meta charset="ISO-8859-1">
-<title>Dettaglio Socio</title>
+<title>DETTAGLIO</title>
 </head>
-<body bgcolor="pink">
- <h1>ELENCO Soci</h1>
- <br><br><a href="socio.jsp">Elenco Soci</a><br><br>
-<!--  <br><br><a href="menu.jsp">Menu</a><br><br>  -->
- <table border="3" bordercolor="brown" bgcolor="white">
- 
- <tr>
- 	<th>codicefiscale</th>
- 	<th>nome</th>
- 	<th>cognome</th>
- 	<th>telefono</th>
- 	<th>sesso </th>
- 	<th>datanascita</th>
- </tr>
- 
- 
-  <tr>
-  	<td><%= s.getcodicefiscale() %></td>
- 	<td><%= s.getnome() %></td>
- 	<td><%= s.getcognome() %></td>
- 	<td><%= s.gettelefono() %></td>
- 	<td><%= s.getsesso() %></td>
- 	<td><%= s.getdatanascita() %></td>
-  </tr>
- </table>
+<body>
+<div class="header">
+<div class="icon">
+
+<img src="img\nuovaicona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP</h1>
+    </div>
+</div>
+<table>
+
+<tr><th>CODICE FISCALE</th><td><%=s.getcodf()%> </td></tr>
+<tr><th>NOME</th><td><%=s.getNome()%> </td></tr>
+<tr><th>COGNOME</th><td><%=s.getCognome()%> </td></tr>
+<tr><th>TELEFONO</th><td><%=s.getTelefono()%> </td></tr>
+<tr><th>SESSO</th><td><%=s.getSesso()%> </td></tr>
+<tr><th>DATA NASCITA</th><td><%=s.getDatanascita()%> </td></tr>
+</table>
 </body>
 </html>
