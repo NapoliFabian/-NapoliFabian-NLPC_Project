@@ -81,6 +81,18 @@ public class Gestore extends HttpServlet {
 			
 			}
 		}
+		if(cmd.equals("allabb")) {
+			ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
+			try {
+				db = new DBManager();
+				abbonamenti= db.allAbbonamenti();
+				request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);
+				response.sendRedirect("abbonamento.jsp");
+			}
+			catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
 		//////////////////////////////////////////////////////////////////////////////////////////
 		//comandi per dettaglio
 		if(cmd.equals("dettagliois")) {
@@ -96,6 +108,50 @@ public class Gestore extends HttpServlet {
 				}
 			}//fine for
 		}// fine if
+		if(cmd.equals("dettaglioabb")) {
+			String id = request.getParameter("id");
+			int id1 = Integer.parseInt(id);
+			ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
+			abbonamenti =(ArrayList<abbonamento> )request.getSession().getAttribute("ELENCO_ABBONAMENTI");
+			abbonamento is;
+			for(int i=0;i<abbonamenti.size();i++) {
+				is = abbonamenti.get(i);
+				if(is.getIdabbonamento()==id1) {
+				request.getSession().setAttribute("ABBONAMENTO_DETTAGLIO",is);	
+				response.sendRedirect("dettaglioabbonamento.jsp");
+				}
+			}//fine for
+		}
+		if(cmd.equals("dettaglioall")) {
+			String id = request.getParameter("id");
+			int id1 = Integer.parseInt(id);
+			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
+			allenamenti =(ArrayList<allenamento> )request.getSession().getAttribute("ELENCO_ALLENAMENTI");
+			allenamento is;
+			for(int i=0;i<allenamenti.size();i++) {
+				is = allenamenti.get(i);
+				if(is.getIdallenamento()==id1) {
+				request.getSession().setAttribute("ALLENAMENTO_DETTAGLIO",is);	
+				response.sendRedirect("dettaglioallenamento.jsp");
+				}
+			}//fine for
+		}
+		if(cmd.equals("dettaglioso")) {
+			String codf = request.getParameter("id");
+			ArrayList<socio> soci = new ArrayList<socio>();
+			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_ALLENAMENTI");
+			socio is;
+			for(int i=0;i<soci.size();i++) {
+				is = soci.get(i);
+				if(is.getCodf().equals(codf)) {
+				request.getSession().setAttribute("SOCIO_DETTAGLIO",is);	
+				response.sendRedirect("dettagliosocio.jsp");
+				}
+			}//fine for
+		}
+		
+		//fine if
+		
 		///////////////////////////////////////////////////////////////////////////////////////////
 		//Comandi elimina
 		if(cmd.equals("eliminais")) {

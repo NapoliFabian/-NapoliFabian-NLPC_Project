@@ -16,7 +16,7 @@ public class DBManager {
 	public DBManager() throws Exception{
 		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
-		pwdDB="cristian02";
+		pwdDB="";
 		//Creazione della connessione
 		//Registrazione dei Driver
 		try {
@@ -128,6 +128,7 @@ public class DBManager {
 		}
 		return ris;
 	}
+
 	
 	
 	public String Login(String username, String password) {
@@ -136,9 +137,16 @@ public class DBManager {
 	}
 	
 	
-	
-	
-	
-	
-	
+	public ArrayList<abbonamento> allAbbonamenti() throws SQLException {
+		ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
+		String cmd = "select * from abbonamento";
+		rs = query.executeQuery(cmd);
+		abbonamento b;
+		while(rs.next()) {
+			b = new abbonamento(rs.getInt(1),rs.getDate(2),rs.getDate(3),rs.getString(4),rs.getString(5));
+			abbonamenti.add(b);
+		}
+		rs.close();
+		return abbonamenti;
+	}
 }

@@ -39,13 +39,11 @@
  %>
  
   <tr>
-    <td><a href="Gestore?cmd=dettaglioc&id=<%=%>"><img src="img\dettaglio.jpeg" height="30" width="30"></a> </td>
  	<td><%=s.getCognome()%></td>
- 	<td><%=s.getNome() %></td>
- 	<td><%=s.getTelefono() %></td>
- 	<td><%=s.getDatanascita() %></td>
- 	<td><a href="Gestore?cmd=aggiornac&id=<%= %>"><img src="img\update.jpeg" height="30" width="30"></a></td>
- 	<td><a href="Gestore?cmd=eliminac&id=<%= %>"><img src="img\elimina.jpg" height="30" width="30"></a></td>
+ 	<td><%=s.getNome()%></td>
+ 	<td><%=s.getTelefono()%></td>
+ 	<td><%=s.getDatanascita()%></td>
+ 	<td><a href="Gestore?cmd=dettagliois&id=<%=s.getCodf()%>">Visualizza</a></td>
  </tr>
  
  <%

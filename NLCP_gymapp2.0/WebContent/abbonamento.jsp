@@ -39,13 +39,10 @@
  %>
  
   <tr>
-    <td><a href="Gestore?cmd=dettaglioc&id=<%=%>"><img src="img\dettaglio.jpeg" height="30" width="30"></a> </td>
  	<td><%=abb.getCodf()%></td>
  	<td><%=abb.getInizio()%></td>
  	<td><%=abb.getFine() %></td>
  	<td><%=abb.getNomecorso() %></td>
- 	<td><a href="Gestore?cmd=aggiornac&id=<%= %>"><img src="img\update.jpeg" height="30" width="30"></a></td>
- 	<td><a href="Gestore?cmd=eliminac&id=<%= %>"><img src="img\elimina.jpg" height="30" width="30"></a></td>
  </tr>
  
  <%
