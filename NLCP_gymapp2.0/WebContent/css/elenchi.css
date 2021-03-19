@@ -1,16 +1,15 @@
 @charset "ISO-8859-1";
-body{
-/*background-image: url("img/sfondo.jpg");*/
-/*background-color: dodgerblue;*/
-margin:0px;
-}
 table{
 background-color: white;
-border:1px solid gray;
+border:1px solid black;
 width:70%;
 }
 td{
 text-align:center;
+}
+th{
+	height: 50px;
+	background-color: green;
 }
 .header{
 width:100%;

@@ -100,4 +100,32 @@ public class DBManager {
 		}
 		return ris;
 	}
+	public int eliminaIStruttore(Istruttore is) throws SQLException {
+		int ris =0;
+		String comando = "Delete from Istruttore where Istruttore.ids ='"+is.getIds()+"'";
+		System.out.println(comando);
+		try {
+			query.executeUpdate(comando);
+			ris=1;
+		}catch (Exception e) {
+			ris=0;
+			System.out.println(e.getMessage());
+		}
+		return ris;
+	}
+	public int insertCorso(Corso c) throws SQLException {
+		String comando = "insert into Corso values(?,?,?)";
+		int ris =0;
+		PreparedStatement ps = connessione.prepareStatement(comando);
+		ps.setString(1, c.getNomecorso());
+		ps.setInt(2,c.getPrezzo());
+		ps.setString(3, c.getDescrizione());
+		try {
+			ps.executeUpdate();	
+			ris=1;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return ris;
+	}
 }
