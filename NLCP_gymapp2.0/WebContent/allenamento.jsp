@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Allenamento</title>
 </head>
 <body bgcolor="pink">
  <h1>ELENCO ALLENAMENTI</h1>
@@ -45,6 +45,9 @@
  	<td><%=a.getDataallenamento() %></td>
  	<td><%= a.getNomecorso() %></td>
  	<td><%= a.getDurata() %></td>
+ 	<td><a href="Gestore?cmd=dettaglioall&id=<%=a.getIdallenamento()%>">Visualizza</a></td>
+    <td><a href="Gestore?cmd=eliminaall&id=<%=a.getIdallenamento()%>">Elimina</a></td>
+    <td><a href="Gestore?cmd=aggiornaall&id=<%=a.getIdallenamento()%>">Aggiorna</a></td>
 
  </tr>
  

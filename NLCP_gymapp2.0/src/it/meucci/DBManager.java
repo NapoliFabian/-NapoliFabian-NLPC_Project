@@ -128,4 +128,17 @@ public class DBManager {
 		}
 		return ris;
 	}
+	
+	
+	public String Login(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
 }

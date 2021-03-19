@@ -2,15 +2,19 @@ create database gym;
 use gym;
 -- drop database gym; --
 
+
+create table Admin(
+username varchar(50) primary key,
+password varchar(50)
+);
+
 create table istruttore(
 Ids varchar(5) primary key,
 nome varchar(50),
 cognome varchar(50),
 telefono varchar(50),
 sesso varchar(50),
-dataNascita date,
-username varchar (50),
-password varchar (50)
+dataNascita date
 );
 
 
