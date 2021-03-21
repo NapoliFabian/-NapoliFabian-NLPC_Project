@@ -17,7 +17,7 @@
      
   <tr>
 	<td>CODICE FISCALE</td>
-	<td><input type="text" name="IdSocio" required maxlength="16" ></td>
+	<td><input type="text" name="codf" required maxlength="16" ></td>
  </tr>
  
   <tr>
@@ -42,12 +42,12 @@
  
   <tr>
 	<td>Data di nascita</td>
-	<td><input type="text" name="DataDiNascita" required></td>
+	<td><input type="date" name="DataDiNascita" required></td>
  </tr>
  
 
   <tr>
-	<td colspan="2"><input type="submit" value="INVIA"> <input type="submit" value="ANNULLA"></td>
+	<td colspan="2"><input type="submit" name="insert" value="INSERT_SOCIO"> <input type="submit" value="ANNULLA"></td>
  </tr>
 
  </table>

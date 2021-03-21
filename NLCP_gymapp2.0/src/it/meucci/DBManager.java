@@ -75,7 +75,7 @@ public class DBManager {
 		rs=query.executeQuery(cmd);
 		socio s;
 		while(rs.next()) {
-			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getDate(6));
+			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
 			soci.add(s);
 		}
 		rs.close();
@@ -143,10 +143,25 @@ public class DBManager {
 		rs = query.executeQuery(cmd);
 		abbonamento b;
 		while(rs.next()) {
-			b = new abbonamento(rs.getInt(1),rs.getDate(2),rs.getDate(3),rs.getString(4),rs.getString(5));
+			b = new abbonamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
 			abbonamenti.add(b);
 		}
 		rs.close();
 		return abbonamenti;
+	}
+	public void insertAbbonamento(abbonamento ab) throws SQLException {
+		String cmd = "insert into abbonamento values(?,?,?,?,?)";
+		PreparedStatement ps = connessione.prepareStatement(cmd);
+		ps.setInt(1,ab.getIdabbonamento());
+		ps.setString(2,ab.getInizio());
+		ps.setString(3,ab.getFine());
+		ps.setString(4,ab.getCodf());
+		ps.setString(5,ab.getNomecorso());
+		ps.execute(cmd);
+		
+	}
+	public void insertSocio(socio soc) {
+		String cmd = "insert into socio values(?,?,?,?,?)";
+		
 	}
 }

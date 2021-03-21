@@ -8,11 +8,11 @@ private String nome;
 private String cognome;
 private String telefono;
 private String sesso;
-private Date datanascita;
+private String datanascita;
 public socio() {
 	super();
 }
-public socio(String codf, String nome, String cognome, String telefono, String sesso, Date datanascita) {
+public socio(String codf, String nome, String cognome, String telefono, String sesso, String datanascita) {
 	super();
 	this.codf = codf;
 	this.nome = nome;
@@ -51,10 +51,10 @@ public String getSesso() {
 public void setSesso(String sesso) {
 	this.sesso = sesso;
 }
-public Date getDatanascita() {
+public String getDatanascita() {
 	return datanascita;
 }
-public void setDatanascita(Date datanascita) {
+public void setDatanascita(String datanascita) {
 	this.datanascita = datanascita;
 }
 

@@ -6,8 +6,8 @@ import java.sql.Date;
 public class abbonamento {
 
 	private int idabbonamento;
-	private Date inizio;
-	private Date fine;
+	private String inizio;
+	private String fine;
 	private String codf;
 	private String nomecorso;
 	
@@ -15,7 +15,7 @@ public class abbonamento {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public abbonamento(int idabbonamento,Date inizio,Date fine,String codf,String nomecorso) {
+	public abbonamento(int idabbonamento,String inizio,String fine,String codf,String nomecorso) {
 		
 		idabbonamento = idabbonamento;
 		inizio = inizio;
@@ -32,19 +32,19 @@ public class abbonamento {
 		this.idabbonamento = idabbonamento;
 	}
 
-	public Date getInizio() {
+	public String getInizio() {
 		return inizio;
 	}
 
-	public void setInizio(Date inizio) {
+	public void setInizio(String inizio) {
 		this.inizio = inizio;
 	}
 
-	public Date getFine() {
+	public String getFine() {
 		return fine;
 	}
 
-	public void setFine(Date fine) {
+	public void setFine(String fine) {
 		this.fine = fine;
 	}
 

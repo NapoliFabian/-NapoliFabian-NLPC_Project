@@ -19,17 +19,14 @@
 <title>Abbonamento</title>
 </head>
 <body>
-
+<a href="insertabbonamento.jsp">INSERISCI</a>
 <table border="3" bordercolor="yellow" bgcolor="white">
  
  <tr>
-    <th></th>
  	<th>COD. FISCALE</th>
  	<th>INIZIO ABBONAMENTO</th>
  	<th>INIZIO ABBONAMENTO</th>
  	<th>NOME CORSO</th>
- 	<th></th>
- 	<th></th>
  </tr>
  
  <% for(i=0;i<elenco.size();i++) 
@@ -43,6 +40,7 @@
  	<td><%=abb.getInizio()%></td>
  	<td><%=abb.getFine() %></td>
  	<td><%=abb.getNomecorso() %></td>
+ 	<td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
  </tr>
  
  <%

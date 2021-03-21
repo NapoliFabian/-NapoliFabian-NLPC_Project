@@ -232,6 +232,25 @@ public class Gestore extends HttpServlet {
 			// TODO: handle exception
 		}
 	}
+	if(submit.equals("INSERT_ABBONAMENTO")) {
+	String id = request.getParameter("IdAbbonamento");
+	String inizio = request.getParameter("inizioabb");
+	String fine = request.getParameter("fineabb");
+	String codf = request.getParameter("CodF");
+	String nomec =request.getParameter("NomeCorso");
+	int id1 = Integer.parseInt(id);
+	abbonamento ab = new abbonamento(id1, inizio, fine, codf, nomec);
+	try {
+		DBManager db = new DBManager();
+		db.insertAbbonamento(ab);
+		request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
+		ArrayList<abbonamento> abbonamenti = db.allAbbonamenti();
+		request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);
+		response.sendRedirect("abbonamento.jsp");
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	}
 	if(submit.equals("cercaIS")) {
 		String cognome = request.getParameter("istruttore");
 		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
@@ -251,5 +270,25 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ISTRUTTORI_CERCATI",ricerca);
 		response.sendRedirect("Istruttore.jsp");
 	}
+	if(submit.equals("INSERT_SOCIO")) {
+		String codf = request.getParameter("codf");
+		String nome = request.getParameter("Nome");
+		String cognome = request.getParameter("Cognome");
+		String tel = request.getParameter("Telefono");
+		String s = request.getParameter("Sesso");
+		String datan = request.getParameter("DataDiNascita");
+		socio soc = new socio(codf, nome, cognome, tel,s,datan);
+		try {
+			DBManager db = new DBManager();
+			db.insertSocio(soc);
+			request.getSession().removeAttribute("ELENCO_SOCI");
+			ArrayList<socio> abbonamenti = db.allSocio();
+			request.getSession().setAttribute("ELENCO_SOCI",abbonamenti);
+			response.sendRedirect("socio.jsp");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 }
 }
