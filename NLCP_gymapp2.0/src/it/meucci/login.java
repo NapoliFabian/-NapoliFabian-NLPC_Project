@@ -43,63 +43,30 @@ public class login extends HttpServlet {
 	
 	//	System.out.println(email+" "+password);
 		
-		String esito=null;
+		boolean esito=false;
 		PrintWriter out =response.getWriter();
 	//77
 		DBManager db = null;
 			 try {
 				  db = new DBManager();
 				 esito =db.Login(username, password);
+				 if(esito==true) {
+					 response.sendRedirect("dashboard.html");
+					 
+				 }
+				 else {
+					 System.out.println("Non va");
+				 }
 			//	 System.out.println(esito);
 			 }catch (Exception e) {
 				System.out.println("Error on login" +e.getMessage()+e.getCause());
 			}
 			 
 			 
-			 if(esito=="accede") {
-				 response.sendRedirect("dashboard.html");
-				 
-			 }
-			 if (esito=="pwerror") {
-				 out.print("<html>"
-							+ "<body>"
-							+ "<h1>Password errata, <a href='index.html'>Riprova </a></h1>"
-							+ "<br>"
-							
-							+ "</body>"
-							+ "</html>");
-			 }
+	
+			
 			 
-			 if (esito=="nonesiste") {
-				  out.print("<html>\r\n"
-					  		+ "\r\n"
-					  		+ "<head>\r\n"
-					  		+ "<link rel=\"stylesheet\" href=\"css/login.css\" type=\"text/css\">\r\n"
-					  		+ "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n"
-					  		+ "<title>Login</title>\r\n"
-					  		+ "</head>\r\n"
-					  		+ "\r\n"
-					  		+ "\r\n"
-					  		+ "<body style=\"background-image: url(img/sfondo.jpg);\">\r\n"
-					  		+ "<h1>Utente non registrato  <a href='registrazione.html'>clicca qui per registrarti </a></h1>\\r\\n"
-					  		+ "</body>\r\n"
-					  		+ "</html>");
-			 }
-			 if (esito==null) {
-				  out.print("<html>\r\n"
-					  		+ "\r\n"
-					  		+ "<head>\r\n"
-					  		+ "<link rel=\"stylesheet\" href=\"css/login.css\" type=\"text/css\">\r\n"
-					  		+ "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n"
-					  		+ "<title>Login</title>\r\n"
-					  		+ "</head>\r\n"
-					  		+ "\r\n"
-					  		+ "\r\n"
-					  		+ "<body style=\"background-image: url(img/sfondo.jpg);\">\r\n"
-					  		+ "<h1>L'email non è presente nel database, <a href='registrazione'>registrati </a></h1>\\r\\n"
-					  		+ "</body>\r\n"
-					  		+ "</html>");
-			 }
+			 
 		
 		
 		
