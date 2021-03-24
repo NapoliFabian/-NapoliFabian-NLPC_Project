@@ -26,7 +26,7 @@
 <form method="POST" action="Gestore">
  <center><table class="scritte" border="0">
 
-     
+   <!--  -->  
 <!--   
  <tr>
 	<th>ProductID</th>
