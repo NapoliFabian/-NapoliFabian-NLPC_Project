@@ -55,7 +55,7 @@ try {
  
   <tr>
 	<td>Nome corso</td>
-	<td><select name="codf">
+	<td><select name="NomeCorso">
 	<%for(int i=0;i<corsi.size();i++){
 		Corso c = corsi.get(i);
 		%>

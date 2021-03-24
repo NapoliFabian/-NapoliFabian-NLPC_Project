@@ -50,7 +50,7 @@ public class DBManager {
 		rs=query.executeQuery(cmd);
 		allenamento l;
 		while(rs.next()) {
-			l = new allenamento(rs.getInt(1),rs.getDate(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			l = new allenamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
 			allenamenti.add(l);
 		
 		}
@@ -195,4 +195,28 @@ public class DBManager {
 		}
 		
 	}
+	public void eliminaSocio(socio is) {
+	String cmd = "delete from socio where codfiscale= '"+is.getCodf()+"'";
+	try {
+		query.executeUpdate(cmd);
+		
+	}catch (Exception e) {
+		System.out.println(e.getMessage());
+	}	
+	}
+	public void insertAllenamento(allenamento al) throws SQLException {
+		String comando = "insert into allenamento values(?,?,?,?,?)";
+		PreparedStatement ps = connessione.prepareStatement(comando);
+		ps.setInt(1,al.getIdallenamento());
+		ps.setString(2,al.getDataallenamento());
+		ps.setString(3,al.getDurata());
+		ps.setString(4,al.getNomecorso());
+		ps.setString(5,al.getIds());
+		try {
+			ps.executeUpdate();	
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 }

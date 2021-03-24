@@ -40,7 +40,9 @@
  	<td><%=s.getNome()%></td>
  	<td><%=s.getTelefono()%></td>
  	<td><%=s.getDatanascita()%></td>
- 	<td><a href="Gestore?cmd=dettagliois&id=<%=s.getCodf()%>">Visualizza</a></td>
+ 	<td><a href="Gestore?cmd=dettaglioso&id=<%=s.getCodf()%>">Visualizza</a></td>
+ 	<td><a href="Gestore?cmd=eliminaso&id=<%=s.getCodf()%>">Cancella</a></td>
+ 	<td><a href="Gestore?cmd=updateso&id=<%=s.getCodf()%>">Aggiorna</a></td>
  </tr>
  
  <%

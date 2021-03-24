@@ -14,13 +14,13 @@ public class abbonamento {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public abbonamento(int idabbonamento,String ini,String fin,String codf,String nomecorso) {
+	public abbonamento(int idabbonamento,String inizio,String fine,String codf,String nomecorso) {
 		
-		idabbonamento = idabbonamento;
-		ini = ini;
-		fin = fin;
-		codf = codf;
-		nomecorso = nomecorso;
+		this.idabbonamento = idabbonamento;
+		this.inizio = inizio;
+		this.fine = fine;
+		this.codf = codf;
+		this.nomecorso = nomecorso;
 	}
 
 	public int getIdabbonamento() {

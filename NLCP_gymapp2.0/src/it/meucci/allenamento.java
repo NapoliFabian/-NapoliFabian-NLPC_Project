@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class allenamento {
 	private int idallenamento;
-	private Date dataallenamento;
+	private String dataallenamento;
 	private String nomecorso;
 	private String ids;
 	private String durata;
@@ -15,13 +15,13 @@ public class allenamento {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public allenamento(int idallenamento,Date dataallenamento,String nomecorso,String ids,String durata) {
+	public allenamento(int idallenamento,String dataallenamento,String nomecorso,String ids,String durata) {
 		
-		idallenamento = idallenamento;
-		dataallenamento = dataallenamento;
-		nomecorso = nomecorso;
-		ids = ids;
-		durata = durata;
+		this.idallenamento = idallenamento;
+		this.dataallenamento = dataallenamento;
+		this.nomecorso = nomecorso;
+		this.ids = ids;
+		this.durata = durata;
 	}
 
 	public int getIdallenamento() {
@@ -32,11 +32,11 @@ public class allenamento {
 		this.idallenamento = idallenamento;
 	}
 
-	public Date getDataallenamento() {
+	public String getDataallenamento() {
 		return dataallenamento;
 	}
 
-	public void setDataallenamento(Date dataallenamento) {
+	public void setDataallenamento(String dataallenamento) {
 		this.dataallenamento = dataallenamento;
 	}
 

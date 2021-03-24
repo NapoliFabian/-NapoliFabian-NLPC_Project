@@ -141,7 +141,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("dettaglioso")) {
 			String codf = request.getParameter("id");
 			ArrayList<socio> soci = new ArrayList<socio>();
-			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_ALLENAMENTI");
+			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_SOCI");
 			socio is;
 			for(int i=0;i<soci.size();i++) {
 				is = soci.get(i);
@@ -187,6 +187,36 @@ public class Gestore extends HttpServlet {
 			request.getSession().removeAttribute("ISTRUTTORE_ELIMINA");
 			response.sendRedirect("Istruttore.jsp");
 		}
+		if(cmd.equals("eliminaso")) {
+			String codf = request.getParameter("id");	
+			ArrayList<socio> soci = new ArrayList<socio>();
+			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_SOCI");
+			socio is;
+			for(int i=0;i<soci.size();i++) {
+				is = soci.get(i);
+				if(is.getCodf().equals(codf)) {
+				request.getSession().setAttribute("SOCIO_ELIMINA",is);	
+				response.sendRedirect("confermaso.jsp");
+				}
+			}//fine for
+			
+		}
+		if(cmd.equals("confermaso")) {
+			socio is =(socio)request.getSession().getAttribute("SOCIO_ELIMINA");
+			try {
+				db = new DBManager();
+				db.eliminaSocio(is);
+				request.getSession().removeAttribute("ELENCO_SOCI");
+				ArrayList<socio> istruttori = new ArrayList<socio>();
+				istruttori = db.allSocio();
+				request.getSession().setAttribute("ELENCO_SOCI",istruttori);
+				response.sendRedirect("socio.jsp");
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		//comandi aggiorna
 		
@@ -238,11 +268,13 @@ public class Gestore extends HttpServlet {
 	String id = request.getParameter("IdAbbonamento");
 	String inizio = request.getParameter("inizioabb");
 	String fine = request.getParameter("fineabb");
-	String codf = request.getParameter("CodF");
+	String codf = request.getParameter("codf");
 	String nomec =request.getParameter("NomeCorso");
-	try {
+	System.out.println(id); System.out.println(inizio);
 		int id1 = Integer.parseInt(id);
 		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec);
+		System.out.println(ab.toString());
+		try {
 		DBManager db = new DBManager();
 		db.insertAbbonamento(ab);
 		request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
@@ -291,6 +323,25 @@ public class Gestore extends HttpServlet {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+	if(submit.equals("INSERT_ALLENAMENTO")) {
+		String id = request.getParameter("idAllenamento");
+		String data = request.getParameter("dataAllenamento");
+		String nomec = request.getParameter("nomeCorso");
+		String ids = request.getParameter("idIstruttore");
+		String t = request.getParameter("durataAllenamento");
+		int id1 = Integer.parseInt(id);
+		allenamento al = new allenamento(id1, data, nomec, ids,t);
+		try {
+			DBManager db = new DBManager();
+			db.insertAllenamento(al);
+			request.getSession().removeAttribute("ELENCO_ALLENAMENTI");
+			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
+			allenamenti = db.allAllenamenti();
+			request.getSession().setAttribute("ELENCO_ALLENAMENTI",allenamenti);
+			response.sendRedirect("allenamento.jsp");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 }
 }

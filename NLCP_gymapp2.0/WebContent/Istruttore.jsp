@@ -116,7 +116,7 @@ float:left;
 	 isc=(Istruttore)ricerca.get(i);
   
 %>
-  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getIds()%>"><%=is.getNome()%><%=is.getCognome()%></a>
+  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getIds()%>"><%=isc.getNome()%> <%=isc.getCognome()%></a>
   <%
      }
  %> 

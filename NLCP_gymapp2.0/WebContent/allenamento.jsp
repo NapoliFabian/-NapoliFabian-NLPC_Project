@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    <%@ page import="java.util.*"%>
 <%@ page import="it.meucci.*"%> 
-    
+ <%@ page import="java.sql.Date"%>    
     <%!
   ArrayList<allenamento> elenco1;
   int i;
@@ -21,16 +21,15 @@
  <h1>ELENCO ALLENAMENTI</h1>
  <br><br><a href="dashboard.html">Home</a><br><br>
  <h1>ALLENAMENTI:<%=elenco1.size()%></h1>
+ <a href="insertAllenamento.jsp">INSERT</a>
  <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
-    <th></th>
  	<th>ID</th>
  	<th>Data</th>
  	<th>Nome corso</th>
  	<th>Durata allenamento</th>
- 	<th></th>
- 	<th></th>
+
  </tr>
  
  <% for(i=0;i<elenco1.size();i++) 
