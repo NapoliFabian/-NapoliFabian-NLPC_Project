@@ -72,4 +72,4 @@ CodFiscale varchar(16),
 FOREIGN KEY (CodFiscale) references socio(CodFiscale)
 );
 
-insert into istruttore values ("IST1","FABIAN","NAPOLI","235235325","M","2002/01/01","Faby","anatra");
+insert into istruttore values ("IST1","FABIAN","NAPOLI","235235325","M","2002/01/01");
