@@ -43,11 +43,11 @@ padding:15px;
 }
 th{
 	height: 50px;
-	background-color: lightgreen;
+	background-color: #66ff66;
 	color:black;
 }
 tr:hover{
-background-color: grey;
+background-color: lightgreen;
 }
 .bottoni{
 width:30%;
