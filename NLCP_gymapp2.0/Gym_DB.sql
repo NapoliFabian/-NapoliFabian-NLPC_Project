@@ -51,6 +51,7 @@ fine date,
 CodFiscale varchar(16),
 FOREIGN KEY (CodFiscale) references socio(CodFiscale),
 NomeCorso varchar(50),
+stato varchar(1),
 FOREIGN KEY (NomeCorso) references corso(NomeCorso)
 );
 

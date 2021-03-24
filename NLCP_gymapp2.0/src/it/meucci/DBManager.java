@@ -164,13 +164,15 @@ public class DBManager {
 		return abbonamenti;
 	}
 	public void insertAbbonamento(abbonamento ab) throws SQLException {
-		String cmd = "insert into abbonamento values(?,?,?,?,?)";
+		String cmd = "insert into abbonamento values(?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(cmd);
+		String stato = "1";
 		ps.setInt(1,ab.getIdabbonamento());
 		ps.setString(2,ab.getInizio());
 		ps.setString(3,ab.getFine());
 		ps.setString(4,ab.getCodf());
 		ps.setString(5,ab.getNomecorso());
+		ps.setString(6,stato);
 		try {
 			ps.executeUpdate();
 		}catch (Exception e) {
@@ -217,6 +219,18 @@ public class DBManager {
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	public void aggiornaAbbonamenti(String data) throws SQLException {
+		String update1="update abbonamento set stato='1' where fine>'"+data+"'";
+		String update2="update abbonamento set stato='0' where fine<'"+data+"'";
+		int st = 0;
+		int st1 = 0;
+		st=query.executeUpdate(update1);	
+		st1=query.executeUpdate(update2);
+		int operazioni = st+st1;
+		System.out.println("Cambiamenti effettuati: "+operazioni);
+	//	query.executeUpdate
+		
 	}
 
 }

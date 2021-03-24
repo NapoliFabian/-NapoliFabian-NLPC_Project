@@ -2,6 +2,7 @@ package it.meucci;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 
 import javax.servlet.ServletConfig;
@@ -30,6 +31,24 @@ public class Startsl extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("Init Servlet partita");
+		try {
+			System.out.println("Controllo abbonamenti in corso......");
+			
+			
+			Date dat = new Date();
+			//Restituzione delle informazioni
+			int mese =  dat.getMonth()+1;
+			int anno = dat.getYear()+1900;
+			int g=dat.getDate();
+			String data = anno+"-"+mese+"-"+g;
+			DBManager db = new DBManager();
+			db.aggiornaAbbonamenti(data);
+			System.out.println(System.getProperty("user.dir"));
+			UpdateAbbornamenti aggiorna = new UpdateAbbornamenti();
+			aggiorna.start();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		
 	}
 
