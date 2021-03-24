@@ -23,13 +23,10 @@
 <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
-    <th></th>
  	<th>COGNOME</th>
  	<th>NOME</th>
  	<th>TELEFONO</th>
  	<th>DATA DI NASCITA</th>
- 	<th></th>
- 	<th></th>
  </tr>
  
  <% for(i=0;i<elenco.size();i++) 

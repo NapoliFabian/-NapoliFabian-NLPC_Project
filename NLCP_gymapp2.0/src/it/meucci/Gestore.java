@@ -1,7 +1,9 @@
 package it.meucci;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -238,9 +240,9 @@ public class Gestore extends HttpServlet {
 	String fine = request.getParameter("fineabb");
 	String codf = request.getParameter("CodF");
 	String nomec =request.getParameter("NomeCorso");
-	int id1 = Integer.parseInt(id);
-	abbonamento ab = new abbonamento(id1, inizio, fine, codf, nomec);
 	try {
+		int id1 = Integer.parseInt(id);
+		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec);
 		DBManager db = new DBManager();
 		db.insertAbbonamento(ab);
 		request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
@@ -248,7 +250,7 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);
 		response.sendRedirect("abbonamento.jsp");
 	} catch (Exception e) {
-		// TODO: handle exception
+		System.out.println(e.getMessage());
 	}
 	}
 	if(submit.equals("cercaIS")) {
@@ -282,11 +284,11 @@ public class Gestore extends HttpServlet {
 			DBManager db = new DBManager();
 			db.insertSocio(soc);
 			request.getSession().removeAttribute("ELENCO_SOCI");
-			ArrayList<socio> abbonamenti = db.allSocio();
-			request.getSession().setAttribute("ELENCO_SOCI",abbonamenti);
+			ArrayList<socio> soci = db.allSocio();
+			request.getSession().setAttribute("ELENCO_SOCI",soci);
 			response.sendRedirect("socio.jsp");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}
 	}
 	

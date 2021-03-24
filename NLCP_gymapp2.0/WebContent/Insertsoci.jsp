@@ -11,7 +11,7 @@
 	 <h1>Inserimento soci</h1>
  <br><br><a href="socio.jsp">Home</a><br><br>
  
-<form method="POST" action="GestioneProdotti">
+<form method="POST" action="Gestore">
  <table border="3" bordercolor="brown" bgcolor="white">
 
      
@@ -47,7 +47,7 @@
  
 
   <tr>
-	<td colspan="2"><input type="submit" name="insert" value="INSERT_SOCIO"> <input type="submit" value="ANNULLA"></td>
+	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_SOCIO"> <input type="submit" value="ANNULLA"></td>
  </tr>
 
  </table>

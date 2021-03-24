@@ -1,13 +1,12 @@
 package it.meucci;
 
 
-import java.sql.Date;
 
 public class abbonamento {
 
 	private int idabbonamento;
-	private String inizio;
-	private String fine;
+	private String  inizio;
+	private String  fine;
 	private String codf;
 	private String nomecorso;
 	
@@ -15,11 +14,11 @@ public class abbonamento {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public abbonamento(int idabbonamento,String inizio,String fine,String codf,String nomecorso) {
+	public abbonamento(int idabbonamento,String ini,String fin,String codf,String nomecorso) {
 		
 		idabbonamento = idabbonamento;
-		inizio = inizio;
-		fine = fine;
+		ini = ini;
+		fin = fin;
 		codf = codf;
 		nomecorso = nomecorso;
 	}
@@ -32,7 +31,7 @@ public class abbonamento {
 		this.idabbonamento = idabbonamento;
 	}
 
-	public String getInizio() {
+	public String  getInizio() {
 		return inizio;
 	}
 
@@ -40,11 +39,11 @@ public class abbonamento {
 		this.inizio = inizio;
 	}
 
-	public String getFine() {
+	public String  getFine() {
 		return fine;
 	}
 
-	public void setFine(String fine) {
+	public void setFine(String  fine) {
 		this.fine = fine;
 	}
 

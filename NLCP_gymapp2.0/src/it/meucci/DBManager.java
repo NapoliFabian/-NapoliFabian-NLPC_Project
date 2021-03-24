@@ -16,7 +16,7 @@ public class DBManager {
 	public DBManager() throws Exception{
 		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
-		pwdDB="cristian02";
+		pwdDB="";
 		//Creazione della connessione
 		//Registrazione dei Driver
 		try {
@@ -75,7 +75,8 @@ public class DBManager {
 		rs=query.executeQuery(cmd);
 		socio s;
 		while(rs.next()) {
-			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+			String data = String.valueOf(rs.getString(6));
+			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),data);
 			soci.add(s);
 		}
 		rs.close();
@@ -170,11 +171,28 @@ public class DBManager {
 		ps.setString(3,ab.getFine());
 		ps.setString(4,ab.getCodf());
 		ps.setString(5,ab.getNomecorso());
-		ps.execute(cmd);
+		try {
+			ps.executeUpdate();
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
-	public void insertSocio(socio soc) {
-		String cmd = "insert into socio values(?,?,?,?,?)";
+	public void insertSocio(socio soc) throws SQLException {
+		String comando = "insert into socio values(?,?,?,?,?,?)";
+		PreparedStatement ps = connessione.prepareStatement(comando);
+		System.out.println(soc.getCodf());
+		ps.setString(1,soc.getCodf());
+		ps.setString(2,soc.getNome());
+		ps.setString(3,soc.getCognome());
+		ps.setString(4,soc.getTelefono());
+		ps.setString(5,soc.getSesso());
+		ps.setString(6,soc.getDatanascita());
+		try {
+			ps.executeUpdate();	
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 }

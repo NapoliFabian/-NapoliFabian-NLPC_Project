@@ -6,10 +6,12 @@
 <head>
 <%
 ArrayList<socio> soci = new ArrayList<socio>();
+ArrayList<Corso> corsi = new ArrayList<Corso>();
 try {
 	DBManager db;
 	db = new DBManager();
-	soci= db.allSocio();			
+	soci= db.allSocio();	
+	corsi = db.allCorsi();
 } catch (Exception e) {
 	System.out.println(e.getMessage());
 }
@@ -53,7 +55,13 @@ try {
  
   <tr>
 	<td>Nome corso</td>
-	<td><input type="text" name="NomeCorso" required ></td>
+	<td><select name="codf">
+	<%for(int i=0;i<corsi.size();i++){
+		Corso c = corsi.get(i);
+		%>
+		<option value="<%=c.getNomecorso()%>"><%=c.getNomecorso()%></option>
+	<%} %>
+	</select></td>
  </tr>
 
 

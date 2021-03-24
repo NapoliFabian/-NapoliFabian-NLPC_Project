@@ -11,7 +11,7 @@
 	 <h1>Inserimento Prodotti</h1>
  <br><br><a href="menu.jsp">Home</a><br><br>
  
-<form method="POST" action="GestioneProdotti">
+<form method="POST" action="Gestore">
  <table border="3" bordercolor="brown" bgcolor="white">
 
      
