@@ -5,63 +5,78 @@
 <html>
 <head>
 <link href="css/insert.css" rel="stylesheet"  type="text/css">
-<link href="css/elenchi.css" rel="stylesheet"  type="text/css">
+<!--<link href="css/elenchi.css" rel="stylesheet"  type="text/css">-->
 <meta charset="ISO-8859-1">
 <title>Inserisci Istruttori</title>
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
-	 <h1>INSERIMENTO ISTRUTTORI</h1>
- <br><br><a href="socio.jsp">Home</a><br><br>
- 
+
+<div class="header">
+<div class="icon">
+
+<img src="img\icona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP</h1>
+    </div>
+</div>
+	 
+ <br>
+ <br>
+ <br>
 <form method="POST" action="Gestore">
 
 
  <div class="insert" >
 
-    <div class="scritte">
-    <label>ID Istruttore</label>
-    <label>Nome</label>
-    <label>Cognome</label>
-    <label>Telefono</label>
-    <label>Sesso</label>
-    <label>Data di nascita</label>
-    </div>
-  
-	<div class="input">
-	<input type="text" name="IdIstruttore">
- 
- <br>
-  
-	
-	<input type="text" name="Nome">
- 
- <br>
-  
-	
-	<input type="text" name="Cognome">
- 
- <br>
-  
-	
-	<label><input type="text" name="Telefono"></label>
- 
- <br>
-  
-	
-	<input type="text" name="Sesso">
- 
- <br>
- 
-	
-	<input type="date" name="DataDiNascita">
- 
- <br>
-</div>
-  
-	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_ISTRUTTORE"> <input type="submit" value="ANNULLA"></td>
- 
+    <center><table class="scritte" border="0">
+    <tr>
+    <th>ID Istruttore</th>
+    <th><input type="text" name="IdIstruttore" required></th>
+    </tr>
+    
+    <tr>
+    <th>Nome</th>
+    <th><input type="text" name="Nome" required></th>
+    </tr>
+    
+    <tr>
+    <th>Cognome</th>
+    <th><input type="text" name="Cognome" required></th>
+    </tr>
+    
+    <tr>
+    <th>Telefono</th>
+    <th><input type="text" name="Telefono" required></th>
+    </tr>
+    
+    <tr>
+    <th>Sesso</th>
+    <th><input type="text" name="Sesso" required></th>
+    </tr>
+    
+    <tr>
+    <th>Data di nascita</th>
+    <th><input type="date" name="DataDiNascita" required></th>
+    </tr>
+    
+    <tr>
+    <th><input type="reset" value="ANNULLA"></th>
+    <th><input type="submit" name="INSERT" value="INSERT_ISTRUTTORE"></th>
+    </tr>
 
+ 
+ 
+</table></center>
+ 
  </div>
+ 
+ <div class="link"><center>
+ 	<a href="Istruttore.jsp"><button>Elenco Istruttori</button></a>
+ 	<a href="dashboard.html"><button>Home</button></a></center>
+ </div>
+ 
  </form>
 </body>
 </html>

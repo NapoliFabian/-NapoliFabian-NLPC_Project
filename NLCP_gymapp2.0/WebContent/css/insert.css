@@ -1,30 +1,106 @@
 @charset "ISO-8859-1";
 
+
+
+/*.header{
+    width:100%;
+    height:10%;
+    background-color: dimgrey;
+	background-image:url(https://www.solidbackgrounds.com/images/1920x1200/1920x1200-dim-gray-solid-color-background.jpg);
+    
+}*/
+.logo{
+    width: 30%;
+    height: 100%;
+    float: left;
+    padding: 16px;
+}
+.icon{
+    width: 6%;
+    height: 100%;
+ 
+    float: left;
+    padding: 16px;
+}
+
+.titolo{
+/*color: #7B002C;*/
+/*color: crimson;*/
+color: gold;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+position: absolute;
+top: 5px;
+}
+
+
 .insert{
-	text-align:center;
+	/*text-align:center;*/
 	background: #ffd700;
-  	background: linear-gradient(to right, gold, darkgrey, gold);
+  	background: linear-gradient(to right, dimgray,gold,dimgray);
   	border-radius: 50px;
+  	width:60%;
+  	height: 310px;
+  	margin-left: 20%;
+  	margin-top: 4.3%;
 }
 
-
-
-label{
-	text-align:center;
-	
-	
+.scritte{
+	width: 50%;
+	/*float: left;*/
+	text-align:right;
+	padding-right: 20px;
+	font-family: Century Gothic;
+  	font-size: 170%;
+  	margin-left: 30px;
+  
 }
 
-input {
+input  {
 	width:250px;
 	height:30px;
 	border-radius: 50px;
     outline-style: none;
 	border: 0;
+	text-align:center;
+	margin-right:80px;
 	
+}
+input:hover{
+	text-decoration: none;
+	/*background-color:  gold;*/
+	background: linear-gradient(to right, gold, white, gold);
 }
 
 
-.input{
-	
+
+
+button:hover{
+	text-decoration: none;
+	/*background-color:  gold;*/
+	background: linear-gradient(to right, gold, darkgrey, gold);
 }
+
+
+
+button {
+	width:150px;
+	height:25px;
+	border-radius: 50px;
+    outline-style: none;
+	border: 0;
+	text-align:center;
+	font-family: Century Gothic;
+	margin-top: 1.5%;
+}
+
+.link{
+	background: #ffd700;
+  	background: linear-gradient(to right, gold,dimgray,gold);
+  	border-radius: 50px;
+  	width:40%;
+  	height: 40px;
+  	margin-left: 30%;
+  	margin-top: 50px;
+}
+
+
