@@ -48,7 +48,7 @@
     
     <tr>
     <th><input type="reset" value="ANNULLA"></th>
-    <th><input type="submit" name="INSERT" value="INSERT_SOCIO"></th>
+    <th><input type="submit" name="INSERT" value="INSERT_CORSO"></th>
     </tr>
 
  
