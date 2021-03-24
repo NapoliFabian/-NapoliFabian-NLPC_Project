@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+.insert{
+	text-align:center;
+	background: #ffd700;
+  	background: linear-gradient(to right, gold, darkgrey, gold);
+  	border-radius: 50px;
+}
+
+
+
+label{
+	text-align:center;
+	
+	
+}
+
+input {
+	width:250px;
+	height:30px;
+	border-radius: 50px;
+    outline-style: none;
+	border: 0;
+	
+}
+
+
+.input{
+	
+}
