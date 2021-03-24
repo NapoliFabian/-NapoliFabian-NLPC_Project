@@ -4,53 +4,79 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/insert.css" rel="stylesheet"  type="text/css">
+<!--<link href="css/elenchi.css" rel="stylesheet"  type="text/css">-->
 <meta charset="ISO-8859-1">
 <title>Inserisci Soci</title>
 </head>
-<body bgcolor="green">
-	 <h1>Inserimento soci</h1>
- <br><br><a href="socio.jsp">Home</a><br><br>
- 
+<body style="background-image: url(images/bg-01.jpg);">
+
+<div class="header">
+<div class="icon">
+
+<img src="img\icona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP</h1>
+    </div>
+</div>
+	 
+ <br>
+ <br>
+ <br>
 <form method="POST" action="Gestore">
- <table border="3" bordercolor="brown" bgcolor="white">
 
-     
-  <tr>
-	<td>CODICE FISCALE</td>
-	<td><input type="text" name="codf" required maxlength="16" ></td>
- </tr>
- 
-  <tr>
-	<td>Nome</td>
-	<td><input type="text" name="Nome" required  ></td>
- </tr>
- 
-  <tr>
-	<td>Cognome</td>
-	<td><input type="text" name="Cognome" required  ></td>
- </tr>
- 
-  <tr>
-	<td>Telefono</td>
-	<td><input type="text" name="Telefono" required ></td>
- </tr>
- 
-  <tr>
-	<td>Sesso</td>
-	<td><input type="text" name="Sesso" required ></td>
- </tr>
- 
-  <tr>
-	<td>Data di nascita</td>
-	<td><input type="date" name="DataDiNascita" required></td>
- </tr>
- 
 
-  <tr>
-	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_SOCIO"> <input type="submit" value="ANNULLA"></td>
- </tr>
+ <div class="insert" >
 
- </table>
+    <center><table class="scritte" border="0">
+    <tr>
+    <th>CODICE FISCALE</th>
+    <th><input type="text" name="codf" required maxlength="16"></th>
+    </tr>
+    
+    <tr>
+    <th>Nome</th>
+    <th><input type="text" name="Nome" required></th>
+    </tr>
+    
+    <tr>
+    <th>Cognome</th>
+    <th><input type="text" name="Cognome" required></th>
+    </tr>
+    
+    <tr>
+    <th>Telefono</th>
+    <th><input type="text" name="Telefono" required></th>
+    </tr>
+    
+    <tr>
+    <th>Sesso</th>
+    <th><input type="text" name="Sesso" required></th>
+    </tr>
+    
+    <tr>
+    <th>Data di nascita</th>
+    <th><input type="date" name="DataDiNascita" required></th>
+    </tr>
+    
+    <tr>
+    <th><input type="reset" value="ANNULLA"></th>
+    <th><input type="submit" name="INSERT" value="INSERT_SOCIO"></th>
+    </tr>
+
+ 
+ 
+</table></center>
+ 
+ </div>
  </form>
+ <div class="link"><center>
+ 	<a href="socio.jsp"><button>Elenco Istruttori</button></a>
+ 	<a href="dashboard.html"><button>Home</button></a></center>
+ </div>
+ 
+ 
 </body>
 </html>
