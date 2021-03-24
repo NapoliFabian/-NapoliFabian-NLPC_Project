@@ -4,53 +4,71 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/insert.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>INSERIMENTO ALLENAMENTI</title>
 </head>
-<body bgcolor="pink">
-	 <h1>INSERIMENTO ALLENAMENTI</h1>
- <br><br><a href="menu.jsp">Home</a><br><br>
- 
+<body style="background-image: url(images/bg-01.jpg);">
+<div class="header">
+<div class="icon">
+
+<img src="img\icona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP</h1>
+    </div>
+</div>
+  <br>
+ <br>
+ <br>
+  <div class="insert" >
 <form method="POST" action="Gestore">
- <table border="3" bordercolor="brown" bgcolor="white">
+ <center><table class="scritte" border="0">
 
      
 <!--   
  <tr>
-	<td>ProductID</td>
-	<td><input type="text" name="txtProductID" maxlength="5" size="60"></td>
+	<th>ProductID</th>
+	<th><input type="text" name="txtProductID" maxlength="5" size="60"></th>
  </tr>
 -->
   <tr>
-	<td>Id allenamento</td>
-	<td><input type="text" name="idAllenamento" required ></td>
+	<th>Id allenamento</th>
+	<th><input type="text" name="idAllenamento" required ></th>
  </tr>
  
   <tr>
-	<td>Data allenamento</td>
-	<td><input type="date" name="dataAllenamento" required "></td>
+	<th>Data allenamento</th>
+	<th><input type="date" name="dataAllenamento" required "></th>
  </tr>
  
   <tr>
-	<td>Nome del corso</td>
-	<td><input type="text" name="nomeCorso" required ></td>
+	<th>Nome del corso</th>
+	<th><input type="text" name="nomeCorso" required ></th>
  </tr>
  
   <tr>
-	<td>Id istruttore</td>
-	<td><input type="text" name="idIstruttore" required ></td>
+	<th>Id istruttore</th>
+	<th><input type="text" name="idIstruttore" required ></th>
  </tr>
  
   <tr>
-	<td>Durata allenamento</td>
-	<td><input type="text" name="durataAllenamento" ></td>
+	<th>Durata allenamento</th>
+	<th><input type="text" name="durataAllenamento" ></th>
  </tr>
 
   <tr>
-	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_ALLENAMENTO"><input type="submit" value="ANNULLA"></td>
+	<th colspan="2"><input type="submit" name="INSERT" value="INSERT_ALLENAMENTO"></th>
+	<th><input type="submit" value="ANNULLA"></th>
  </tr>
 
- </table>
+  </table></center>
+    </div>
  </form>
+    <div class="link"><center>
+ 	<a href="allenamento.jsp"><button>Elenco Allenamenti</button></a>
+ 	<a href="dashboard.html"><button>Home</button></a></center>
+ </div>
 </body>
 </html>

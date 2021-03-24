@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="css/insert.css" rel="stylesheet"  type="text/css">
 <%
 ArrayList<socio> soci = new ArrayList<socio>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
@@ -19,57 +20,76 @@ try {
 <meta charset="ISO-8859-1">
 <title>Inserisci Abbonamento</title>
 </head>
-<body bgcolor="green">
-	 <h1>Inserimento Abbonamenti</h1>
- <br><br><a href="dashboard.html">Home</a><br><br>
+<body style="background-image: url(images/bg-01.jpg);">
+<div class="header">
+<div class="icon">
+
+<img src="img\icona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP</h1>
+    </div>
+</div>
+	 
+ <br>
+ <br>
+ <br>
+	  <div class="insert">
  
 <form method="POST" action="Gestore">
- <table border="3" bordercolor="brown" bgcolor="white">
+ <center><table class="scritte" border="0">
 
      
   <tr>
-	<td>ID abbonamento</td>
-	<td><input type="text" name="IdAbbonamento" required  ></td>
+	<th>ID abbonamento</th>
+	<th><input type="text" name="IdAbbonamento" required  ></th>
  </tr>
  
   <tr>
-	<td>Inizio</td>
-	<td><input type="date" name="inizioabb" required  ></td>
+	<th>Inizio</th>
+	<th><input type="date" name="inizioabb" required  ></th>
  </tr>
  
   <tr>
-	<td>Fine</td>
-	<td><input type="date" name="fineabb" required  ></td>
+	<th>Fine</th>
+	<th><input type="date" name="fineabb" required  ></th>
  </tr>
  
   <tr>
-	<td>Codice Fiscale</td>
-	<td><select name="codf">
+	<th>Codice Fiscale</th>
+	<th><select name="codf">
 	<%for(int i=0;i<soci.size();i++){
 		socio s = soci.get(i);
 		%>
 		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
 	<%} %>
-	</select></td>
+	</select></th>
  </tr>
  
   <tr>
-	<td>Nome corso</td>
-	<td><select name="NomeCorso">
+	<th>Nome corso</th>
+	<th><select name="NomeCorso">
 	<%for(int i=0;i<corsi.size();i++){
 		Corso c = corsi.get(i);
 		%>
 		<option value="<%=c.getNomecorso()%>"><%=c.getNomecorso()%></option>
 	<%} %>
-	</select></td>
+	</select></th>
  </tr>
 
 
   <tr>
-	<td colspan="2"><input type="submit" name="INSERT" value="INSERT_ABBONAMENTO"> <input type="submit" value="ANNULLA"></td>
+	<th colspan="2"><input type="submit" name="INSERT" value="INSERT_ABBONAMENTO"></th>
+	<th><input type="submit" value="ANNULLA"></th>
  </tr>
 
- </table>
+ </table></center>
+  </div>
  </form>
+    <div class="link"><center>
+ 	<a href="abbonamento.jsp"><button>Elenco Abbonamenti</button></a>
+ 	<a href="dashboard.html"><button>Home</button></a></center>
+ </div>
 </body>
 </html>

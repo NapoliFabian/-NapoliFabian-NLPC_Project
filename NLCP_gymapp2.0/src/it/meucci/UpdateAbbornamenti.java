@@ -17,7 +17,7 @@ public void run() {
 		String data = anno+"-"+mese+"-"+g;
 		db.aggiornaAbbonamenti(data);
 		System.out.println("Aggiornamento completato");
-		//Thread.sleep(1000);
+		Thread.sleep(300000);
 		//5 minuti 300000
 		} 
 	} catch (Exception e) {
