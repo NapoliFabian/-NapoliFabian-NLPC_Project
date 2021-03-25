@@ -8,6 +8,19 @@ username varchar(50) primary key,
 password varchar(50)
 );
 
+create table utente{
+codf varchar(5) primary key,
+nome varchar(50),
+cognome varchar(50), 
+telefono varchar(50), 
+dataNascita date, 
+username varchar(50) primary key,
+email varchar(50),
+password varchar(50), 
+tipou varchar(1)
+
+}
+
 create table istruttore(
 Ids varchar(5) primary key,
 nome varchar(50),
