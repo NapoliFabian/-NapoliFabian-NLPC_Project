@@ -17,7 +17,7 @@ public class DBManager {
 	public DBManager() throws Exception{
 		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
-		pwdDB="cristian02";
+		pwdDB="";
 		//Creazione della connessione
 		//Registrazione dei Driver
 		try {
@@ -33,8 +33,9 @@ public class DBManager {
 		
 	}
 	public ArrayList<Utente> allIstruttori() throws SQLException{
-		String cmd = "select * from Istruttore";
+		String cmd = "select * from utente where tipou='I'";
 		ArrayList<Utente> istruttori = new ArrayList<Utente>();
+
 		rs=query.executeQuery(cmd);
 		Utente s;
 		while(rs.next()) {
@@ -72,7 +73,7 @@ public class DBManager {
 		return corsi;
 	}
 	public ArrayList<Utente> allSocio() throws SQLException{
-		String cmd = "select * from socio";
+		String cmd = "select * from utente where tipou = 'S'";
 		ArrayList<Utente> soci = new ArrayList<Utente>();
 		rs=query.executeQuery(cmd);
 		Utente s;
@@ -87,19 +88,18 @@ public class DBManager {
 	}
 	public String insertIstruttore(Utente is) throws SQLException {
 		String ris = "n";
-		String comando = "insert into Istruttore values(?,?,?,?,?,?)";
+		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
-		System.out.println(is.getCodf());
-		ps.setString(1,is.getNome());
+		ps.setString(1,is.getCodf());
+		ps.setString(2,is.getNome());
 		ps.setString(3,is.getCognome());
 		ps.setString(4,is.getTelefono());
 		ps.setString(5,is.getSesso());
 		ps.setString(6,is.getDataNascita());
-		ps.setString(7,is.getUsername());
-		ps.setString(8,is.getEmail());
-		ps.setString(9,is.getPassword());
-		ps.setString(10,is.getTipou());
-	
+		ps.setString(7,"");
+		ps.setString(8,"");
+		ps.setString(9,"");
+		ps.setString(10,"I");
 		try {
 			ps.executeUpdate();	
 			ris="y";
@@ -110,7 +110,8 @@ public class DBManager {
 	}
 	public int eliminaIStruttore(Utente is) throws SQLException {
 		int ris =0;
-		String comando = "Delete from Istruttore where Utente.Codf ='"+is.getCodf()+"'";
+
+		String comando = "Delete from utente where utente.codf ='"+is.getCodf()+"'";
 		System.out.println(comando);
 		try {
 			query.executeUpdate(comando);
@@ -136,12 +137,9 @@ public class DBManager {
 		}
 		return ris;
 	}
-
-	
-	
 	public boolean Login(String username, String password) {
 		boolean esito= false;
-		String q = "SELECT * FROM admin WHERE username='"+username+"' AND password='"+password+"';";
+		String q = "SELECT username,password FROM utente WHERE (username='"+username+"' AND password='"+password+"') and tipou='A';";
 		System.out.println(q);
 		try {
 			rs = query.executeQuery(q);
@@ -156,8 +154,6 @@ public class DBManager {
 		}
 		return esito;	
 		}
-	
-	
 	public ArrayList<abbonamento> allAbbonamenti() throws SQLException {
 		ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
 		String cmd = "select * from abbonamento";
@@ -187,20 +183,20 @@ public class DBManager {
 		}
 		
 	}
-	public void insertSocio(Utente soc) throws SQLException {
-		String comando = "insert into socio values(?,?,?,?,?,?)";
+	public void insertSocio(Utente is) throws SQLException {
+		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?,?)";
+
 		PreparedStatement ps = connessione.prepareStatement(comando);
-		System.out.println(soc.getCodf());
-		ps.setString(1,soc.getCodf());
-		ps.setString(2,soc.getNome());
-		ps.setString(3,soc.getCognome());
-		ps.setString(4,soc.getTelefono());
-		ps.setString(5,soc.getSesso());
-		ps.setString(6,soc.getDataNascita());
-		ps.setString(7,soc.getUsername());
-		ps.setString(8,soc.getEmail());
-		ps.setString(9,soc.getPassword());
-		ps.setString(10,soc.getTipou());
+		ps.setString(1,is.getCodf());
+		ps.setString(2,is.getNome());
+		ps.setString(3,is.getCognome());
+		ps.setString(4,is.getTelefono());
+		ps.setString(5,is.getSesso());
+		ps.setString(6,is.getDataNascita());
+		ps.setString(7,"");
+		ps.setString(8,"");
+		ps.setString(9,"");
+		ps.setString(10,"S");
 		try {
 			ps.executeUpdate();	
 		}catch (Exception e) {
@@ -209,7 +205,7 @@ public class DBManager {
 		
 	}
 	public void eliminaSocio(Utente is) {
-	String cmd = "delete from socio where codfiscale= '"+is.getCodf()+"'";
+	String cmd = "delete from utente where codf= '"+is.getCodf()+"'";
 	try {
 		query.executeUpdate(cmd);
 		

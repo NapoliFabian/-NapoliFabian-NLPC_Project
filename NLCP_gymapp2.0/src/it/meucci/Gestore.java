@@ -33,6 +33,7 @@ public class Gestore extends HttpServlet {
 		// comandi per stampare tutto
 		String cmd = request.getParameter("cmd");
 		DBManager db;
+		//STAMPA ISTRUTTORI
 		if(cmd.equals("allis")) {
 			ArrayList<Utente> istruttori = new ArrayList<Utente>();
 			try {
@@ -45,7 +46,8 @@ public class Gestore extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 			
-		}
+		}//FINE
+		//STAMPA ALLENAMENTI
 		if(cmd.equals("allal")) {
 			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
 			try {
@@ -58,7 +60,8 @@ public class Gestore extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 			
-		}
+		}//FINE
+		//STAMPA SOCI
 		if(cmd.equals("allsoc")) {
 			ArrayList<Utente> soci = new ArrayList<Utente>();
 			try {
@@ -71,7 +74,8 @@ public class Gestore extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 			
-		}
+		}//FINE
+		//STAMPA CORSI
 		if(cmd.equals("allco")) {
 			ArrayList<Corso> corsi = new ArrayList<Corso>();
 			try {
@@ -82,7 +86,8 @@ public class Gestore extends HttpServlet {
 			} catch (Exception e) {
 			
 			}
-		}
+		}//FINE
+		//STAMPA ABBONAMENTI
 		if(cmd.equals("allabb")) {
 			ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
 			try {
@@ -94,9 +99,10 @@ public class Gestore extends HttpServlet {
 			catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
-		}
+		}//FINE
 		//////////////////////////////////////////////////////////////////////////////////////////
 		//comandi per dettaglio
+		//DETTAGKU ISTRUTTORI
 		if(cmd.equals("dettagliois")) {
 			String id = request.getParameter("id");
 			ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -104,12 +110,13 @@ public class Gestore extends HttpServlet {
 			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
-				if(is.getIds().equals(id)) {
+				if(is.getCodf().equals(id)) {
 				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
 				response.sendRedirect("dettaglioistruttore.jsp");
 				}
 			}//fine for
-		}// fine if
+		}// //FINE
+		//DETTAGLIO ABBONAMENTO
 		if(cmd.equals("dettaglioabb")) {
 			String id = request.getParameter("id");
 			int id1 = Integer.parseInt(id);
@@ -123,7 +130,8 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("dettaglioabbonamento.jsp");
 				}
 			}//fine for
-		}
+		}//FINE
+		//DETTAGLIO ALLENAMENTO
 		if(cmd.equals("dettaglioall")) {
 			String id = request.getParameter("id");
 			int id1 = Integer.parseInt(id);
@@ -137,7 +145,8 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("dettaglioallenamento.jsp");
 				}
 			}//fine for
-		}
+		}//FINE
+		//DETTAGLIO SOCIO
 		if(cmd.equals("dettaglioso")) {
 			String codf = request.getParameter("id");
 			ArrayList<Utente> soci = new ArrayList<Utente>();
@@ -149,10 +158,10 @@ public class Gestore extends HttpServlet {
 				request.getSession().setAttribute("SOCIO_DETTAGLIO",is);	
 				response.sendRedirect("dettagliosocio.jsp");
 				}
-			}//fine for
-		}
+			}
+		}//FINE
 		
-		//fine if
+		
 		
 		///////////////////////////////////////////////////////////////////////////////////////////
 		//Comandi elimina
@@ -163,7 +172,7 @@ public class Gestore extends HttpServlet {
 			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
-				if(is.getIds().equals(id)) {
+				if(is.getCodf().equals(id)){
 				request.getSession().setAttribute("ISTRUTTORE_ELIMINA",is);	
 				response.sendRedirect("confermais.jsp");
 				}
@@ -223,6 +232,8 @@ public class Gestore extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String submit = request.getParameter("INSERT");	
+		
+		// INSERT ISTRUTTORE
 		if(submit.equals("INSERT_ISTRUTTORE")) {
 	try {
 		DBManager db = new DBManager();
@@ -233,7 +244,7 @@ public class Gestore extends HttpServlet {
 		String sesso = request.getParameter("Sesso");
 		String data = request.getParameter("DataDiNascita");
 		
-		Utente i = new Utente(id, nome, cognome, telefono, sesso,data);
+		Utente i = new Utente(id, nome, cognome, telefono, sesso,data,"","","","I");
 		db.insertIstruttore(i);
 		request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
 		ArrayList<Utente>istruttori = new ArrayList<Utente>();
@@ -244,7 +255,7 @@ public class Gestore extends HttpServlet {
 		System.out.println(e.getMessage());
 	}	
 	}
-	//fine insert istruttore
+	// INSERT CORSO
 	if(submit.equals("INSERT_CORSO")) {
 		String nome = request.getParameter("NomeCorso");
 		String prezzo = request.getParameter("Prezzo");
@@ -264,6 +275,7 @@ public class Gestore extends HttpServlet {
 			// TODO: handle exception
 		}
 	}
+	//INSERT ABBONAMENTO
 	if(submit.equals("INSERT_ABBONAMENTO")) {
 	String id = request.getParameter("IdAbbonamento");
 	String inizio = request.getParameter("inizioabb");
@@ -285,6 +297,7 @@ public class Gestore extends HttpServlet {
 		System.out.println(e.getMessage());
 	}
 	}
+	//CERCA ISTRUTTORE
 	if(submit.equals("cercaIS")) {
 		String cognome = request.getParameter("istruttore");
 		ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -304,6 +317,7 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ISTRUTTORI_CERCATI",ricerca);
 		response.sendRedirect("Istruttore.jsp");
 	}
+	//INSERT ISTRUTTORE
 	if(submit.equals("INSERT_SOCIO")) {
 		String codf = request.getParameter("codf");
 		String nome = request.getParameter("Nome");
@@ -311,7 +325,7 @@ public class Gestore extends HttpServlet {
 		String tel = request.getParameter("Telefono");
 		String s = request.getParameter("Sesso");
 		String datan = request.getParameter("DataDiNascita");
-		Utente soc = new Utente(codf, nome, cognome, tel,s,datan);
+		Utente soc = new Utente(codf, nome, cognome, tel,s,datan,"","","","S");
 		try {
 			DBManager db = new DBManager();
 			db.insertSocio(soc);
@@ -323,6 +337,7 @@ public class Gestore extends HttpServlet {
 			System.out.println(e.getMessage());
 		}
 	}
+	//INSERT ALLENAMENTO
 	if(submit.equals("INSERT_ALLENAMENTO")) {
 		String id = request.getParameter("idAllenamento");
 		String data = request.getParameter("dataAllenamento");

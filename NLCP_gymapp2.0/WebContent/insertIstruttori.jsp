@@ -33,7 +33,7 @@
     <center><table class="scritte" border="0">
     <tr>
     <th>CODICE FISCALE</th>
-    <th><input type="text" name="codf" required maxlength="16"></th>
+    <th><input type="text" name="IdIstruttore" required maxlength="16"></th>
     </tr>
     
     <tr>

@@ -39,7 +39,6 @@
  %>
  
   <tr>
-
  	<td><%=a.getIdallenamento()%></td>
  	<td><%=a.getDataallenamento() %></td>
  	<td><%= a.getNomecorso() %></td>
@@ -47,7 +46,6 @@
  	<td><a href="Gestore?cmd=dettaglioall&id=<%=a.getIdallenamento()%>">Visualizza</a></td>
     <td><a href="Gestore?cmd=eliminaall&id=<%=a.getIdallenamento()%>">Elimina</a></td>
     <td><a href="Gestore?cmd=aggiornaall&id=<%=a.getIdallenamento()%>">Aggiorna</a></td>
-
  </tr>
  
  <%
