@@ -44,6 +44,8 @@ public class Gestore extends HttpServlet {
 						
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -61,6 +63,8 @@ public class Gestore extends HttpServlet {
 						
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -78,6 +82,8 @@ public class Gestore extends HttpServlet {
 						
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -94,6 +100,8 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("Corso.jsp");
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 			
 			}
@@ -111,6 +119,9 @@ public class Gestore extends HttpServlet {
 			}
 			catch (Exception e) {
 				
+				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -208,6 +219,8 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("Istruttore.jsp");
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -243,6 +256,8 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("socio.jsp");
 			} catch (Exception e) {
 				
+				String errore = "";
+				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
 				
 				System.out.println(e.getMessage());
@@ -277,6 +292,8 @@ public class Gestore extends HttpServlet {
 		response.sendRedirect("Istruttore.jsp");
 	} catch (Exception e) {
 		
+		String errore = "";
+		request.getSession().setAttribute("ERROR",errore);
 		response.sendRedirect("errore.jsp");
 		
 		System.out.println(e.getMessage());
@@ -300,6 +317,8 @@ public class Gestore extends HttpServlet {
 			response.sendRedirect("Corso.jsp");
 		} catch (Exception e) {
 			
+			String errore = "";
+			request.getSession().setAttribute("ERROR",errore);
 			response.sendRedirect("errore.jsp");
 			
 			// TODO: handle exception
@@ -325,6 +344,8 @@ public class Gestore extends HttpServlet {
 		response.sendRedirect("abbonamento.jsp");
 	} catch (Exception e) {
 		
+		String errore = "";
+		request.getSession().setAttribute("ERROR",errore);
 		response.sendRedirect("errore.jsp");
 		
 		System.out.println(e.getMessage());
@@ -368,6 +389,8 @@ public class Gestore extends HttpServlet {
 			response.sendRedirect("socio.jsp");
 		} catch (Exception e) {
 			
+			String errore = "";
+			request.getSession().setAttribute("ERROR",errore);
 			response.sendRedirect("errore.jsp");
 			
 			System.out.println(e.getMessage());
@@ -392,6 +415,9 @@ public class Gestore extends HttpServlet {
 			response.sendRedirect("allenamento.jsp");
 		} catch (Exception e) {
 			
+			
+			String errore = "";
+			request.getSession().setAttribute("ERROR",errore);
 			response.sendRedirect("errore.jsp");
 			
 			// TODO: handle exception
