@@ -63,11 +63,6 @@
     </tr>
     
     
-    
-     
-    
-    
-    
     <tr>
     <th><input type="reset" value="ANNULLA"></th>
     <th><input type="submit" name="INSERT" value="INSERT_ISTRUTTORE"></th>
