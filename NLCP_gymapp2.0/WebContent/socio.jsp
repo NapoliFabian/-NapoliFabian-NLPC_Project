@@ -36,7 +36,7 @@
     
  %>
  
-  <tr>
+  <tr><!--  -->
  	<td><%=s.getCognome()%></td>
  	<td><%=s.getNome()%></td>
  	<td><%=s.getTelefono()%></td>
