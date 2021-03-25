@@ -51,3 +51,4 @@ FOREIGN KEY (codf) references utente(codf)
 );
 
 -- insert into utente values ("IST1","FABIAN","NAPOLI","235235325","M","2002/01/01");
+insert into utente values("2"," "," "," "," "," ","admin","","root","A");

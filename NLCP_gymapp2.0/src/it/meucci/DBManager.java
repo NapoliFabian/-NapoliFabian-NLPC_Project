@@ -72,7 +72,6 @@ public class DBManager {
 		rs.close();
 		return corsi;
 	}
-
 	public ArrayList<Utente> allSocio() throws SQLException{
 		String cmd = "select * from utente where tipou = 'S'";
 		ArrayList<Utente> soci = new ArrayList<Utente>();
@@ -91,20 +90,6 @@ public class DBManager {
 		String ris = "n";
 		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
-
-		/*
-		 * codf varchar(16) primary key,
-nome varchar(50),
-cognome varchar(50),
-telefono varchar(50),
-sesso varchar(50),
-dataNascita date,
-username varchar(50),
-email varchar(50),
-password varchar(50),
-tipou varchar(1)
-		 * 
-		 */
 		ps.setString(1,is.getCodf());
 		ps.setString(2,is.getNome());
 		ps.setString(3,is.getCognome());
@@ -152,9 +137,6 @@ tipou varchar(1)
 		}
 		return ris;
 	}
-
-	
-	
 	public boolean Login(String username, String password) {
 		boolean esito= false;
 		String q = "SELECT username,password FROM utente WHERE (username='"+username+"' AND password='"+password+"') and tipou='A';";
@@ -172,8 +154,6 @@ tipou varchar(1)
 		}
 		return esito;	
 		}
-	
-	
 	public ArrayList<abbonamento> allAbbonamenti() throws SQLException {
 		ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
 		String cmd = "select * from abbonamento";
@@ -203,7 +183,6 @@ tipou varchar(1)
 		}
 		
 	}
-
 	public void insertSocio(Utente is) throws SQLException {
 		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?,?)";
 
