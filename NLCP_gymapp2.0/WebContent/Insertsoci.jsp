@@ -40,7 +40,7 @@
     <th>Nome</th>
     <th><input type="text" name="Nome" required></th>
     </tr>
-    
+    <!--  -->
     <tr>
     <th>Cognome</th>
     <th><input type="text" name="Cognome" required></th>
