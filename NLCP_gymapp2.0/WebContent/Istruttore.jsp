@@ -1,23 +1,19 @@
 
-
-
-
-
 <%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
 <%!
-  ArrayList<Istruttore> elenco;
-  ArrayList<Istruttore> ricerca;
+  ArrayList<Utente> elenco;
+  ArrayList<Utente> ricerca;
   int i;
-  Istruttore is;
-  Istruttore isc;
+  Utente is;
+  Utente isc;
 %>
 
 <%
 
-	elenco = (ArrayList<Istruttore>)session.getAttribute("ELENCO_ISTRUTTORI");
-    ricerca = (ArrayList<Istruttore>)session.getAttribute("ISTRUTTORI_CERCATI");
+	elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_ISTRUTTORI");
+    ricerca = (ArrayList<Utente>)session.getAttribute("ISTRUTTORI_CERCATI");
 %>
 
 <!DOCTYPE html>
@@ -87,7 +83,7 @@ float:left;
  
  <% for(i=0;i<elenco.size();i++) 
     {
-	 is=(Istruttore)elenco.get(i);
+	 is=(Utente)elenco.get(i);
     
  %>
  
@@ -95,9 +91,9 @@ float:left;
  	<td><%=is.getNome()%></td>
  	<td><%=is.getCognome() %></td>
  	<td><%=is.getTelefono() %></td>
-    <td><a href="Gestore?cmd=dettagliois&id=<%=is.getIds()%>">Visualizza</a></td>
-    <td><a href="Gestore?cmd=eliminais&id=<%=is.getIds()%>">Elimina</a></td>
-    <td><a href="Gestore?cmd=aggiornais&id=<%=is.getIds()%>">Aggiorna</a></td>
+    <td><a href="Gestore?cmd=dettagliois&id=<%=is.getCodf()%>">Visualizza</a></td>
+    <td><a href="Gestore?cmd=eliminais&id=<%=is.getCodf()%>">Elimina</a></td>
+    <td><a href="Gestore?cmd=aggiornais&id=<%=is.getCodf()%>">Aggiorna</a></td>
  </tr>
  <%
      }
@@ -113,10 +109,10 @@ float:left;
   <%if(ricerca!=null) {%>
   <%for(i=0;i<ricerca.size();i++) 
   {
-	 isc=(Istruttore)ricerca.get(i);
+	 isc=(Utente)ricerca.get(i);
   
 %>
-  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getIds()%>"><%=isc.getNome()%> <%=isc.getCognome()%></a>
+  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getCodf()%>"><%=isc.getNome()%> <%=isc.getCognome()%></a>
   <%
      }
  %> 
