@@ -239,5 +239,30 @@ public class DBManager {
 	//	query.executeUpdate
 		
 	}
+	
+	public void updateSocio(Utente c) throws SQLException
+	{
+		System.out.println(c.toString()+" nel db");
+		String cmd;
+		cmd = "update Utente set nome=?,cognome=?,telefono=?,sesso=?,datanascita=? where Utente.codf='"+c.getCodf()+"'";
+		    PreparedStatement psc;
+		    psc = connessione.prepareStatement(cmd);
+			
+			psc.setString(1,c.getNome());
+			psc.setString(2,c.getCognome());
+			psc.setString(3,c.getTelefono());
+			psc.setString(4,c.getSesso());
+			psc.setString(5,c.getDataNascita());
+			/*psc.setString(7,c.getPostalCode());
+			psc.setString(8,c.getCountry());
+			psc.setString(9,c.getPhone());
+			psc.setString(10,c.getFax());
+			psc.setString(11,c.getId());*/
+			psc.executeUpdate();
+	}
+	
+	
+	
+	
 
 }

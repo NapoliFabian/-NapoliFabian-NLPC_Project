@@ -20,6 +20,7 @@
 </head>
 <body>
 <a href="Insertsoci.jsp">Inserisci</a>
+
 <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>
