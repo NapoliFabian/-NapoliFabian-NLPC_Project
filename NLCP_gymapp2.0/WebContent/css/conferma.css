@@ -1,1 +1,24 @@
 @charset "ISO-8859-1";
+
+.logo{
+    width: 30%;
+    height: 100%;
+    float: left;
+    padding: 16px;
+}
+.icon{
+    width: 6%;
+    height: 100%;
+ 
+    float: left;
+    padding: 16px;
+}
+
+.titolo{
+/*color: #7B002C;*/
+/*color: crimson;*/
+color: gold;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+position: absolute;
+top: 5px;
+}
