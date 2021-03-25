@@ -43,6 +43,9 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("Istruttore.jsp");
 						
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
 			
@@ -57,6 +60,9 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("allenamento.jsp");
 						
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
 			
@@ -71,6 +77,9 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("socio.jsp");
 						
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
 			
@@ -84,8 +93,12 @@ public class Gestore extends HttpServlet {
 				request.getSession().setAttribute("ELENCO_CORSI",corsi);
 				response.sendRedirect("Corso.jsp");
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
 			
 			}
+			
+			
 		}//FINE
 		//STAMPA ABBONAMENTI
 		if(cmd.equals("allabb")) {
@@ -97,8 +110,13 @@ public class Gestore extends HttpServlet {
 				response.sendRedirect("abbonamento.jsp");
 			}
 			catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
+			
+			
 		}//FINE
 		//////////////////////////////////////////////////////////////////////////////////////////
 		//comandi per dettaglio
@@ -189,6 +207,9 @@ public class Gestore extends HttpServlet {
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
 				response.sendRedirect("Istruttore.jsp");
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
 		}
@@ -221,6 +242,9 @@ public class Gestore extends HttpServlet {
 				request.getSession().setAttribute("ELENCO_SOCI",istruttori);
 				response.sendRedirect("socio.jsp");
 			} catch (Exception e) {
+				
+				response.sendRedirect("errore.jsp");
+				
 				System.out.println(e.getMessage());
 			}
 		}
@@ -252,6 +276,9 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ELENCO_ISTRUTTORI", istruttori);
 		response.sendRedirect("Istruttore.jsp");
 	} catch (Exception e) {
+		
+		response.sendRedirect("errore.jsp");
+		
 		System.out.println(e.getMessage());
 	}	
 	}
@@ -272,6 +299,9 @@ public class Gestore extends HttpServlet {
 			request.getSession().setAttribute("ELENCO_CORSI",corsi);
 			response.sendRedirect("Corso.jsp");
 		} catch (Exception e) {
+			
+			response.sendRedirect("errore.jsp");
+			
 			// TODO: handle exception
 		}
 	}
@@ -294,6 +324,9 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);
 		response.sendRedirect("abbonamento.jsp");
 	} catch (Exception e) {
+		
+		response.sendRedirect("errore.jsp");
+		
 		System.out.println(e.getMessage());
 	}
 	}
@@ -334,6 +367,9 @@ public class Gestore extends HttpServlet {
 			request.getSession().setAttribute("ELENCO_SOCI",soci);
 			response.sendRedirect("socio.jsp");
 		} catch (Exception e) {
+			
+			response.sendRedirect("errore.jsp");
+			
 			System.out.println(e.getMessage());
 		}
 	}
@@ -355,6 +391,9 @@ public class Gestore extends HttpServlet {
 			request.getSession().setAttribute("ELENCO_ALLENAMENTI",allenamenti);
 			response.sendRedirect("allenamento.jsp");
 		} catch (Exception e) {
+			
+			response.sendRedirect("errore.jsp");
+			
 			// TODO: handle exception
 		}
 	}
