@@ -104,7 +104,7 @@ public class Gestore extends HttpServlet {
 			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
-				if(is.getIds().equals(id)) {
+				if(is.getCodf().equals(id)) {
 				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
 				response.sendRedirect("dettaglioistruttore.jsp");
 				}
@@ -163,7 +163,7 @@ public class Gestore extends HttpServlet {
 			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
-				if(is.getIds().equals(id)) {
+				if(is.getCodf().equals(id)){
 				request.getSession().setAttribute("ISTRUTTORE_ELIMINA",is);	
 				response.sendRedirect("confermais.jsp");
 				}
@@ -233,7 +233,7 @@ public class Gestore extends HttpServlet {
 		String sesso = request.getParameter("Sesso");
 		String data = request.getParameter("DataDiNascita");
 		
-		Utente i = new Utente(id, nome, cognome, telefono, sesso,data);
+		Utente i = new Utente(id, nome, cognome, telefono, sesso,data,"","","","I");
 		db.insertIstruttore(i);
 		request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
 		ArrayList<Utente>istruttori = new ArrayList<Utente>();
@@ -311,7 +311,7 @@ public class Gestore extends HttpServlet {
 		String tel = request.getParameter("Telefono");
 		String s = request.getParameter("Sesso");
 		String datan = request.getParameter("DataDiNascita");
-		Utente soc = new Utente(codf, nome, cognome, tel,s,datan);
+		Utente soc = new Utente(codf, nome, cognome, tel,s,datan,"","","","S");
 		try {
 			DBManager db = new DBManager();
 			db.insertSocio(soc);

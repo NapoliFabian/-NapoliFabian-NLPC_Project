@@ -1,3 +1,4 @@
+//DBManager
 package it.meucci;
 
 import java.sql.*;
@@ -16,7 +17,7 @@ public class DBManager {
 	public DBManager() throws Exception{
 		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
-		pwdDB="cristian02";
+		pwdDB="";
 		//Creazione della connessione
 		//Registrazione dei Driver
 		try {
@@ -31,13 +32,15 @@ public class DBManager {
 		query = connessione.createStatement();
 		
 	}
-	public ArrayList<Istruttore> allIstruttori() throws SQLException{
+	public ArrayList<Utente> allIstruttori() throws SQLException{
 		String cmd = "select * from utente where tipou='I'";
-		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+		ArrayList<Utente> istruttori = new ArrayList<Utente>();
+
 		rs=query.executeQuery(cmd);
-		Istruttore s;
+		Utente s;
 		while(rs.next()) {
-			s = new Istruttore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+			s = new Utente(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
 			istruttori.add(s);
 		
 		}
@@ -69,23 +72,26 @@ public class DBManager {
 		rs.close();
 		return corsi;
 	}
-	public ArrayList<socio> allSocio() throws SQLException{
-		String cmd = "select * from utente where tipou='S'";
-		ArrayList<socio> soci = new ArrayList<socio>();
+
+	public ArrayList<Utente> allSocio() throws SQLException{
+		String cmd = "select * from utente where tipou = 'S'";
+		ArrayList<Utente> soci = new ArrayList<Utente>();
 		rs=query.executeQuery(cmd);
-		socio s;
+		Utente s;
 		while(rs.next()) {
 			String data = String.valueOf(rs.getString(6));
-			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),data);
+			s = new Utente(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
 			soci.add(s);
 		}
 		rs.close();
 		return soci;
 	}
-	public String insertIstruttore(Istruttore is) throws SQLException {
+	public String insertIstruttore(Utente is) throws SQLException {
 		String ris = "n";
 		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
+
 		/*
 		 * codf varchar(16) primary key,
 nome varchar(50),
@@ -99,16 +105,17 @@ password varchar(50),
 tipou varchar(1)
 		 * 
 		 */
-		System.out.println(is.getIds());
-		ps.setString(1,is.getIds());
+		ps.setString(1,is.getCodf());
 		ps.setString(2,is.getNome());
-		ps.setString(3,is.getCognome());
-		ps.setString(4,is.getTelefono());
-		ps.setString(5,is.getSesso());
-		ps.setString(6,is.getDatanascita());
-		ps.setString(7,"");
+		System.out.println(is.getCodf());
+		ps.setString(3,is.getNome());
+		ps.setString(4,is.getCognome());
+		ps.setString(5,is.getTelefono());
+		ps.setString(6,is.getSesso());
+		ps.setString(7,is.getDataNascita());
 		ps.setString(8,"");
-		ps.setString(9,"I");
+		ps.setString(9,"");
+		ps.setString(10,"I");
 		try {
 			ps.executeUpdate();	
 			ris="y";
@@ -117,9 +124,10 @@ tipou varchar(1)
 		}
 		return ris;
 	}
-	public int eliminaIStruttore(Istruttore is) throws SQLException {
+	public int eliminaIStruttore(Utente is) throws SQLException {
 		int ris =0;
-		String comando = "Delete from utente where Istruttore.codf ='"+is.getIds()+"'";
+
+		String comando = "Delete from utente where utente.codf ='"+is.getCodf()+"'";
 		System.out.println(comando);
 		try {
 			query.executeUpdate(comando);
@@ -150,7 +158,7 @@ tipou varchar(1)
 	
 	public boolean Login(String username, String password) {
 		boolean esito= false;
-		String q = "SELECT * FROM admin WHERE username='"+username+"' AND password='"+password+"';";
+		String q = "SELECT username,password FROM utente WHERE (username='"+username+"' AND password='"+password+"') and tipou='A';";
 		System.out.println(q);
 		try {
 			rs = query.executeQuery(q);
@@ -196,19 +204,20 @@ tipou varchar(1)
 		}
 		
 	}
-	public void insertSocio(socio soc) throws SQLException {
+
+	public void insertSocio(Utente is) throws SQLException {
 		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?)";
+
 		PreparedStatement ps = connessione.prepareStatement(comando);
-		System.out.println(soc.getCodf());
-		ps.setString(1,soc.getCodf());
-		ps.setString(2,soc.getNome());
-		ps.setString(3,soc.getCognome());
-		ps.setString(4,soc.getTelefono());
-		ps.setString(5,soc.getSesso());
-		ps.setString(6,soc.getDatanascita());
-		ps.setString(7,"");
+		ps.setString(1,is.getCodf());
+		ps.setString(3,is.getNome());
+		ps.setString(4,is.getCognome());
+		ps.setString(5,is.getTelefono());
+		ps.setString(6,is.getSesso());
+		ps.setString(7,is.getDataNascita());
 		ps.setString(8,"");
-		ps.setString(9,"I");
+		ps.setString(9,"");
+		ps.setString(10,"S");
 		try {
 			ps.executeUpdate();	
 		}catch (Exception e) {
@@ -216,7 +225,7 @@ tipou varchar(1)
 		}
 		
 	}
-	public void eliminaSocio(socio is) {
+	public void eliminaSocio(Utente is) {
 	String cmd = "delete from socio where codfiscale= '"+is.getCodf()+"'";
 	try {
 		query.executeUpdate(cmd);
