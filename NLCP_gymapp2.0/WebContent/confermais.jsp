@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%Istruttore is = (Istruttore)session.getAttribute("ISTRUTTORE_ELIMINA"); %>
+<%Utente is = (Utente)session.getAttribute("ISTRUTTORE_ELIMINA"); %>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
