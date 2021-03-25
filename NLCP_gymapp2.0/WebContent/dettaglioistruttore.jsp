@@ -5,8 +5,8 @@
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <%
-Istruttore is;
-is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
+Utente is;
+is = (Utente)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 %>
 <style>
 
@@ -30,12 +30,12 @@ is = (Istruttore)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 </div>
 <table>
 
-<tr><th>ID</th><td><%=is.getIds()%> </td></tr>
+<tr><th>ID</th><td><%=is.getCodf()%> </td></tr>
 <tr><th>NOME</th><td><%=is.getNome()%> </td></tr>
 <tr><th>COGNOME</th><td><%=is.getCognome()%> </td></tr>
 <tr><th>TELEFONO</th><td><%=is.getTelefono()%> </td></tr>
 <tr><th>SESSO</th><td><%=is.getSesso()%> </td></tr>
-<tr><th>DATA NASCITA</th><td><%=is.getDatanascita()%> </td></tr>
+<tr><th>DATA NASCITA</th><td><%=is.getDataNascita()%> </td></tr>
 </table>
 </body>
 </html>

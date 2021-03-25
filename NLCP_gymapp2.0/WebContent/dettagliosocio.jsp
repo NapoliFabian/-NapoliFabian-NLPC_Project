@@ -5,8 +5,8 @@
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <%
-socio s;
-s = (socio)session.getAttribute("SOCIO_DETTAGLIO");
+Utente s;
+s = (Utente)session.getAttribute("SOCIO_DETTAGLIO");
 %>
 <style>
 
@@ -35,7 +35,7 @@ s = (socio)session.getAttribute("SOCIO_DETTAGLIO");
 <tr><th>COGNOME</th><td><%=s.getCognome()%> </td></tr>
 <tr><th>TELEFONO</th><td><%=s.getTelefono()%> </td></tr>
 <tr><th>SESSO</th><td><%=s.getSesso()%> </td></tr>
-<tr><th>DATA NASCITA</th><td><%=s.getDatanascita()%> </td></tr>
+<tr><th>DATA NASCITA</th><td><%=s.getDataNascita()%> </td></tr>
 </table>
 </body>
 </html>
