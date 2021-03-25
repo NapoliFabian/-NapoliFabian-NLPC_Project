@@ -60,7 +60,7 @@ float:left;
 
 </div>
 <div class="logo">
-    <h1 class="titolo">GYM APP ELENCO ALLENAMENTI     <a href="dashboard.jsp">Home</a> <a href="insertAllenamento.jsp">INSERISCI</a><br></h1>
+    <h1 class="titolo">GYM APP</h1>
     </div>
 </div>
 <div>
@@ -79,7 +79,7 @@ float:left;
  	<th>Data</th>
  	<th>Nome corso</th>
  	<th>Durata allenamento</th>
-
+ 	<th><a href = "insertAllenamento.jsp"><img src=img/add.png height="30" width="30"></a> </th>
  </tr>
  
  <% for(i=0;i<elenco1.size();i++) 

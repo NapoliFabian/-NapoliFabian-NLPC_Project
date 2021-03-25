@@ -18,17 +18,6 @@
  <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>Abbonamento</title>
-</head>
-<body>
-<a href="insertabbonamento.jsp">INSERISCI</a>
-<table border="3" bordercolor="yellow" bgcolor="white">
-<!DOCTYPE html>
-<html>
-<head>
-<!--  -->
- <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
-<meta charset="ISO-8859-1">
-<title>Gestione Abbonamento</title>
 <style>
 body{
 margin:0px;
@@ -36,7 +25,7 @@ margin:0px;
 table{
 background-color: white;
 border:1px solid black;
-width:70%;
+width:60%;
 border-collapse: collapse;
 }
 td{
@@ -75,7 +64,14 @@ float:left;
     <h1 class="titolo">GYM APP</h1>
     </div>
 </div>
-<div>
+ <br>
+ <br>
+ <br>
+ <br>
+  <br>
+ <br>
+ <br>
+ <div>
  <div class="tabella">
  <table>
  
@@ -105,7 +101,12 @@ float:left;
      }
  %>
  </table>
-
+</div>
+     <div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/home.png height="70" width="70"></a> <br>
+  <h3>ABBONAMENTI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+ </div>
+ </div>
 
 
 </body>

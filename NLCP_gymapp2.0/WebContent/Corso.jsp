@@ -62,7 +62,7 @@ float:left;
 
 </div>
 <div class="logo">
-    <h1 class="titolo">GYM APP ELENCO CORSI     <a href="dashboard.jsp">Home</a> <a href="insertCorsi.jsp">INSERISCI</a><br></h1>
+    <h1 class="titolo">GYM APP ELENCO CORSI</h1>
     </div>
 </div>
 <div>
@@ -79,6 +79,7 @@ float:left;
  	<th>nomecorso</th>
  	<th>prezzo</th>
  	<th>descrizione</th>
+ 	<th><a href = "insertCorsi.jsp"><img src=img/add.png height="30" width="30"></a> </th>
  </tr>
  
  <% for(i=0;i<elenco.size();i++) 
