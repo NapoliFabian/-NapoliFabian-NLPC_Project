@@ -32,7 +32,7 @@ public class DBManager {
 		
 	}
 	public ArrayList<Istruttore> allIstruttori() throws SQLException{
-		String cmd = "select * from Istruttore";
+		String cmd = "select * from utente where tipou='I'";
 		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
 		rs=query.executeQuery(cmd);
 		Istruttore s;
@@ -70,7 +70,7 @@ public class DBManager {
 		return corsi;
 	}
 	public ArrayList<socio> allSocio() throws SQLException{
-		String cmd = "select * from socio";
+		String cmd = "select * from utente where tipou='S'";
 		ArrayList<socio> soci = new ArrayList<socio>();
 		rs=query.executeQuery(cmd);
 		socio s;
@@ -84,8 +84,21 @@ public class DBManager {
 	}
 	public String insertIstruttore(Istruttore is) throws SQLException {
 		String ris = "n";
-		String comando = "insert into Istruttore values(?,?,?,?,?,?)";
+		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
+		/*
+		 * codf varchar(16) primary key,
+nome varchar(50),
+cognome varchar(50),
+telefono varchar(50),
+sesso varchar(50),
+dataNascita date,
+username varchar(50),
+email varchar(50),
+password varchar(50),
+tipou varchar(1)
+		 * 
+		 */
 		System.out.println(is.getIds());
 		ps.setString(1,is.getIds());
 		ps.setString(2,is.getNome());
@@ -93,6 +106,9 @@ public class DBManager {
 		ps.setString(4,is.getTelefono());
 		ps.setString(5,is.getSesso());
 		ps.setString(6,is.getDatanascita());
+		ps.setString(7,"");
+		ps.setString(8,"");
+		ps.setString(9,"I");
 		try {
 			ps.executeUpdate();	
 			ris="y";
@@ -103,7 +119,7 @@ public class DBManager {
 	}
 	public int eliminaIStruttore(Istruttore is) throws SQLException {
 		int ris =0;
-		String comando = "Delete from Istruttore where Istruttore.ids ='"+is.getIds()+"'";
+		String comando = "Delete from utente where Istruttore.codf ='"+is.getIds()+"'";
 		System.out.println(comando);
 		try {
 			query.executeUpdate(comando);
@@ -181,7 +197,7 @@ public class DBManager {
 		
 	}
 	public void insertSocio(socio soc) throws SQLException {
-		String comando = "insert into socio values(?,?,?,?,?,?)";
+		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		System.out.println(soc.getCodf());
 		ps.setString(1,soc.getCodf());
@@ -190,6 +206,9 @@ public class DBManager {
 		ps.setString(4,soc.getTelefono());
 		ps.setString(5,soc.getSesso());
 		ps.setString(6,soc.getDatanascita());
+		ps.setString(7,"");
+		ps.setString(8,"");
+		ps.setString(9,"I");
 		try {
 			ps.executeUpdate();	
 		}catch (Exception e) {
