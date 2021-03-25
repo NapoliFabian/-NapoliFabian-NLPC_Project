@@ -5,17 +5,17 @@
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <%
-ArrayList<Istruttore> istruttori;
+ArrayList<Utente> Utente;
 allenamento a;
 a = (allenamento)session.getAttribute("ALLENAMENTO_DETTAGLIO");
-istruttori = (ArrayList<Istruttore>)session.getAttribute("ELENCO_ISTRUTTORI");
-Istruttore is;
+Utente = (ArrayList<Utente>)session.getAttribute("ELENCO_ISTRUTTORI");
+Utente u;
 String ist ="";
-for(int i=0;i<istruttori.size();i++)
+for(int i=0;i<Utente.size();i++)
 {
-	is = istruttori.get(i);
-	if(is.getIds().equals(a.getIds())) {
-    ist = is.getNome()+is.getCognome();
+	u = Utente.get(i);
+	if(u.getCodf().equals(a.getIds())) {
+    ist = u.getNome()+u.getCognome();
 	}
 }	
 %>

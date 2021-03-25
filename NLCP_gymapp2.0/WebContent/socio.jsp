@@ -3,13 +3,13 @@
     
     
     <%!
-  ArrayList <socio> elenco;
+  ArrayList <Utente> elenco;
   int i;
-  socio s;
+  Utente s;
 %>
 <%
 
-	elenco = (ArrayList <socio> )session.getAttribute("ELENCO_SOCI");
+	elenco = (ArrayList <Utente> )session.getAttribute("ELENCO_SOCI");
 %>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
  
  <% for(i=0;i<elenco.size();i++) 
     {
-	 s=(socio)elenco.get(i);
+	 s=(Utente)elenco.get(i);
     
  %>
  
@@ -39,7 +39,7 @@
  	<td><%=s.getCognome()%></td>
  	<td><%=s.getNome()%></td>
  	<td><%=s.getTelefono()%></td>
- 	<td><%=s.getDatanascita()%></td>
+ 	<td><%=s.getDataNascita()%></td>
  	<td><a href="Gestore?cmd=dettaglioso&id=<%=s.getCodf()%>">Visualizza</a></td>
  	<td><a href="Gestore?cmd=eliminaso&id=<%=s.getCodf()%>">Cancella</a></td>
  	<td><a href="Gestore?cmd=updateso&id=<%=s.getCodf()%>">Aggiorna</a></td>
