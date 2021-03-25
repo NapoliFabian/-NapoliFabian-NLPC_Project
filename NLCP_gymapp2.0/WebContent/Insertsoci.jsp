@@ -81,7 +81,7 @@
  </div>
  </form>
  <div class="link"><center>
- 	<a href="socio.jsp"><button>Elenco Istruttori</button></a>
+ 	<a href="socio.jsp"><button>Elenco Soci</button></a>
  	<a href="dashboard.html"><button>Home</button></a></center>
  </div>
  
