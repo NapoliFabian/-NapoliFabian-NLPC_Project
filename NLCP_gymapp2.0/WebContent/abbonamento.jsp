@@ -15,6 +15,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>Abbonamento</title>
 </head>

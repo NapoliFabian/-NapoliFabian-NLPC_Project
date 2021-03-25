@@ -16,23 +16,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+ <style>
+body{
+margin:0px;
+}
+table{
+background-color: white;
+border:1px solid black;
+width:70%;
+border-collapse: collapse;
+}
+td{
+text-align:center;
+padding:15px;
+}
+th{
+	height: 50px;
+	background-color: #66ff66;
+	color:black;
+}
+tr:hover{
+background-color: lightgreen;
+}
+.bottoni{
+width:30%;
+text-align: center;
+float:right;
+border: 1px solid black;
+}
+.tabella{
+width: 68%;
+border: 1px solid black;
+float:left;
+}
+</style>
 <meta charset="ISO-8859-1">
 <title>Gestione corsi</title>
 </head>
-<body bgcolor="pink">
- <h1>ELENCO corsi</h1>
- <br><br><a href="dashboard.jsp">Home</a><a href="insertCorsi.jsp">INSERISCI</a><br><br>
+<body>
+<div class="header">
+<div class="icon">
 
- <% if(elenco.isEmpty()) {
- %>
- <h1>Nessun corso inserito</h1>
-  <%
-     }
- %>
- <table border="3" bordercolor="brown" bgcolor="white">
- 
+<img src="img\nuovaicona.png" width="100" height="70">
+
+</div>
+<div class="logo">
+    <h1 class="titolo">GYM APP ELENCO CORSI     <a href="dashboard.jsp">Home</a> <a href="insertCorsi.jsp">INSERISCI</a><br></h1>
+    </div>
+</div>
+<div>
+ <br>
+ <br>
+ <br>
+ <br>
+  <br>
+ <br>
+ <br>
+  <div class="tabella">
+ <table>
  <tr>
-
  	<th>nomecorso</th>
  	<th>prezzo</th>
  	<th>descrizione</th>
@@ -56,5 +99,12 @@
      }
  %>
  </table>
+   </div>
+   <div class="bottoni">
+  <a href="dashboard.html"><img src=img/home.png height="70" width="70"></a> <br>
+  <h3>CORSI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+
+ </div>
+ </div>
 </body>
 </html>

@@ -51,15 +51,22 @@ public class login extends HttpServlet {
 				  db = new DBManager();
 				 esito =db.Login(username, password);
 				 if(esito==true) {
-					 response.sendRedirect("dashboard.html");
+					 request.getSession().setAttribute("username",username);
+					 response.sendRedirect("dashboard.jsp");
 					 
 				 }
 				 else {
 					 System.out.println("Non va");
+						String errore = "Password o Username invalidi";
+						request.getSession().setAttribute("ERROR",errore);
+					 response.sendRedirect("errore.jsp");
 				 }
 			//	 System.out.println(esito);
 			 }catch (Exception e) {
 				System.out.println("Error on login" +e.getMessage()+e.getCause());
+				String errore = "Password o Username invalidi";
+				request.getSession().setAttribute("ERROR",errore);
+				response.sendRedirect("errore.jsp");
 			}
 			 
 			 
