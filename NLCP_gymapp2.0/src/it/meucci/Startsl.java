@@ -33,8 +33,6 @@ public class Startsl extends HttpServlet {
 		System.out.println("Init Servlet partita");
 		try {
 			System.out.println("Controllo abbonamenti in corso......");
-			
-			
 			Date dat = new Date();
 			//Restituzione delle informazioni
 			int mese =  dat.getMonth()+1;

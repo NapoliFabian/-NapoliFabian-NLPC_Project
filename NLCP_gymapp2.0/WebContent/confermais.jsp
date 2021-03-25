@@ -8,6 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<div class="header">
+<div class="icon">
+
+
 <h1>Eliminare <%=is.getNome()%> <%=is.getCognome()%> dal database?</h1>
 <a href="Gestore?cmd=confermais"><input type="submit" value="SI"></a>    <a href="Gestore?cmd=noelis"><input type="submit" value="NO"></a>
 </body>
