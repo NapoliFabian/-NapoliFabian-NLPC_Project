@@ -1,5 +1,5 @@
 package it.meucci;
-
+//sbc
 public class Scheda {
 	private int idscheda;
 	private String ids;
