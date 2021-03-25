@@ -31,13 +31,14 @@ public class DBManager {
 		query = connessione.createStatement();
 		
 	}
-	public ArrayList<Istruttore> allIstruttori() throws SQLException{
+	public ArrayList<Utente> allIstruttori() throws SQLException{
 		String cmd = "select * from Istruttore";
-		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+		ArrayList<Utente> istruttori = new ArrayList<Utente>();
 		rs=query.executeQuery(cmd);
-		Istruttore s;
+		Utente s;
 		while(rs.next()) {
-			s = new Istruttore(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
+			s = new Utente(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
 			istruttori.add(s);
 		
 		}
@@ -69,30 +70,35 @@ public class DBManager {
 		rs.close();
 		return corsi;
 	}
-	public ArrayList<socio> allSocio() throws SQLException{
+	public ArrayList<Utente> allSocio() throws SQLException{
 		String cmd = "select * from socio";
-		ArrayList<socio> soci = new ArrayList<socio>();
+		ArrayList<Utente> soci = new ArrayList<Utente>();
 		rs=query.executeQuery(cmd);
-		socio s;
+		Utente s;
 		while(rs.next()) {
 			String data = String.valueOf(rs.getString(6));
-			s = new socio(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),data);
+			s = new Utente(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
 			soci.add(s);
 		}
 		rs.close();
 		return soci;
 	}
-	public String insertIstruttore(Istruttore is) throws SQLException {
+	public String insertIstruttore(Utente is) throws SQLException {
 		String ris = "n";
 		String comando = "insert into Istruttore values(?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
-		System.out.println(is.getIds());
-		ps.setString(1,is.getIds());
-		ps.setString(2,is.getNome());
+		System.out.println(is.getCodf());
+		ps.setString(1,is.getNome());
 		ps.setString(3,is.getCognome());
 		ps.setString(4,is.getTelefono());
 		ps.setString(5,is.getSesso());
-		ps.setString(6,is.getDatanascita());
+		ps.setString(6,is.getDataNascita());
+		ps.setString(7,is.getUsername());
+		ps.setString(8,is.getEmail());
+		ps.setString(9,is.getPassword());
+		ps.setString(10,is.getTipou());
+	
 		try {
 			ps.executeUpdate();	
 			ris="y";
@@ -101,9 +107,9 @@ public class DBManager {
 		}
 		return ris;
 	}
-	public int eliminaIStruttore(Istruttore is) throws SQLException {
+	public int eliminaIStruttore(Utente is) throws SQLException {
 		int ris =0;
-		String comando = "Delete from Istruttore where Istruttore.ids ='"+is.getIds()+"'";
+		String comando = "Delete from Istruttore where Utente.Codf ='"+is.getCodf()+"'";
 		System.out.println(comando);
 		try {
 			query.executeUpdate(comando);
@@ -180,7 +186,7 @@ public class DBManager {
 		}
 		
 	}
-	public void insertSocio(socio soc) throws SQLException {
+	public void insertSocio(Utente soc) throws SQLException {
 		String comando = "insert into socio values(?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		System.out.println(soc.getCodf());
@@ -189,7 +195,11 @@ public class DBManager {
 		ps.setString(3,soc.getCognome());
 		ps.setString(4,soc.getTelefono());
 		ps.setString(5,soc.getSesso());
-		ps.setString(6,soc.getDatanascita());
+		ps.setString(6,soc.getDataNascita());
+		ps.setString(7,soc.getUsername());
+		ps.setString(8,soc.getEmail());
+		ps.setString(9,soc.getPassword());
+		ps.setString(10,soc.getTipou());
 		try {
 			ps.executeUpdate();	
 		}catch (Exception e) {
@@ -197,7 +207,7 @@ public class DBManager {
 		}
 		
 	}
-	public void eliminaSocio(socio is) {
+	public void eliminaSocio(Utente is) {
 	String cmd = "delete from socio where codfiscale= '"+is.getCodf()+"'";
 	try {
 		query.executeUpdate(cmd);
