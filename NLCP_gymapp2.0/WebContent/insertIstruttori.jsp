@@ -51,6 +51,11 @@
     <th><input type="text" name="Telefono" required></th>
     </tr>
     
+    <tr>
+    <th>Sesso</th>
+    <th><input type="radio" name="Sesso"  value="M"required></th>
+    <th><input type="radio" name="Sesso"  value="F"required></th>
+    </tr>
     
     <tr>
     <th>Data di nascita</th>
