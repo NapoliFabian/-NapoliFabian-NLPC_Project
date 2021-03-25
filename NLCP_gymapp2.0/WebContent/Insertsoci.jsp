@@ -51,36 +51,22 @@
     <th><input type="text" name="Telefono" required></th>
     </tr>
     
+    <tr>
+    <th>Sesso</th>
+    <th><select name="Sesso">
+    		<option value="Vuoto"></option>
+    		<option value="M">Male</option>
+    		<option value="F">Female</option>
+    		<option value="Altro">Altro</option> 	
+    	</select>
+    </th>
+    </tr>
     
     <tr>
     <th>Data di nascita</th>
     <th><input type="date" name="DataDiNascita" required></th>
     </tr>
     
-        <tr>
-    <th>username</th>
-    <th><input type="text" name="username" required></th>
-    </tr>
-    
-           <tr>
-    <th>email</th>
-    <th><input type="text" name="email" required></th>
-    </tr>
-    
-               <tr>
-    <th>password</th>
-    <th><input type="text" name="password" required></th>
-    </tr>
-    
-                   <tr>
-    <th>password</th>
-    <th><input type="text" name="password" required></th>
-    </tr>
-    
-                       <tr>
-    <th>tipou</th>
-    <th><input type="text" name="tipou" required></th>
-    </tr>
     
     
     <tr>

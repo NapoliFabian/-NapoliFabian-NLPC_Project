@@ -30,7 +30,7 @@
 
  <div class="insert" >
 
-    <center><table class="scritte" border="0">
+    <center><table class="scritte" border="1">
     <tr>
     <th>CODICE FISCALE</th>
     <th><input type="text" name="IdIstruttore" required maxlength="16"></th>
@@ -53,8 +53,13 @@
     
     <tr>
     <th>Sesso</th>
-    <th><input type="radio" name="Sesso"  value="M"required></th>
-    <th><input type="radio" name="Sesso"  value="F"required></th>
+    <th><select name="Sesso">
+    		<option value="Vuoto"></option>
+    		<option value="M">Male</option>
+    		<option value="F">Female</option>
+    		<option value="Altro">Altro</option> 	
+    	</select>
+    </th>
     </tr>
     
     <tr>
