@@ -34,7 +34,7 @@ public class Gestore extends HttpServlet {
 		String cmd = request.getParameter("cmd");
 		DBManager db;
 		if(cmd.equals("allis")) {
-			ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+			ArrayList<Utente> istruttori = new ArrayList<Utente>();
 			try {
 				db = new DBManager();
 				istruttori = db.allIstruttori();
@@ -60,7 +60,7 @@ public class Gestore extends HttpServlet {
 			
 		}
 		if(cmd.equals("allsoc")) {
-			ArrayList<socio> soci = new ArrayList<socio>();
+			ArrayList<Utente> soci = new ArrayList<Utente>();
 			try {
 				db = new DBManager();
 				soci= db.allSocio();
@@ -99,9 +99,9 @@ public class Gestore extends HttpServlet {
 		//comandi per dettaglio
 		if(cmd.equals("dettagliois")) {
 			String id = request.getParameter("id");
-			ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
-			istruttori =(ArrayList<Istruttore>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
-		    Istruttore is;
+			ArrayList<Utente> istruttori = new ArrayList<Utente>();
+			istruttori =(ArrayList<Utente>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
+			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
 				if(is.getIds().equals(id)) {
@@ -140,9 +140,9 @@ public class Gestore extends HttpServlet {
 		}
 		if(cmd.equals("dettaglioso")) {
 			String codf = request.getParameter("id");
-			ArrayList<socio> soci = new ArrayList<socio>();
-			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_SOCI");
-			socio is;
+			ArrayList<Utente> soci = new ArrayList<Utente>();
+			soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
+			Utente is;
 			for(int i=0;i<soci.size();i++) {
 				is = soci.get(i);
 				if(is.getCodf().equals(codf)) {
@@ -158,9 +158,9 @@ public class Gestore extends HttpServlet {
 		//Comandi elimina
 		if(cmd.equals("eliminais")) {
 			String id = request.getParameter("id");
-			ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
-			istruttori =(ArrayList<Istruttore>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
-		    Istruttore is;
+			ArrayList<Utente> istruttori = new ArrayList<Utente>();
+			istruttori =(ArrayList<Utente>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
+			Utente is;
 			for(int i=0;i<istruttori.size();i++) {
 				is = istruttori.get(i);
 				if(is.getIds().equals(id)) {
@@ -170,12 +170,12 @@ public class Gestore extends HttpServlet {
 			}	
 		}
 		if(cmd.equals("confermais")) {
-			Istruttore is =(Istruttore)request.getSession().getAttribute("ISTRUTTORE_ELIMINA");
+			Utente is =(Utente)request.getSession().getAttribute("ISTRUTTORE_ELIMINA");
 			try {
 				db = new DBManager();
 				db.eliminaIStruttore(is);
 				request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
-				ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
+				ArrayList<Utente> istruttori = new ArrayList<Utente>();
 				istruttori = db.allIstruttori();
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
 				response.sendRedirect("Istruttore.jsp");
@@ -189,9 +189,9 @@ public class Gestore extends HttpServlet {
 		}
 		if(cmd.equals("eliminaso")) {
 			String codf = request.getParameter("id");	
-			ArrayList<socio> soci = new ArrayList<socio>();
-			soci =(ArrayList<socio> )request.getSession().getAttribute("ELENCO_SOCI");
-			socio is;
+			ArrayList<Utente> soci = new ArrayList<Utente>();
+			soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
+			Utente is;
 			for(int i=0;i<soci.size();i++) {
 				is = soci.get(i);
 				if(is.getCodf().equals(codf)) {
@@ -202,12 +202,12 @@ public class Gestore extends HttpServlet {
 			
 		}
 		if(cmd.equals("confermaso")) {
-			socio is =(socio)request.getSession().getAttribute("SOCIO_ELIMINA");
+			Utente is =(Utente)request.getSession().getAttribute("SOCIO_ELIMINA");
 			try {
 				db = new DBManager();
 				db.eliminaSocio(is);
 				request.getSession().removeAttribute("ELENCO_SOCI");
-				ArrayList<socio> istruttori = new ArrayList<socio>();
+				ArrayList<Utente> istruttori = new ArrayList<Utente>();
 				istruttori = db.allSocio();
 				request.getSession().setAttribute("ELENCO_SOCI",istruttori);
 				response.sendRedirect("socio.jsp");
@@ -233,10 +233,10 @@ public class Gestore extends HttpServlet {
 		String sesso = request.getParameter("Sesso");
 		String data = request.getParameter("DataDiNascita");
 		
-		Istruttore i = new Istruttore(id, nome, cognome, telefono, sesso,data);
+		Utente i = new Utente(id, nome, cognome, telefono, sesso,data);
 		db.insertIstruttore(i);
 		request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
-		ArrayList<Istruttore>istruttori = new ArrayList<Istruttore>();
+		ArrayList<Utente>istruttori = new ArrayList<Utente>();
 		istruttori = db.allIstruttori();
 		request.getSession().setAttribute("ELENCO_ISTRUTTORI", istruttori);
 		response.sendRedirect("Istruttore.jsp");
@@ -287,11 +287,11 @@ public class Gestore extends HttpServlet {
 	}
 	if(submit.equals("cercaIS")) {
 		String cognome = request.getParameter("istruttore");
-		ArrayList<Istruttore> istruttori = new ArrayList<Istruttore>();
-		ArrayList<Istruttore> ricerca = new ArrayList<Istruttore>();
-		Istruttore is;
+		ArrayList<Utente> istruttori = new ArrayList<Utente>();
+		ArrayList<Utente> ricerca = new ArrayList<Utente>();
+		Utente is;
 		System.out.println(cognome);
-		istruttori = (ArrayList<Istruttore>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
+		istruttori = (ArrayList<Utente>)request.getSession().getAttribute("ELENCO_ISTRUTTORI");
 		for(int i=0;i<istruttori.size();i++) 
 	    {
 			is = istruttori.get(i);
@@ -311,12 +311,12 @@ public class Gestore extends HttpServlet {
 		String tel = request.getParameter("Telefono");
 		String s = request.getParameter("Sesso");
 		String datan = request.getParameter("DataDiNascita");
-		socio soc = new socio(codf, nome, cognome, tel,s,datan);
+		Utente soc = new Utente(codf, nome, cognome, tel,s,datan);
 		try {
 			DBManager db = new DBManager();
 			db.insertSocio(soc);
 			request.getSession().removeAttribute("ELENCO_SOCI");
-			ArrayList<socio> soci = db.allSocio();
+			ArrayList<Utente> soci = db.allSocio();
 			request.getSession().setAttribute("ELENCO_SOCI",soci);
 			response.sendRedirect("socio.jsp");
 		} catch (Exception e) {
