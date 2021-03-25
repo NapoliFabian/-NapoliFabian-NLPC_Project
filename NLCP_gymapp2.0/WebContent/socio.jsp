@@ -54,6 +54,7 @@ float:left;
 <title>Socio</title>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="header">
 <div class="icon">
 
@@ -74,6 +75,11 @@ float:left;
  <br>
  <div class="tabella">
 <table>
+=======
+<a href="Insertsoci.jsp">Inserisci</a>
+
+<table border="3" bordercolor="brown" bgcolor="white">
+>>>>>>> branch 'master20' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
  
  <tr>
  	<th>COGNOME</th>
@@ -89,7 +95,7 @@ float:left;
     
  %>
  
-  <tr>
+  <tr><!--  -->
  	<td><%=s.getCognome()%></td>
  	<td><%=s.getNome()%></td>
  	<td><%=s.getTelefono()%></td>

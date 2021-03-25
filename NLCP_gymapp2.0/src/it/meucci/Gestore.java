@@ -263,10 +263,28 @@ public class Gestore extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 		}
-		
+		if(cmd.equals("updateso")) {
+			String codf = request.getParameter("id");
+			ArrayList<Utente> soci = new ArrayList<Utente>();
+			soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
+			Utente is;
+			for(int i=0;i<soci.size();i++) {
+				is = soci.get(i);
+				if(is.getCodf().equals(codf)) {
+				request.getSession().setAttribute("SOCIO_CAMBIA",is);	
+				response.sendRedirect("updatesocio.jsp");
+				}
+			}
+		}
 		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		//comandi aggiorna
+		
+			
+			
+			
+		
+		
 		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -423,5 +441,29 @@ public class Gestore extends HttpServlet {
 			// TODO: handle exception
 		}
 	}
+	if(submit.equals("AGGIORNA SOCIO")) {
+		try {
+			Utente c;
+		    c = new Utente(request.getParameter("codf"),
+		    		request.getParameter("Nome"),
+		    		request.getParameter("Cognome"),
+		    		request.getParameter("Telefono"),
+		    		request.getParameter("Sesso"),
+		    		request.getParameter("DataNascita"),"","","","");
+		    
+		    	DBManager db;
+		    	db = new DBManager();
+		    	System.out.println(c.toString()+" nella servlet");
+		    	db.updateSocio(c);
+		    	request.getSession().removeAttribute("ELENCO_SOCI");
+		    	ArrayList<Utente> elenco= new ArrayList<Utente>();
+		    	elenco =db.allSocio();
+		    	request.getSession().setAttribute("ELENCO_SOCI", elenco);
+		    	response.sendRedirect("socio.jsp");
+		}
+		    catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
 }
 }
