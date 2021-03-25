@@ -57,30 +57,11 @@
     <th><input type="date" name="DataDiNascita" required></th>
     </tr>
     
-        <tr>
-    <th>username</th>
-    <th><input type="text" name="username" required></th>
-    </tr>
     
-           <tr>
-    <th>email</th>
-    <th><input type="text" name="email" required></th>
-    </tr>
     
-               <tr>
-    <th>password</th>
-    <th><input type="text" name="password" required></th>
-    </tr>
+     
     
-                   <tr>
-    <th>password</th>
-    <th><input type="text" name="password" required></th>
-    </tr>
     
-                       <tr>
-    <th>tipou</th>
-    <th><input type="text" name="tipou" required></th>
-    </tr>
     
     <tr>
     <th><input type="reset" value="ANNULLA"></th>

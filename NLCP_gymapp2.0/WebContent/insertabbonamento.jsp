@@ -6,7 +6,7 @@
 <head>
 <link href="css/insert.css" rel="stylesheet"  type="text/css">
 <%
-ArrayList<socio> soci = new ArrayList<socio>();
+ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
 try {
 	DBManager db;
@@ -60,7 +60,7 @@ try {
 	<th>Codice Fiscale</th>
 	<th><select name="codf">
 	<%for(int i=0;i<soci.size();i++){
-		socio s = soci.get(i);
+		Utente s = soci.get(i);
 		%>
 		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
 	<%} %>
