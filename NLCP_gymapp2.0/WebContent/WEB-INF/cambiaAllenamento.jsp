@@ -6,7 +6,7 @@
 <%@ page import="java.util.*"%>
 <%@ page import="it.meucci.*"%>
  <style type="text/css">
-  /* ddd*/
+  /* dadd*/
 /*body{
 background-image: url("img/sfondo.jpg");
 }
