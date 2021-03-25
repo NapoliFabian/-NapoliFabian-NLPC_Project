@@ -89,7 +89,7 @@ public class DBManager {
 	}
 	public String insertIstruttore(Utente is) throws SQLException {
 		String ris = "n";
-		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?)";
+		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
 
 		/*
@@ -107,12 +107,11 @@ tipou varchar(1)
 		 */
 		ps.setString(1,is.getCodf());
 		ps.setString(2,is.getNome());
-		System.out.println(is.getCodf());
-		ps.setString(3,is.getNome());
-		ps.setString(4,is.getCognome());
-		ps.setString(5,is.getTelefono());
-		ps.setString(6,is.getSesso());
-		ps.setString(7,is.getDataNascita());
+		ps.setString(3,is.getCognome());
+		ps.setString(4,is.getTelefono());
+		ps.setString(5,is.getSesso());
+		ps.setString(6,is.getDataNascita());
+		ps.setString(7,"");
 		ps.setString(8,"");
 		ps.setString(9,"");
 		ps.setString(10,"I");
@@ -206,15 +205,16 @@ tipou varchar(1)
 	}
 
 	public void insertSocio(Utente is) throws SQLException {
-		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?)";
+		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?,?)";
 
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		ps.setString(1,is.getCodf());
-		ps.setString(3,is.getNome());
-		ps.setString(4,is.getCognome());
-		ps.setString(5,is.getTelefono());
-		ps.setString(6,is.getSesso());
-		ps.setString(7,is.getDataNascita());
+		ps.setString(2,is.getNome());
+		ps.setString(3,is.getCognome());
+		ps.setString(4,is.getTelefono());
+		ps.setString(5,is.getSesso());
+		ps.setString(6,is.getDataNascita());
+		ps.setString(7,"");
 		ps.setString(8,"");
 		ps.setString(9,"");
 		ps.setString(10,"S");
@@ -226,7 +226,7 @@ tipou varchar(1)
 		
 	}
 	public void eliminaSocio(Utente is) {
-	String cmd = "delete from socio where codfiscale= '"+is.getCodf()+"'";
+	String cmd = "delete from utente where codf= '"+is.getCodf()+"'";
 	try {
 		query.executeUpdate(cmd);
 		
