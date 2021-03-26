@@ -14,7 +14,7 @@ public class DBManager {
 	private String userDB;
 	private String pwdDB;
 	private ResultSet rs;
-	public DBManager() throws Exception{
+	/*public DBManager() throws Exception{
 		urlDB="jdbc:mysql://localhost:3306/gym?serverTimezone=UTC";
 		userDB="root";
 		pwdDB="";
@@ -31,7 +31,24 @@ public class DBManager {
 		System.out.println("Connessione instaurata con il database nortwind");
 		query = connessione.createStatement();
 		
+	}*/
+	public DBManager(String urlDB, String userDB, String pwdDB) throws SQLException {
+		super();
+		this.urlDB = urlDB;
+		this.userDB = userDB;
+		this.pwdDB = pwdDB;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			System.err.println(e.getMessage());
+		}
+		
+		System.out.println("Registrazione driver sql effettuata");
+		connessione=DriverManager.getConnection(urlDB, userDB, pwdDB);
+		System.out.println("Connessione instaurata con il database nortwind");
+		query = connessione.createStatement();
 	}
+	
 	public ArrayList<Utente> allIstruttori() throws SQLException{
 		String cmd = "select * from utente where tipou='I'";
 		ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -47,6 +64,8 @@ public class DBManager {
 		rs.close();
 		return istruttori;
 	}
+
+	
 	public ArrayList<allenamento> allAllenamenti() throws SQLException {
 		String cmd = "select * from Allenamento";
 		ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();

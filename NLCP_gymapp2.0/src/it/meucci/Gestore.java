@@ -32,12 +32,16 @@ public class Gestore extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// comandi per stampare tutto
 		String cmd = request.getParameter("cmd");
-		DBManager db;
+		System.out.println(cmd);
+		try {
+		GestoreFile load = new GestoreFile();
+		String[] datidb = load.DBSettings();
+		DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 		//STAMPA ISTRUTTORI
 		if(cmd.equals("allis")) {
 			ArrayList<Utente> istruttori = new ArrayList<Utente>();
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				istruttori = db.allIstruttori();
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
 				response.sendRedirect("Istruttore.jsp");
@@ -56,7 +60,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("allal")) {
 			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
 			try {
-				db = new DBManager();
+				//db = new DBManager();
 				allenamenti= db.allAllenamenti();
 				request.getSession().setAttribute("ELENCO_ALLENAMENTI",allenamenti);
 				response.sendRedirect("allenamento.jsp");
@@ -75,7 +79,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("allsoc")) {
 			ArrayList<Utente> soci = new ArrayList<Utente>();
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				soci= db.allSocio();
 				request.getSession().setAttribute("ELENCO_SOCI",soci);
 				response.sendRedirect("socio.jsp");
@@ -94,7 +98,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("allco")) {
 			ArrayList<Corso> corsi = new ArrayList<Corso>();
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				corsi = db.allCorsi();
 				request.getSession().setAttribute("ELENCO_CORSI",corsi);
 				response.sendRedirect("Corso.jsp");
@@ -112,7 +116,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("allabb")) {
 			ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				abbonamenti= db.allAbbonamenti();
 				request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);
 				response.sendRedirect("abbonamento.jsp");
@@ -210,7 +214,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("confermais")) {
 			Utente is =(Utente)request.getSession().getAttribute("ISTRUTTORE_ELIMINA");
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				db.eliminaIStruttore(is);
 				request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
 				ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -247,7 +251,7 @@ public class Gestore extends HttpServlet {
 		if(cmd.equals("confermaso")) {
 			Utente is =(Utente)request.getSession().getAttribute("SOCIO_ELIMINA");
 			try {
-				db = new DBManager();
+			//	db = new DBManager();
 				db.eliminaSocio(is);
 				request.getSession().removeAttribute("ELENCO_SOCI");
 				ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -276,9 +280,14 @@ public class Gestore extends HttpServlet {
 				}
 			}
 		}
-		
 		//////////////////////////////////////////////////////////////////////////////////////////////
 		//comandi aggiorna
+		}catch (Exception e) {
+			String errore = "ERRORE ALL AVVIO DEL DB";
+			request.getSession().setAttribute("ERROR",errore);
+			response.sendRedirect("errore.jsp");
+		}
+
 		
 			
 			
@@ -289,11 +298,17 @@ public class Gestore extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String submit = request.getParameter("INSERT");	
-		
+		System.out.println(submit);
+		try {
+			
+			GestoreFile load = new GestoreFile();
+			String[] datidb = load.DBSettings();
+			DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+			
 		// INSERT ISTRUTTORE
 		if(submit.equals("INSERT_ISTRUTTORE")) {
 	try {
-		DBManager db = new DBManager();
+	//	DBManager db = new DBManager();
 		String id = request.getParameter("IdIstruttore");
 		String nome = request.getParameter("Nome");
 		String cognome = request.getParameter("Cognome");
@@ -324,9 +339,9 @@ public class Gestore extends HttpServlet {
 		String desc = request.getParameter("Descrizione");
 		int p = Integer.parseInt(prezzo);
 		Corso c = new Corso(nome,p,desc);
-		DBManager db;
+	//	DBManager db;
 		try {
-			db = new DBManager();
+	//		db = new DBManager();
 			db.insertCorso(c);
 			request.getSession().removeAttribute("ELENCO_CORSI");
 			ArrayList<Corso> corsi = new ArrayList<Corso>();
@@ -354,7 +369,7 @@ public class Gestore extends HttpServlet {
 		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec);
 		System.out.println(ab.toString());
 		try {
-		DBManager db = new DBManager();
+	//	DBManager db = new DBManager();
 		db.insertAbbonamento(ab);
 		request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
 		ArrayList<abbonamento> abbonamenti = db.allAbbonamenti();
@@ -399,7 +414,7 @@ public class Gestore extends HttpServlet {
 		String datan = request.getParameter("DataDiNascita");
 		Utente soc = new Utente(codf, nome, cognome, tel,s,datan,"","","","S");
 		try {
-			DBManager db = new DBManager();
+		//	DBManager db = new DBManager();
 			db.insertSocio(soc);
 			request.getSession().removeAttribute("ELENCO_SOCI");
 			ArrayList<Utente> soci = db.allSocio();
@@ -424,7 +439,7 @@ public class Gestore extends HttpServlet {
 		int id1 = Integer.parseInt(id);
 		allenamento al = new allenamento(id1, data, nomec, ids,t);
 		try {
-			DBManager db = new DBManager();
+		//	DBManager db = new DBManager();
 			db.insertAllenamento(al);
 			request.getSession().removeAttribute("ELENCO_ALLENAMENTI");
 			ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
@@ -451,8 +466,8 @@ public class Gestore extends HttpServlet {
 		    		request.getParameter("Sesso"),
 		    		request.getParameter("DataNascita"),"","","","");
 		    
-		    	DBManager db;
-		    	db = new DBManager();
+		    //	DBManager db;
+		   // 	db = new DBManager();
 		    	System.out.println(c.toString()+" nella servlet");
 		    	db.updateSocio(c);
 		    	request.getSession().removeAttribute("ELENCO_SOCI");
@@ -464,6 +479,11 @@ public class Gestore extends HttpServlet {
 		    catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
+		}
+		}catch (Exception e) {
+			String errore = "ERRORE ALL AVVIO DEL DB";
+			request.getSession().setAttribute("ERROR",errore);
+			response.sendRedirect("errore.jsp");
 		}
 }
 }

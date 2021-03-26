@@ -46,9 +46,10 @@ public class login extends HttpServlet {
 		boolean esito=false;
 		PrintWriter out =response.getWriter();
 	//77
-		DBManager db = null;
 			 try {
-				  db = new DBManager();
+					GestoreFile load = new GestoreFile();
+					String[] datidb = load.DBSettings();
+					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 				 esito =db.Login(username, password);
 				 if(esito==true) {
 					 request.getSession().setAttribute("username",username);

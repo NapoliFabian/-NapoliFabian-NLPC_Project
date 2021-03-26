@@ -43,42 +43,15 @@ public class Startsl extends HttpServlet {
 			int mese =  dat.getMonth()+1;
 			int anno = dat.getYear()+1900;
 			int g=dat.getDate();
-			//InputStream input = getClass().getResourceAsStream("dbconf.txt");
 			String data = anno+"-"+mese+"-"+g;
-			DBManager db = new DBManager();
+			GestoreFile load = new GestoreFile();
+			String[] datidb = load.DBSettings();
+			DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 			db.aggiornaAbbonamenti(data);
-			//System.out.println(System.getProperty("user.dir"));
 			UpdateAbbornamenti aggiorna = new UpdateAbbornamenti();
-			String email = null;
-			/*try {
-				URL percorso = getServletContext().geta
-				//String percorso=".config";
-				String file = String.valueOf(percorso);
-				System.out.println(percorso);
-			//File file = new File(percorso+"/dbconf.txt");
-			FileReader fr = new FileReader(file);
-			BufferedReader br = new BufferedReader(fr);
-			email = br.readLine();
-			System.out.println("Nel file ho letto:"+ email);
-			br.close();
-			} catch(IOException e) {
-			System.out.println(e.getMessage());
-			}
-			catch (Exception e) {
-				System.out.println(e.getMessage());
-			}*/
-			try {
-				System.out.println(System.getProperty("user.dir"));
-				//System.out.println(new File("").getCanonicalPath());
-				File file = new File("src/it/meucci/prova2.txt");
-				file.createNewFile();
-				System.out.println("File creato");
-			} catch (Exception e) {
-				System.out.println(e.getMessage());
-			}
 			aggiorna.start();
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage()+e.getStackTrace()+e.getCause()+e.getLocalizedMessage());
 		}
 		
 	}

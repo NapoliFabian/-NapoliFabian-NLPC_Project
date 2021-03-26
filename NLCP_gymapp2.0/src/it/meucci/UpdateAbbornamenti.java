@@ -4,11 +4,12 @@ import java.util.Date;
 
 public class UpdateAbbornamenti extends Thread implements Runnable{
 public void run() {
-	DBManager db;
 	try {
 		while(true) {
 		System.out.println("Aggiornamento abbonamenti in corso");
-		db = new DBManager();
+		GestoreFile load = new GestoreFile();
+		String[] datidb = load.DBSettings();
+		DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 		Date dat = new Date();
 		//Restituzione delle informazioni
 		int mese =  dat.getMonth()+1;
