@@ -30,7 +30,7 @@
 				<th>DATA</th>
 				<th>NOME CORSO</th>
 				<th>DURATA ALLENAMENTO</th>
-				<th>
+				<th colspan="3">
 				<a href = "insertAllenamento.jsp"><img src=img/add.png height="30" width="30"></a> 
 				</th>
 			</tr>
