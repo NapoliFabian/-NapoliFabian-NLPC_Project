@@ -5,28 +5,17 @@
 <head>
 <%Utente is = (Utente)session.getAttribute("ISTRUTTORE_ELIMINA"); %>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<link href="css/confermais.css" rel="stylesheet"  type="text/css">
+<title>eliminazione istruttore</title>
+
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
+<div class="centrale">
+<div class="righe">
 
-<<<<<<< HEAD
+<img src="img\icona.png" width="100" height="70">
+<h1>GYM APP</h1>
 <h1>Eliminare <%=is.getNome()%> <%=is.getCognome()%> dal database?</h1>
-<a href="Gestore?cmd=confermais"><input type="submit" value="SI"></a>    <a href="Gestore?cmd=noelis"><input type="submit" value="NO"></a>
-=======
-<div class="header">
-<div class="icon">
-
-<img src="img\nuovaicona.png" width="100" height="70">
-
-</div>
-<div class="logo">
-    <h1 class="titolo">GYM APP </h1>
-    </div>
-</div>
-
-
-<h1 class="">Eliminare <%=is.getNome()%> <%=is.getCognome()%> dal database?</h1>
-<a href="Gestore?cmd=confermais"><button class="btn" input type="submit" value="SI" >SI</button></a>    <a href="Gestore?cmd=noelis"><button class="btn" input type="submit" value="NO">NO</button></a>
->>>>>>> branch 'master20' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
+<a href="Gestore?cmd=confermais"><input type="submit" class="bottoni" value="SI"></a>    <a href="Gestore?cmd=noelis"><input type="submit" class="bottone" value="NO"></a>
 </body>
 </html>

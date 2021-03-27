@@ -18,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class StampaClientiPDFServlet
  */
-@WebServlet("/pdfclienti")
+
+@WebServlet("/pdfabbonamenti")
 public class PdfAbbonamentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
