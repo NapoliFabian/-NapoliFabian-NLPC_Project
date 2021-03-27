@@ -18,8 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class StampaClientiPDFServlet
  */
+<<<<<<< HEAD
 
 @WebServlet("/pdfabbonamenti")
+=======
+@WebServlet("/pdfabbonamento")
+>>>>>>> branch 'master20' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 public class PdfAbbonamentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,7 +39,7 @@ public class PdfAbbonamentoServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		/*// TODO Auto-generated method stub
 		PdfManager pdf;
 		ArrayList<Scheda> elenco = new ArrayList<Scheda>();
 		elenco = (ArrayList<Scheda>)(request.getSession().getAttribute("ELENCO_CLIENTI"));
@@ -80,7 +84,7 @@ public class PdfAbbonamentoServlet extends HttpServlet {
 			baos.close();
 			is.close();
 		}
-	}
+	}*/
 }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

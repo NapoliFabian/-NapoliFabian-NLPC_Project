@@ -58,7 +58,7 @@
  </div>
  </form>
  <div class="link"><center>
- 	<a href="Istruttore.jsp"><button>Elenco Istruttori</button></a>
+ 	<a href="Corso.jsp"><button>Elenco Corsi</button></a>
  	<a href="dashboard.html"><button>Home</button></a></center>
  </div>
  

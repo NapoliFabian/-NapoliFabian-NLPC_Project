@@ -1,5 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%
+ArrayList<Utente> soci = new ArrayList<Utente>();
+ArrayList<Corso> corsi = new ArrayList<Corso>();
+try {
+	GestoreFile load = new GestoreFile();
+	String[] datidb = load.DBSettings();
+	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+	soci= db.allSocio();	
+	corsi = db.allCorsi();
+} catch (Exception e) {
+	System.out.println(e.getMessage());
+}
+
+%>
+
 
 <!DOCTYPE html>
 <html>
@@ -34,27 +50,39 @@
  </tr>
 -->
   <tr>
-	<th>Id allenamento</th>
+	<th>ID ALLENAMENTO</th>
 	<th><input type="text" name="idAllenamento" required ></th>
  </tr>
  
   <tr>
-	<th>Data allenamento</th>
+	<th>DATA ALLENAMENTO</th>
 	<th><input type="date" name="dataAllenamento" required "></th>
  </tr>
  
   <tr>
-	<th>Nome del corso</th>
-	<th><input type="text" name="nomeCorso" required ></th>
+	<th>CORSO</th>
+	<th><select name="NomeCorso">
+	<%for(int i=0;i<corsi.size();i++){
+		Corso c = corsi.get(i);
+		%>
+		<option value="<%=c.getNomecorso()%>"><%=c.getNomecorso()%></option>
+	<%} %>
+	</select></th>
  </tr>
  
   <tr>
-	<th>Id istruttore</th>
-	<th><input type="text" name="idIstruttore" required ></th>
+  <th>ISTRUTTORE</th>
+	<th><select name="codf">
+	<%for(int i=0;i<soci.size();i++){
+		Utente s = soci.get(i);
+		%>
+		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
+	<%} %>
+	</select></th>
  </tr>
  
   <tr>
-	<th>Durata allenamento</th>
+	<th>DURATA ALLENAMENTO</th>
 	<th><input type="text" name="durataAllenamento" ></th>
  </tr>
 
@@ -68,7 +96,7 @@
  </form>
     <div class="link"><center>
  	<a href="allenamento.jsp"><button>Elenco Allenamenti</button></a>
- 	<a href="dashboard.html"><button>Home</button></a></center>
+ 	<a href="dashboard.jsp"><button>Home</button></a></center>
  </div>
 </body>
 </html>

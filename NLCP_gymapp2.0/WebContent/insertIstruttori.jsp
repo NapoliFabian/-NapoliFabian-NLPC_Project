@@ -81,7 +81,7 @@
  </form>
  <div class="link"><center>
  	<a href="Istruttore.jsp"><button>Elenco Istruttori</button></a>
- 	<a href="dashboard.html"><button>Home</button></a></center>
+ 	<a href="dashboard.jsp"><button>Home</button></a></center>
  </div>
  
  

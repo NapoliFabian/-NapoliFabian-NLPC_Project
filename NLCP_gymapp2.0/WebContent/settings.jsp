@@ -49,16 +49,21 @@ margin:0px;
 <title>IMPOSTAZIONI</title>
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
+<%
+String color = (String)session.getAttribute("color");
+String nomeapp = (String)session.getAttribute("nomeapp");
+%>
 <header>
 <a style="float:left" href="optionpage.html"><img src=img/back.png height="50" width="50"></a>
 <h1>PERSONALIZZAZIONE</h1>
 </header>
 <br>
 <br>
+<form action="changer" method="GET">
 <div class="impostazioni">
 <div class="box">
-<center><h2>COLORE HEADER TABELLA: <select name="color_theme">
-<option value="GOLD">GIALLO ORO</option>
+<center><h2>COLORE TEMA: <select name="color_change">
+<option value="gold">GIALLO ORO</option>
 <option value="#66ff66">VERDE</option>
 <option value="#05DBFA">AZZURRO</option>
 </select></h2></center>
@@ -67,9 +72,11 @@ margin:0px;
 <br>
 <div class="box">
 <center>
-<h2>NOME APP:<input type="text" name="app_name"></h2>
+<h2>NOME APP:<input type="text" name="title_change" value=<%=nomeapp%>></h2>
 </center>
 </div>
 </div>
+<input type="submit" value="invia00">
+</form>
 </body>
 </html>

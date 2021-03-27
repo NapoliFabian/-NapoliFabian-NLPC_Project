@@ -35,7 +35,7 @@ public class PdfSchedaServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	/*	// TODO Auto-generated method stub
 		PdfManager pdf;
 		ArrayList<Scheda> elenco = new ArrayList<Scheda>();
 		elenco = (ArrayList<Scheda>)(request.getSession().getAttribute("ELENCO_CLIENTI"));
@@ -80,7 +80,7 @@ public class PdfSchedaServlet extends HttpServlet {
 			baos.close();
 			is.close();
 		}
-	}
+	}*/
 }
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

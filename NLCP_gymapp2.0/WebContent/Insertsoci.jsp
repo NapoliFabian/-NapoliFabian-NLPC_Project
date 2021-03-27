@@ -82,7 +82,7 @@
  </form>
  <div class="link"><center>
  	<a href="socio.jsp"><button>Elenco Soci</button></a>
- 	<a href="dashboard.html"><button>Home</button></a></center>
+ 	<a href="dashboard.jsp"><button>Home</button></a></center>
  </div>
  
  
