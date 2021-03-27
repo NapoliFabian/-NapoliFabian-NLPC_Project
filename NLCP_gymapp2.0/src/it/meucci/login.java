@@ -52,6 +52,11 @@ public class login extends HttpServlet {
 					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 					request.getSession().setAttribute("urldb", datidb[0]);
 					request.getSession().setAttribute("userdb", datidb[1]);
+					String datiapp[] = load.getConfig();
+					System.out.println(datiapp[2]);
+					request.getSession().setAttribute("color", datiapp[0]);
+					request.getSession().setAttribute("nomeapp", datiapp[2]);
+				//	String[] parole = load.readLan("");
 					String pw = datidb[2];
 					String pwstatus="";
 					if(pw.equals("")) {

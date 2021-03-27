@@ -5,9 +5,25 @@
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"/>
 <meta charset="ISO-8859-1">
+<%
+String color = (String)session.getAttribute("color");
+%>
+<style>
+
+.centrale .botton{
+border: 0px;
+color: black;
+width: 230px;
+height: 70px;
+opacity: 100%;
+background-color: <%=color%>;
+}
+
+</style>
 <title>DASHBOARD</title>
 <%
 String username = (String)session.getAttribute("username");
+String nomeapp = (String)session.getAttribute("nomeapp");
 if(username!=null){
 	%>
 </head>
@@ -19,7 +35,7 @@ if(username!=null){
 <img src="img\nuovaicona.png" width="100" height="70">
 </div>
 <div class="logo">
-    <h1 class="titolo">GYM APP</h1>
+    <h1 class="titolo"><%=nomeapp%></h1>
     </div>
 <div style="padding-top:30px;
     width: 10%;
