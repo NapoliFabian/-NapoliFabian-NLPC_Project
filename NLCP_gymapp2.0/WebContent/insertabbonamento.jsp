@@ -9,8 +9,9 @@
 ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
 try {
-	DBManager db;
-	db = new DBManager();
+	GestoreFile load = new GestoreFile();
+	String[] datidb = load.DBSettings();
+	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 	soci= db.allSocio();	
 	corsi = db.allCorsi();
 } catch (Exception e) {

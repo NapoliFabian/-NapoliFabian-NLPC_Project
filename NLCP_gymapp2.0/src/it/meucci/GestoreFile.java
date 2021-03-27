@@ -15,13 +15,14 @@ public class GestoreFile {
 	private String default_config;
 	private String db_settings;
 	public GestoreFile() {
+	//PERCORSO NAPOLI
 		this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 	}
 	
 	public String[] DBSettings() throws IOException {
 		 System.out.println("Leggo dati del db.....");
-		 Properties prop = readPropertiesFile(db_settings);
+		 Properties prop = readDB_Settings(db_settings);
 	      String[] dati;
 	      dati = new String[3];
 	      dati[0] = prop.getProperty("IP_DB");
@@ -30,8 +31,12 @@ public class GestoreFile {
 	      System.out.println("Lettura effettuata");
 	      return dati;
 	}
+/*	public String[] DefaultConfig() {
+		
+		
+	};*/
 
-public static Properties readPropertiesFile(String streamOfString) throws IOException {
+public static Properties readDB_Settings(String streamOfString) throws IOException {
     FileInputStream fis = null;
     Properties prop = null;
     try {
