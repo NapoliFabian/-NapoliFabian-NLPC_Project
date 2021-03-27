@@ -38,6 +38,7 @@ public class Startsl extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		System.out.println("Init Servlet partita");
 		try {
+			
 			System.out.println("Controllo abbonamenti in corso......");
 			Date dat = new Date();
 			//Restituzione delle informazioni
@@ -48,7 +49,6 @@ public class Startsl extends HttpServlet {
 			GestoreFile load = new GestoreFile();
 			String[] datidb = load.DBSettings();
 			DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
-			
 			db.aggiornaAbbonamenti(data);
 			UpdateAbbornamenti aggiorna = new UpdateAbbornamenti();
 			aggiorna.start();
