@@ -24,7 +24,7 @@
     <div class="table-users">
         <div class="header">ALLENAMENTI</div>
         
-        <table cellspacing="0">
+        <table cellspacing="0"><!--  -->
 			<tr>
 				<th>ID</th>
 				<th>DATA</th>

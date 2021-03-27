@@ -41,17 +41,27 @@ public class login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 	
-	//	System.out.println(email+" "+password);
+		System.out.println(username+" "+password);
 		
 		boolean esito=false;
-		PrintWriter out =response.getWriter();
+		//PrintWriter out =response.getWriter();
 	//77
 			 try {
 					GestoreFile load = new GestoreFile();
+					System.out.println("1");
 					String[] datidb = load.DBSettings();
 					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+					System.out.println("1");
 					request.getSession().setAttribute("urldb", datidb[0]);
 					request.getSession().setAttribute("userdb", datidb[1]);
+					System.out.println("1");
+					String datiapp[] = load.getConfig();
+					System.out.println(datiapp[2]);
+					System.out.println("1");
+					request.getSession().setAttribute("color", datiapp[0]);
+					request.getSession().setAttribute("nomeapp", datiapp[2]);
+					System.out.println("1");
+				//	String[] parole = load.readLan("");
 					String pw = datidb[2];
 					String pwstatus="";
 					if(pw.equals("")) {
