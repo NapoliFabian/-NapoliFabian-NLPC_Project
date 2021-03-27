@@ -37,8 +37,18 @@ public class GestoreFile {
 		return config;
 		
 	}
-	public void setConfig(String colore,String titolo)throws IOException {
-		
+	public String[] setConfig(String colore,String titolo)throws IOException {
+		OutputStream output = new FileOutputStream(default_config);
+		String[] vet;
+		vet = new String[2];
+		vet[0] = colore;
+		vet[1] = titolo;
+		Properties prop = new Properties();
+		prop.setProperty("color_theme",colore);
+        prop.setProperty("app_name", titolo);
+        prop.store(output, null);
+        System.out.println("Cambiamenti effettuati");
+        return vet;
 	}
 	public String[] DBSettings() throws IOException {
 		 System.out.println("Leggo dati del db.....");

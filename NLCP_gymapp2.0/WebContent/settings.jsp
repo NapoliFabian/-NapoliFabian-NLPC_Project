@@ -76,7 +76,7 @@ String nomeapp = (String)session.getAttribute("nomeapp");
 </center>
 </div>
 </div>
-<input type="submit" value="invia">
+<input type="submit" value="invia00">
 </form>
 </body>
 </html>
