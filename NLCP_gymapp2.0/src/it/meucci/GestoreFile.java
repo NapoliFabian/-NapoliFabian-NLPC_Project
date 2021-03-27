@@ -15,19 +15,15 @@ public class GestoreFile {
 	private String default_config;
 	private String db_settings;
 	public GestoreFile() {
+		//PERCORSO C
+		/*this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";*/
 
-		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+    //percorso f
+	this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+	this.default_config ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 
-		// creata da fb
-		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-
-	//PERCORSO NAPOLI
-		this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
- branch 'master20' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
-		this.default_config ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-		*/
-	//a	
+		
 	}
 	public String[] getConfig() throws IOException {
 		System.out.println("Leggo dati conf");
@@ -39,6 +35,9 @@ public class GestoreFile {
 		config[1] = prop.getProperty("language");
 		config[2] = prop.getProperty("app_name");
 		return config;
+		
+	}
+	public void setConfig(String colore,String titolo)throws IOException {
 		
 	}
 	public String[] DBSettings() throws IOException {
@@ -110,7 +109,7 @@ public static Properties readDB_Settings(String streamOfString) throws IOExcepti
     } catch(IOException ioe) {
        ioe.printStackTrace();
     } finally {
-       fis.close();
+     fis.close();
     }
     return prop;
  }
@@ -128,7 +127,7 @@ public static Properties readConfig(String pathfile) throws IOException
     } catch(IOException ioe) {
        ioe.printStackTrace();
     } finally {
-       fis.close();
+     fis.close();
     }
     return prop;
 }

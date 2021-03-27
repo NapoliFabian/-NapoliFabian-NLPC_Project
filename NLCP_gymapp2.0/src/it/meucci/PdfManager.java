@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.apache.pdfbox.pdmodel.PDDocument;
+/*import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -13,9 +13,9 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 import be.quodlibet.boxable.*;
 import be.quodlibet.boxable.line.LineStyle;
-
+*/
 public class PdfManager {
-	
+/*	
 	public PdfManager() throws Exception {
 		System.out.println("Stampa Eseguita");
 	}
@@ -245,5 +245,5 @@ public void stampaElencoAbbonamenti (ArrayList<abbonamento> elenco) throws Excep
 	    // Save the results and ensure that the document is properly closed:
 		document.save(outputFileName);
 		document.close();
-	}
+	}*/
 }

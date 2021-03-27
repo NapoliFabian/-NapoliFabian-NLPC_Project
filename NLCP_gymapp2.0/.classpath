@@ -11,12 +11,5 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/boxable-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/commons-csv-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/fontbox-2.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/guava-18.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/pdfbox-2.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Samuel/Desktop/slf4j-api-1.7.10.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
