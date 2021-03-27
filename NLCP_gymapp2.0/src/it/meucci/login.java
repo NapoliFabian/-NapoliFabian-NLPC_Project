@@ -51,7 +51,16 @@ public class login extends HttpServlet {
 					String[] datidb = load.DBSettings();
 					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 					request.getSession().setAttribute("urldb", datidb[0]);
-					request.getSession().setAttribute("user", datidb[1]);
+					request.getSession().setAttribute("userdb", datidb[1]);
+					String pw = datidb[2];
+					String pwstatus="";
+					if(pw.equals("")) {
+						pwstatus ="NO";
+					}
+					if(pw.length()>0) {
+						pwstatus ="YES";
+					}
+					request.getSession().setAttribute("pwdb", pwstatus);
 				 esito =db.Login(username, password);
 				 if(esito==true) {
 					 request.getSession().setAttribute("username",username);
