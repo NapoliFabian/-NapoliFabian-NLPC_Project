@@ -25,9 +25,9 @@ public class GestoreFile {
 		this.default_config ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 		*/
 		
-		/*this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+		this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-		*/
+		
 	}
 	
 	public String[] DBSettings() throws IOException {

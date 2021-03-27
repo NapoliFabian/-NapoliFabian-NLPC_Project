@@ -90,7 +90,7 @@ try {
  </form>
     <div class="link"><center>
  	<a href="abbonamento.jsp"><button>Elenco Abbonamenti</button></a>
- 	<a href="dashboard.html"><button>Home</button></a></center>
+ 	<a href="dashboard.jsp"><button>Home</button></a></center>
  </div>
 </body>
 </html>
