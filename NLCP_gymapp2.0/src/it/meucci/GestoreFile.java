@@ -16,7 +16,7 @@ public class GestoreFile {
 	private String db_settings;
 	public GestoreFile() {
 
-		
+		// creata da fb
 		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 
 	//PERCORSO NAPOLI
