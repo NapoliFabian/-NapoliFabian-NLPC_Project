@@ -50,6 +50,8 @@ public class login extends HttpServlet {
 					GestoreFile load = new GestoreFile();
 					String[] datidb = load.DBSettings();
 					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+					request.getSession().setAttribute("urldb", datidb[0]);
+					request.getSession().setAttribute("user", datidb[1]);
 				 esito =db.Login(username, password);
 				 if(esito==true) {
 					 request.getSession().setAttribute("username",username);

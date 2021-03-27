@@ -37,6 +37,7 @@ public class Gestore extends HttpServlet {
 		GestoreFile load = new GestoreFile();
 		String[] datidb = load.DBSettings();
 		DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+		
 		//STAMPA ISTRUTTORI
 		if(cmd.equals("allis")) {
 			ArrayList<Utente> istruttori = new ArrayList<Utente>();

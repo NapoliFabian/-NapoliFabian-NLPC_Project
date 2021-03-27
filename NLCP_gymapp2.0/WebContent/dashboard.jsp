@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+<link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"/>
 <meta charset="ISO-8859-1">
 <title>DASHBOARD</title>
 <%
@@ -12,16 +12,24 @@ if(username!=null){
 	%>
 </head>
 <body style="background-image: url(images/bg-00.jpg);">
-<div class="header">
+<header style="   width:100%;
+    height: 100px;
+    background-color: #696969;">
 <div class="icon">
-
 <img src="img\nuovaicona.png" width="100" height="70">
-
 </div>
 <div class="logo">
     <h1 class="titolo">GYM APP</h1>
     </div>
+<div style="padding-top:30px;
+    width: 10%;
+    height: 100%;
+    float: right;
+    padding: 16px;">
+<a href="optionpage.html"><img src="img\imp.png" width="50" height="50"></a>
 </div>
+ 
+</header>
 <div class="centrale">
     <center>
     <br>

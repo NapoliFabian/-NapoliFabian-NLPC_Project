@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Vector;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,6 +48,7 @@ public class Startsl extends HttpServlet {
 			GestoreFile load = new GestoreFile();
 			String[] datidb = load.DBSettings();
 			DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+			
 			db.aggiornaAbbonamenti(data);
 			UpdateAbbornamenti aggiorna = new UpdateAbbornamenti();
 			aggiorna.start();
