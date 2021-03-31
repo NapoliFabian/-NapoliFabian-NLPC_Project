@@ -56,15 +56,17 @@ public class GestoreFile {
 		return config;
 		
 	}
-	public String[] setConfig(String colore,String titolo)throws IOException {
+	public String[] setConfig(String colore,String titolo,String lang)throws IOException {
 		OutputStream output = new FileOutputStream(default_config);
 		String[] vet;
-		vet = new String[2];
+		vet = new String[3];
 		vet[0] = colore;
 		vet[1] = titolo;
+		vet[2] = lang;
 		Properties prop = new Properties();
 		prop.setProperty("color_theme",colore);
         prop.setProperty("app_name", titolo);
+        prop.setProperty("language", lang);
         prop.store(output, null);
         System.out.println("Cambiamenti effettuati");
         return vet;

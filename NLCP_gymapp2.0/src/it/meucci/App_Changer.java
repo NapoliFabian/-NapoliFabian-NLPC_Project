@@ -28,11 +28,13 @@ public class App_Changer extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String color=request.getParameter("color_change");
 		String title = request.getParameter("title_change");
+		String language = request.getParameter("lang");
 		GestoreFile load = new GestoreFile();
 		try {
-			String[] vet =load.setConfig(color, title);
+			String[] vet =load.setConfig(color, title,language);
 			request.getSession().removeAttribute("color");
 			request.getSession().removeAttribute("nomeapp");
+			request.getSession().removeAttribute("lang");
 			request.getSession().setAttribute("color", vet[0]);
 			request.getSession().setAttribute("nomeapp",vet[1]);
 			response.sendRedirect("settings.jsp");

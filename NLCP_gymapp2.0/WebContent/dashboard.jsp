@@ -55,9 +55,9 @@ if(username!=null){
     <br>
 </center>
 <center><img src="img\usericon.png" width="100" height="70"></center>
-<center style="padding-top: 4%;"><a href="Gestore?cmd=allsoc"><button class="botton">SOCI</button></a>  <a href="Gestore?cmd=allis"><button class="botton">ISTRUTTORI</button></a></center>
+<center style="padding-top: 4%;"><a href="Gestore?cmd=allsoc"><button class="botton"><%=lang[1]%></button></a>  <a href="Gestore?cmd=allis"><button class="botton"><%=lang[2]%></button></a></center>
 <br>
-<center><a href="Gestore?cmd=allabb"><button class="botton">ABBONAMENTI</button></a>   <a href="Gestore?cmd=allal"><button class="botton">ALLENAMENTI</button></a></center>
+<center><a href="Gestore?cmd=allabb"><button class="botton"><%=lang[3]%></button></a>   <a href="Gestore?cmd=allal"><button class="botton"><%=lang[4]%></button></a></center>
 <br>
 <center><a href="Gestore?cmd=allco"><button class="botton">CORSI</button></a>   <a><button class="botton">SCHEDE</button></a></center>
 <br>
