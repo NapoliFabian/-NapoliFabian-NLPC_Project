@@ -67,7 +67,7 @@ public class DBManager {
 
 	
 	public ArrayList<allenamento> allAllenamenti() throws SQLException {
-		String cmd = "select * from Allenamento";
+		String cmd = "select * from allenamento";
 		ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
 		rs=query.executeQuery(cmd);
 		allenamento l;
@@ -179,7 +179,7 @@ public class DBManager {
 		rs = query.executeQuery(cmd);
 		abbonamento b;
 		while(rs.next()) {
-			b = new abbonamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			b = new abbonamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
 			abbonamenti.add(b);
 		}
 		rs.close();
