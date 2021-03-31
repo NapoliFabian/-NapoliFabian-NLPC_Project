@@ -77,10 +77,10 @@ public class GestoreFile {
 	      System.out.println("Lettura effettuata");
 	      return dati;
 	}
-	public String[] readLan(String path) throws IOException {
+	public String[] readLan(String language) throws IOException {
 		System.out.println("Leggo dati lingua");	
 		int max = 32;
-		Properties prop = readConfig("");
+		Properties prop = readConfig(language);
 		String[] config;
 		config = new String[max];
 		config[0] = prop.getProperty("WELCOME_MESSAGE");
@@ -140,8 +140,9 @@ public static Properties readDB_Settings(String streamOfString) throws IOExcepti
     return prop;
  }
 
-public static Properties readConfig(String pathfile) throws IOException
+public static Properties readConfig(String lang) throws IOException
 {
+	String pathfile = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+lang+".properties";
     FileInputStream fis = null;
     Properties prop = null;
     try {

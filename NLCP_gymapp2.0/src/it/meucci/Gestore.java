@@ -435,7 +435,7 @@ public class Gestore extends HttpServlet {
 		//String id = request.getParameter("idAllenamento");
 		String data = request.getParameter("dataAllenamento");
 		String nomec = request.getParameter("nomeCorso");
-		String ids = request.getParameter("idIstruttore");
+		String ids = request.getParameter("codf");
 		String t = request.getParameter("durataAllenamento");
 		//int id1 = Integer.parseInt(id);
 		allenamento al = new allenamento(0, data, nomec, ids,t);

@@ -59,7 +59,9 @@ public class login extends HttpServlet {
 					System.out.println(datiapp[2]);
 					System.out.println("1");
 					request.getSession().setAttribute("color", datiapp[0]);
-					request.getSession().setAttribute("nomeapp", datiapp[2]);
+					//request.getSession().setAttribute("lang",datiapp[1]);
+					String[] scritte= load.readLan(datiapp[1]);
+					request.getSession().setAttribute("lang",scritte);
 					System.out.println("1");
 				//	String[] parole = load.readLan("");
 					String pw = datidb[2];

@@ -261,7 +261,7 @@ public class DBManager {
 	{
 		System.out.println(c.toString()+" nel db");
 		String cmd;
-		cmd = "update Utente set nome=?,cognome=?,telefono=?,sesso=?,datanascita=? where Utente.codf='"+c.getCodf()+"'";
+		cmd = "update utente set nome=?,cognome=?,telefono=?,sesso=?,datanascita=? where Utente.codf='"+c.getCodf()+"'";
 		    PreparedStatement psc;
 		    psc = connessione.prepareStatement(cmd);
 			
