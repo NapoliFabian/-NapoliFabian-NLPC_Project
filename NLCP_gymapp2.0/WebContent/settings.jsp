@@ -62,11 +62,14 @@ String nomeapp = (String)session.getAttribute("nomeapp");
 <form action="changer" method="GET">
 <div class="impostazioni">
 <div class="box">
-<center><h2>COLORE TEMA: <select name="color_change">
+<center><h2>COLORE TEMA: <select name="color_change" default="<%=color%>">
 <option value="gold">GIALLO ORO</option>
 <option value="#66ff66">VERDE</option>
 <option value="#05DBFA">AZZURRO</option>
-</select></h2></center>
+</select></h2>
+<br>
+<h2>COLORE ATTUALE <strong color="<%=color%>"><%=color %></strong></h2>
+</center>
 </div>
 <br>
 <br>
@@ -75,8 +78,8 @@ String nomeapp = (String)session.getAttribute("nomeapp");
 <h2>NOME APP:<input type="text" name="title_change" value=<%=nomeapp%>></h2>
 </center>
 </div>
+<input type="submit" value="invia">
 </div>
-<input type="submit" value="invia00">
 </form>
 </body>
 </html>

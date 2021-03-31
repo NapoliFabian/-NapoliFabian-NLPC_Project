@@ -10,18 +10,28 @@ public class abbonamento {
 	private String  fine;
 	private String codf;
 	private String nomecorso;
+	private String stato;
 	
 	public abbonamento() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public abbonamento(int idabbonamento,String inizio,String fine,String codf,String nomecorso) {
+	public abbonamento(int idabbonamento,String inizio,String fine,String codf,String nomecorso,String stato) {
 		
 		this.idabbonamento = idabbonamento;
 		this.inizio = inizio;
 		this.fine = fine;
 		this.codf = codf;
 		this.nomecorso = nomecorso;
+		this.stato = stato;
+	}
+
+	public String getStato() {
+		return stato;
+	}
+
+	public void setStato(String stato) {
+		this.stato = stato;
 	}
 
 	public int getIdabbonamento() {

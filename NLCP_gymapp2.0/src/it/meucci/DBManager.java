@@ -67,7 +67,7 @@ public class DBManager {
 
 	
 	public ArrayList<allenamento> allAllenamenti() throws SQLException {
-		String cmd = "select * from Allenamento";
+		String cmd = "select * from allenamento";
 		ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
 		rs=query.executeQuery(cmd);
 		allenamento l;
@@ -179,14 +179,14 @@ public class DBManager {
 		rs = query.executeQuery(cmd);
 		abbonamento b;
 		while(rs.next()) {
-			b = new abbonamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			b = new abbonamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6));
 			abbonamenti.add(b);
 		}
 		rs.close();
 		return abbonamenti;
 	}
 	public void insertAbbonamento(abbonamento ab) throws SQLException {
-		String cmd = "insert into abbonamento values(?,?,?,?,?,?)";
+		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values";
 		PreparedStatement ps = connessione.prepareStatement(cmd);
 		String stato = "1";
 		ps.setInt(1,ab.getIdabbonamento());
@@ -233,7 +233,7 @@ public class DBManager {
 	}	
 	}
 	public void insertAllenamento(allenamento al) throws SQLException {
-		String comando = "insert into allenamento values(?,?,?,?,?)";
+		String comando = "insert into allenamento (dataallenamento,durata,Nomecorso,Ids)values";
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		ps.setInt(1,al.getIdallenamento());
 		ps.setString(2,al.getDataallenamento());
