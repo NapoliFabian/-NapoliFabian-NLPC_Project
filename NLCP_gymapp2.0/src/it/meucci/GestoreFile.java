@@ -28,13 +28,13 @@ public class GestoreFile {
 */
 		
 
-
+/*
 		
 		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-	
-		
-		
+	*/
+		this.db_settings = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/dbsettings.properties";
+		this.default_config ="/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/defaultconf.properties";
 		
 		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 
@@ -84,7 +84,7 @@ public class GestoreFile {
 	public String[] readLan(String language) throws IOException {
 		System.out.println("Leggo dati lingua");	
 		int max = 32;
-		Properties prop = readConfig(language);
+		Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
 		String[] config;
 		config = new String[max];
 		config[0] = prop.getProperty("WELCOME_MESSAGE");
@@ -144,9 +144,25 @@ public static Properties readDB_Settings(String streamOfString) throws IOExcepti
     return prop;
  }
 
-public static Properties readConfig(String lang) throws IOException
+public static Properties readConfig(String pathfile) throws IOException
 {
-	String pathfile = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+lang+".properties";
+    FileInputStream fis = null;
+    Properties prop = null;
+    try {
+       fis = new FileInputStream(pathfile);
+       prop = new Properties();
+       prop.load(fis);
+    } catch(FileNotFoundException fnfe) {
+       fnfe.printStackTrace();
+    } catch(IOException ioe) {
+       ioe.printStackTrace();
+    } finally {
+     fis.close();
+    }
+    return prop;
+}
+public static Properties readLanguage(String pathfile) throws IOException
+{
     FileInputStream fis = null;
     Properties prop = null;
     try {
