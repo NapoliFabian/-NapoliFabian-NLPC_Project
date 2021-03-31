@@ -60,7 +60,7 @@ public class login extends HttpServlet {
 					System.out.println("1");*/
 					System.out.println("Lingua"+datiapp[1]);
 					request.getSession().setAttribute("color", datiapp[0]);
-					//request.getSession().setAttribute("lang",datiapp[1]);
+					request.getSession().setAttribute("lang",datiapp[1]);
 					String[] scritte= load.readLan(datiapp[1]);
 					request.getSession().setAttribute("lang",scritte);
 					System.out.println("1");
