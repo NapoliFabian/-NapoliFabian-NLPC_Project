@@ -69,6 +69,7 @@ public class GestoreFile {
         System.out.println("Cambiamenti effettuati");
         return vet;
 	}
+	//
 	public String[] DBSettings() throws IOException {
 		 System.out.println("Leggo dati del db.....");
 		 Properties prop = readDB_Settings(db_settings);
