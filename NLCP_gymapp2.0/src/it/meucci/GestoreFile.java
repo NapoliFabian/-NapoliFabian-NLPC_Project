@@ -84,9 +84,8 @@ public class GestoreFile {
 	public String[] readLan(String language) throws IOException {
 		System.out.println("Leggo dati lingua");	
 		int max = 32;
-		Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
-
-		//Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
+		
+		Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
 		String[] config;
 		config = new String[max];
 		config[0] = prop.getProperty("WELCOME_MESSAGE");
