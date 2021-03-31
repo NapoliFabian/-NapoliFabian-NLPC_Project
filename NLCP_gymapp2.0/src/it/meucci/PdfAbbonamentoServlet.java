@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class StampaClientiPDFServlet
  */
-<<<<<<< HEAD
+
 
 @WebServlet("/pdfabbonamenti")
-=======
+
 @WebServlet("/pdfabbonamento")
->>>>>>> branch 'master20' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
+
 public class PdfAbbonamentoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
