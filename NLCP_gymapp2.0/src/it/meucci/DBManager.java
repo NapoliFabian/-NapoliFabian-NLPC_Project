@@ -186,7 +186,7 @@ public class DBManager {
 		return abbonamenti;
 	}
 	public void insertAbbonamento(abbonamento ab) throws SQLException {
-		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values";
+		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values";// cambiato abbonamento
 		PreparedStatement ps = connessione.prepareStatement(cmd);
 		String stato = "1";
 		ps.setInt(1,ab.getIdabbonamento());
