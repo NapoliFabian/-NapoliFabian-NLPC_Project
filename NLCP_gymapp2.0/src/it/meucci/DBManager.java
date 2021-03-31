@@ -107,7 +107,7 @@ public class DBManager {
 	}
 	public String insertIstruttore(Utente is) throws SQLException {
 		String ris = "n";
-		String comando = "insert into Utente values(?,?,?,?,?,?,?,?,?,?)";
+		String comando = "insert into utente values(?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		ps.setString(1,is.getCodf());
 		ps.setString(2,is.getNome());
@@ -142,7 +142,7 @@ public class DBManager {
 		return ris;
 	}
 	public int insertCorso(Corso c) throws SQLException {
-		String comando = "insert into Corso values(?,?,?)";
+		String comando = "insert into corso values(?,?,?)";
 		int ris =0;
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		ps.setString(1, c.getNomecorso());
@@ -189,12 +189,11 @@ public class DBManager {
 		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values";// cambiato abbonamento
 		PreparedStatement ps = connessione.prepareStatement(cmd);
 		String stato = "1";
-		ps.setInt(1,ab.getIdabbonamento());
-		ps.setString(2,ab.getInizio());
-		ps.setString(3,ab.getFine());
-		ps.setString(4,ab.getCodf());
-		ps.setString(5,ab.getNomecorso());
-		ps.setString(6,stato);
+		ps.setString(1,ab.getInizio());
+		ps.setString(2,ab.getFine());
+		ps.setString(3,ab.getCodf());
+		ps.setString(4,ab.getNomecorso());
+		ps.setString(5,stato);
 		try {
 			ps.executeUpdate();
 		}catch (Exception e) {
@@ -233,13 +232,12 @@ public class DBManager {
 	}	
 	}
 	public void insertAllenamento(allenamento al) throws SQLException {
-		String comando = "insert into allenamento (dataallenamento,durata,Nomecorso,Ids)values";
+		String comando = "insert into allenamento (dataallenamento,durata,Nomecorso,codf) values(?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
-		ps.setInt(1,al.getIdallenamento());
-		ps.setString(2,al.getDataallenamento());
-		ps.setString(3,al.getDurata());
-		ps.setString(4,al.getNomecorso());
-		ps.setString(5,al.getIds());
+		ps.setString(1,al.getDataallenamento());
+		ps.setString(2,al.getDurata());
+		ps.setString(3,al.getNomecorso());
+		ps.setString(4,al.getIds());
 		try {
 			ps.executeUpdate();	
 		}catch (Exception e) {

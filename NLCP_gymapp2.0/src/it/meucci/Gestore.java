@@ -360,14 +360,14 @@ public class Gestore extends HttpServlet {
 	}
 	//INSERT ABBONAMENTO
 	if(submit.equals("INSERT_ABBONAMENTO")) {
-	String id = request.getParameter("IdAbbonamento");
+	//String id = request.getParameter("IdAbbonamento");
 	String inizio = request.getParameter("inizioabb");
 	String fine = request.getParameter("fineabb");
 	String codf = request.getParameter("codf");
 	String nomec =request.getParameter("NomeCorso");
-	System.out.println(id); System.out.println(inizio);
-		int id1 = Integer.parseInt(id);
-		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec,"2");
+	//System.out.println(id); System.out.println(inizio);
+//		int id1 = Integer.parseInt(id);
+		abbonamento ab = new abbonamento(0,inizio,fine,codf,nomec,"2");
 		System.out.println(ab.toString());
 		try {
 	//	DBManager db = new DBManager();
@@ -432,13 +432,13 @@ public class Gestore extends HttpServlet {
 	}
 	//INSERT ALLENAMENTO
 	if(submit.equals("INSERT_ALLENAMENTO")) {
-		String id = request.getParameter("idAllenamento");
+		//String id = request.getParameter("idAllenamento");
 		String data = request.getParameter("dataAllenamento");
 		String nomec = request.getParameter("nomeCorso");
 		String ids = request.getParameter("idIstruttore");
 		String t = request.getParameter("durataAllenamento");
-		int id1 = Integer.parseInt(id);
-		allenamento al = new allenamento(id1, data, nomec, ids,t);
+		//int id1 = Integer.parseInt(id);
+		allenamento al = new allenamento(0, data, nomec, ids,t);
 		try {
 		//	DBManager db = new DBManager();
 			db.insertAllenamento(al);

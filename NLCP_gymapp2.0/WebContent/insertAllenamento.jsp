@@ -8,7 +8,7 @@ try {
 	GestoreFile load = new GestoreFile();
 	String[] datidb = load.DBSettings();
 	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
-	soci= db.allSocio();	
+	soci= db.allIstruttori();	
 	corsi = db.allCorsi();
 } catch (Exception e) {
 	System.out.println(e.getMessage());
