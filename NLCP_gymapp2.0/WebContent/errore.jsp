@@ -111,10 +111,10 @@ svg {
   </svg>
   <div class="message-box">
     <h1><%=errore%></h1>
-    <p><a href="index.html">Riprova</a></p>
+    <!-- <p><a href="index.html">Riprova</a></p> -->
     <div class="buttons-con">
       <div class="action-link-wrap">
-        <a onclick="history.back(-1)" class="link-button link-back-button">Accedi</a>
+        <a onclick="history.back(-1)" class="link-button link-back-button">Riprova</a>
         <a href="" class="link-button">Ottieni password</a>
       </div>
     </div>
