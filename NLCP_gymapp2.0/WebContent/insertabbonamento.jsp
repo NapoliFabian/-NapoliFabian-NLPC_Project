@@ -41,12 +41,12 @@ try {
 <form method="POST" action="Gestore">
  <center><table class="scritte" border="0">
 
-     
+ <!--    
   <tr>
 	<th>ID abbonamento</th>
 	<th><input type="text" name="IdAbbonamento" required  ></th>
  </tr>
- 
+ -->
   <tr>
 	<th>Inizio</th>
 	<th><input type="date" name="inizioabb" required  ></th>

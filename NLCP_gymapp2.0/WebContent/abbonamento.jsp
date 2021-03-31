@@ -29,15 +29,20 @@
 			<tr>
 				<th>COD. FISCALE</th>
 				<th>INIZIO ABBONAMENTO</th>
-				<th>INIZIO ABBONAMENTO</th>
+				<th>FINE ABBONAMENTO</th>
 				<th>NOME CORSO</th>
+				<th>STATO</th>
 				<th><a href = "insertabbonamento.jsp"><img src=img/add.png height="30" width="30"></a> </th>
 			</tr>
 		   
      
 			<% for(i=0;i<elenco.size();i++) 
 			{
+			String abb_status = "";
 			 abb=(abbonamento)elenco.get(i);
+			 if(abb.getStato().equals("0"))
+				 abb_status = "red";
+			 else abb_status = "green";
 			
 		 %>
 		 
@@ -46,6 +51,8 @@
 			 <td><%=abb.getInizio()%></td>
 			 <td><%=abb.getFine() %></td>
 			 <td><%=abb.getNomecorso() %></td>
+			 <td style="background-color:<%=abb_status%>">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+			 
 			 <td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
 		 </tr>
 		 

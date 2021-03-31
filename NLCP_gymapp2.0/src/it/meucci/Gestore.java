@@ -367,7 +367,7 @@ public class Gestore extends HttpServlet {
 	String nomec =request.getParameter("NomeCorso");
 	System.out.println(id); System.out.println(inizio);
 		int id1 = Integer.parseInt(id);
-		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec);
+		abbonamento ab = new abbonamento(id1,inizio,fine,codf,nomec,"2");
 		System.out.println(ab.toString());
 		try {
 	//	DBManager db = new DBManager();

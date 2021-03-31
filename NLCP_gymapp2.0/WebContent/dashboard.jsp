@@ -35,7 +35,7 @@ if(username!=null){
 <img src="img\nuovaicona.png" width="100" height="70">
 </div>
 <div class="logo">
-    <h1 class="titolo"><%=nomeapp%></h1>
+    <h1 class="titolo" style="color:<%=color%>"><%=nomeapp%></h1>
     </div>
 <div style="padding-top:30px;
     width: 10%;

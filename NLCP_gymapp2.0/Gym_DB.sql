@@ -30,7 +30,7 @@ FOREIGN KEY (codf) references utente(codf)
 );
 
 create table abbonamento(
-IdAbbonamento int primary key,
+IdAbbonamento int auto increment primary key,
 Inizio date,
 fine date,
 codf varchar(16),
@@ -41,7 +41,7 @@ FOREIGN KEY (NomeCorso) references corso(NomeCorso)
 );
 
 create table allenamento(
-IdAllenamento int primary key,
+IdAllenamento int auto increment primary key,
 dataAllenamento date,
 durata time,
 NomeCorso varchar(50),

@@ -49,11 +49,11 @@ try {
 	<th><input type="text" name="txtProductID" maxlength="5" size="60"></th>
  </tr>
 -->
-  <tr>
+<!--   <tr>
 	<th>ID ALLENAMENTO</th>
 	<th><input type="text" name="idAllenamento" required ></th>
  </tr>
- 
+--> 
   <tr>
 	<th>DATA ALLENAMENTO</th>
 	<th><input type="date" name="dataAllenamento" required "></th>
