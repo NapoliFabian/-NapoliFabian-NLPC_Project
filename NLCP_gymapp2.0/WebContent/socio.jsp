@@ -62,7 +62,11 @@ String[] lang = (String[])session.getAttribute("lang");
            
         </table>
      </div>
+	<div class="bottoni">
+  <a href="dashboard.html"><img src=img/home.png height="70" width="70"></a> <br>
+  <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
 
+ </div>
 
 </body>
 </html>
