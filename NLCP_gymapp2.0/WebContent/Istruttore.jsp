@@ -9,7 +9,10 @@
   Utente is;
   Utente isc;
 %>
-
+<%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>
 <%
 
 	elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_ISTRUTTORI");
@@ -29,13 +32,13 @@
 <body background="images\bg-01.jpg">
 
     <div class="table-users">
-        <div class="header">ISTRUTTORI</div>
+        <div class="header"><%=lang[2]%></div>
         
         <table cellspacing="0">
 			<tr>
-				<th>NOME</th>
-				<th>COGNOME</th>
-				<th>TELEFONO</th>
+				<th><%=lang[11]%></th>
+				<th><%=lang[10]%></th>
+				<th><%=lang[15]%></th>
 				
 				<th colspan="3">
 				<a href = "insertIstruttori.jsp"><img src=img/add.png height="30" width="30">

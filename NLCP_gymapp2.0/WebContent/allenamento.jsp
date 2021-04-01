@@ -11,13 +11,17 @@
 <%
 	elenco1 = (ArrayList<allenamento>)session.getAttribute("ELENCO_ALLENAMENTI");
 %>
+<%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>
 <!DOCTYPE html>
 <html>
 <head>
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 
 <meta charset="ISO-8859-1">
-<title>Allenamento</title>
+<title><%=lang[4]%></title>
 </head>
 <body background="images\bg-01.jpg">
 

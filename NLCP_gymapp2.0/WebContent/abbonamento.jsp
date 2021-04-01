@@ -10,7 +10,10 @@
 
 	elenco = (ArrayList <abbonamento> )session.getAttribute("ELENCO_ABBONAMENTI");
 %> 
-    
+ <%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>   
     
 <!DOCTYPE html>
 <html>
@@ -23,14 +26,14 @@
 <body background="images\bg-01.jpg">
 
     <div class="table-users">
-        <div class="header">ABBONAMENTI</div>
+        <div class="header"><%=lang[3]%></div>
         
         <table cellspacing="0">
 			<tr>
-				<th>COD. FISCALE</th>
-				<th>INIZIO ABBONAMENTO</th>
-				<th>FINE ABBONAMENTO</th>
-				<th>NOME CORSO</th>
+				<th><%=lang[21]%></th>
+				<th><%=lang[22]%></th>
+				<th><%=lang[23]%></th>
+				<th><%=lang[24]%></th>
 				<th>STATO</th>
 				<th><a href = "insertabbonamento.jsp"><img src=img/add.png height="30" width="30"></a> </th>
 			</tr>

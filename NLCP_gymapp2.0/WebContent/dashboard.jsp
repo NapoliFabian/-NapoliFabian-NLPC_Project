@@ -59,7 +59,7 @@ if(username!=null){
 <br>
 <center><a href="Gestore?cmd=allabb"><button class="botton"><%=lang[3]%></button></a>   <a href="Gestore?cmd=allal"><button class="botton"><%=lang[4]%></button></a></center>
 <br>
-<center><a href="Gestore?cmd=allco"><button class="botton">CORSI</button></a>   <a><button class="botton">SCHEDE</button></a></center>
+<center><a href="Gestore?cmd=allco"><button class="botton"><%=lang[5]%></button></a>   <a><button class="botton"><%=lang[6]%></button></a></center>
 <br>
 </div>
 <div class="footer">
