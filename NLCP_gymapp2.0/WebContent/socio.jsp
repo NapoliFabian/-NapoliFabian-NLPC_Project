@@ -19,7 +19,19 @@ String[] lang = (String[])session.getAttribute("lang");
 <html>
 <head>
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
+ <style>
+.bottoni{
+width:18%;
+height:20%;
+top:40%;
+right: 1%;
+text-align: center;
+
+border: 1px solid black;
+position: fixed;
+} 
  
+ </style>
 <meta charset="ISO-8859-1">
 <title>Socio</title>
 </head>
@@ -61,12 +73,12 @@ String[] lang = (String[])session.getAttribute("lang");
      
            
         </table>
-     </div>
-	<div class="bottoni">
-  <a href="dashboard.html"><img src=img/home.png height="70" width="70"></a> <br>
-  <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
-
+        
  </div>
-
+<div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/home.png height="70" width="70"></a> <br>
+  <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+        
+     </div>
 </body>
 </html>

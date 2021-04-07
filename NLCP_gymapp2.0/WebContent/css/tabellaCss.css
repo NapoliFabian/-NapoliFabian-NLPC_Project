@@ -1,12 +1,15 @@
 @charset "ISO-8859-1";
 
 
-.bottoni{
-width:30%;
+/*.bottoni{
+width:100%;
 text-align: center;
-float:right;
+
 border: 1px solid black;
+position: fixed;
 }
+*/
+
 .tabella{
 width: 68%;
 border: 1px solid black;
