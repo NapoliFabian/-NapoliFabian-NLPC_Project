@@ -27,6 +27,19 @@ String[] lang = (String[])session.getAttribute("lang");
 <meta charset="ISO-8859-1">
 <title>Gestione Istruttore</title>
 
+ <style>
+.bottoni{
+width:18%;
+height:20%;
+top:40%;
+right: 1%;
+text-align: center;
+
+border: 2px solid black;
+position: fixed;
+} 
+ 
+ </style>
 
 </head>
 <body background="images\bg-01.jpg">
@@ -67,7 +80,26 @@ String[] lang = (String[])session.getAttribute("lang");
            
 </table>
 </div>
-
+<div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/home.png height="70" width="70"></a> <br>
+  <h3>ISTRUTTORI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+  <form method="POST" action="Gestore">
+  <input type="text" placeholder="Nome e Cognome" name="istruttore"><input type="submit" name="INSERT" value="cercaIS">
+  <%if(ricerca!=null) {%>
+  <%for(i=0;i<ricerca.size();i++) 
+  {
+	 isc=(Utente)ricerca.get(i);
+  
+%>
+  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getCodf()%>"><%=isc.getNome()%> <%=isc.getCognome()%></a>
+  <%
+     }
+ %> 
+  <%
+     }
+ %> 
+  </form>
+ </div>
 
 </body>
 
