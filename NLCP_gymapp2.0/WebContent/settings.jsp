@@ -30,12 +30,12 @@ text-align: center;
 select{
 width:250px;
 height:50px;
-border-radius: 50px;
+/*border-radius: 50px;*/
 }
 input{
 width:250px;
 height:50px;
-border-radius: 50px;
+/*border-radius: 50px;*/
  outline-style: none;
 }
 header{
@@ -68,7 +68,7 @@ String nomeapp = (String)session.getAttribute("nomeapp");
 <option value="#05DBFA">AZZURRO</option>
 </select></h2>
 <br>
-<h2>COLORE ATTUALE <strong color="<%=color%>"><%=color %></strong></h2>
+<h2>COLORE ATTUALE <strong color=<%=color%>><%=color%></strong></h2>
 </center>
 </div>
 <br>

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.Session;
 
 /**
  * Servlet implementation class App_Changer
@@ -49,6 +50,19 @@ public class App_Changer extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			String appname= (String) request.getSession().getAttribute("nomeapp");
+			String color = (String)request.getSession().getAttribute("color");
+			String flag = request.getParameter("flag");
+			GestoreFile file = new GestoreFile();
+			String[] vet = file.readLan(flag);
+			file.setConfig(color, appname,flag);
+			request.getSession().removeAttribute("lang");
+			request.getSession().setAttribute("lang",vet);
+			response.sendRedirect("changelanguage.jsp");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 }

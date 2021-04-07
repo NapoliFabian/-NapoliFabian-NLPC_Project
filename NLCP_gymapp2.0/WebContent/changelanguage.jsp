@@ -3,6 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript">
+function avvisa(){
+	var language = document.querySelector('input[name="flag"]:checked').value;
+	if(language=="ita")alert("Lingua cambiata");
+	if(language=="isp")alert("cambio de idioma");
+	if(language=="ing")alert("Language changed");
+};
+
+</script>
 <style>
 body{
     margin: 0px;
@@ -16,7 +25,7 @@ body{
 .icona{
     width: 30%;
      padding: 16px;
-    float: left;
+    float: left;{
     /*border: 1px solid red;*/
 }
 .radiob{
@@ -48,7 +57,7 @@ a{
       <a style="float:left" href="dashboard.jsp"><img src=img/back.png height="50" width="50"></a>
      
     </div>
-<form action="changer" method="GET">
+<form action="changer" method="POST">
 <!--  
 <input type="radio" name="flag" value="ita">
 <input type="radio" name="flag" value="eng">
@@ -56,19 +65,19 @@ a{
 <div class="box">
 <div class="icona">
 <img src="img\flags\ita.png" width="200" height="200"><br>
-<input class="radiob" type="radio" name="flag" value="ita">
+<input class="radiob" type="radio" name="flag" id="lingua" value="ita">
 </div>
 <div class="icona">
 <img src="img\flags\esp.png" width="200" height="200"><br>
-<input type="radio" class="radiob" name="flag" value="eng">
+<input type="radio" class="radiob" name="flag" id="lingua" value="isp">
 </div>
 <div class="icona">
 <img src="img\flags\ing.jpeg" width="200" height="200"><br>
-<input type="radio" class="radiob" name="flag" value="esp">
+<input type="radio" class="radiob" name="flag"id="lingua" value="ing">
 </div>
 </div>
 <center>
-<input type="submit" value="INVIA">
+<input type="submit" value="INVIA" onClick=avvisa()>
 </center>
 </form>
 </body>

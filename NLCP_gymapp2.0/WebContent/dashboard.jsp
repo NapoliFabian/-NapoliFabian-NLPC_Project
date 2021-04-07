@@ -51,7 +51,7 @@ if(username!=null){
     <center>
     <br>
     <h1 style="
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><%=lang[0]%><%=username%></h1>
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><%=lang[0]%> <%=username%></h1>
     <br>
 </center>
 <center><img src="img\usericon.png" width="100" height="70"></center>
