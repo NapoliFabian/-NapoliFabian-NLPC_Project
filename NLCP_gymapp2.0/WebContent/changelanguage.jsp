@@ -9,11 +9,13 @@ function avvisa(){
 	if(language=="ita")alert("Lingua cambiata");
 	if(language=="isp")alert("cambio de idioma");
 	if(language=="ing")alert("Language changed");
+	if(language=="")alert("Lingua non selezionata");
 };
 
 </script>
 <style>
 body{
+	background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #AACFEF 100%);
     margin: 0px;
 }
 .box{
