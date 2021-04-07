@@ -203,6 +203,7 @@ String filtro;
 				 abb_status = "img/ABB_STATUS/rosso.jpeg";
 			 else abb_status = "img/ABB_STATUS/verde.jpeg";
 			 if(abb.getStato().equals("1")){
+				 //
 		 %>
 		 
 		  <tr>
