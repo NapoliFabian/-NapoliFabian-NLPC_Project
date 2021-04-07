@@ -78,7 +78,7 @@ String nomeapp = (String)session.getAttribute("nomeapp");
 <h2>NOME APP:<input type="text" name="title_change" value=<%=nomeapp%>></h2>
 </center>
 </div>
-<input type="submit" value="invia">
+<input type="submit" value="invia" onClick=avvisa()>
 </div>
 </form>
 </body>

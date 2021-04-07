@@ -17,7 +17,7 @@ float:left;
 }
 
  body {
-	 background: ;
+	/* background: ;*/
 	 margin:0px;
 }
  body * {
@@ -34,8 +34,25 @@ float:left;
 	 font-family: Century Gothic;
 	 font-weight: 700;
 }
-
+.filtri{
+	float:left;
+	text-align:left;
+	width: 10%;
+	height: auto;
+	position:fixed;
+	border: 1px solid black;
+	margin-top: 10%;
+}
+.barra{
+	width: auto;
+	height: auto;
+	background-color: white;
+}
+.barra:hover{
+	background-color: blue;
+}	
  .table-users {
+
 	 border: 1px solid #2f2f2f;
 	 border-radius: 10px;
 	 box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);

@@ -72,7 +72,8 @@ public class DBManager {
 		rs=query.executeQuery(cmd);
 		allenamento l;
 		while(rs.next()) {
-			l = new allenamento(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5));
+			l = new allenamento(rs.getInt(1),rs.getString(2),rs.getString(4),rs.getString(5),rs.getString(3));
+			System.out.println(l.toString());
 			allenamenti.add(l);
 		
 		}
@@ -186,7 +187,7 @@ public class DBManager {
 		return abbonamenti;
 	}
 	public void insertAbbonamento(abbonamento ab) throws SQLException {
-		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values";// cambiato abbonamento
+		String cmd = "insert into abbonamento (inizio,fine,codf,nomecorso,stato)values (?,?,?,?,?)";// cambiato abbonamento
 		PreparedStatement ps = connessione.prepareStatement(cmd);
 		String stato = "1";
 		ps.setString(1,ab.getInizio());
@@ -234,6 +235,7 @@ public class DBManager {
 	public void insertAllenamento(allenamento al) throws SQLException {
 		String comando = "insert into allenamento (dataallenamento,durata,Nomecorso,codf) values(?,?,?,?)";
 		PreparedStatement ps = connessione.prepareStatement(comando);
+		System.out.println("Inserito:"+al.toString());
 		ps.setString(1,al.getDataallenamento());
 		ps.setString(2,al.getDurata());
 		ps.setString(3,al.getNomecorso());

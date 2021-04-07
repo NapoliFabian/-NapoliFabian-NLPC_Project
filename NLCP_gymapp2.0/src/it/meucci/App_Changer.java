@@ -29,18 +29,18 @@ public class App_Changer extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String color=request.getParameter("color_change");
 		String title = request.getParameter("title_change");
-		String language = request.getParameter("lang");
+		String language = (String) request.getSession().getAttribute("current_language");
 		GestoreFile load = new GestoreFile();
 		try {
 			String[] vet =load.setConfig(color, title,language);
 			request.getSession().removeAttribute("color");
 			request.getSession().removeAttribute("nomeapp");
-			request.getSession().removeAttribute("lang");
+			//request.getSession().removeAttribute("lang");
 			request.getSession().setAttribute("color", vet[0]);
 			request.getSession().setAttribute("nomeapp",vet[1]);
 			response.sendRedirect("settings.jsp");
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage()+e.getCause());
 			
 		}
 		
@@ -57,11 +57,13 @@ public class App_Changer extends HttpServlet {
 			GestoreFile file = new GestoreFile();
 			String[] vet = file.readLan(flag);
 			file.setConfig(color, appname,flag);
+			String datiapp[] = file.getConfig();
 			request.getSession().removeAttribute("lang");
+			request.getSession().setAttribute("current_language",datiapp[1]);
 			request.getSession().setAttribute("lang",vet);
 			response.sendRedirect("changelanguage.jsp");
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage()+e.getCause());
 		}
 	}
 

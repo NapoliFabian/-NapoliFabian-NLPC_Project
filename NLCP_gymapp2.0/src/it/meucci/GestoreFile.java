@@ -33,16 +33,16 @@ public class GestoreFile {
 	//	this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 	//	this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 	
-	//	this.db_settings = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/dbsettings.properties";
-	//	this.default_config ="/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/defaultconf.properties";
+		this.db_settings = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/dbsettings.properties";
+		this.default_config ="/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/defaultconf.properties";
 		
 		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 */
-
+/*
 		this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 		
-		
+	*/	
 	}
 	public String[] getConfig() throws IOException {
 		System.out.println("Leggo dati conf");
@@ -53,6 +53,9 @@ public class GestoreFile {
 		config[0] = prop.getProperty("color_theme");
 		config[1] = prop.getProperty("language");
 		config[2] = prop.getProperty("app_name");
+		if(config[0]==null)config[0]="gold";
+		if(config[1]==null)config[1] ="ing";
+		if(config[2]==null)config[2] ="GYM";
 		return config;
 		
 	}
@@ -63,11 +66,15 @@ public class GestoreFile {
 		vet[0] = colore;
 		vet[1] = titolo;
 		vet[2] = lang;
-		Properties prop = new Properties();
-		 prop.setProperty("app_name", titolo);
-		prop.setProperty("color_theme",colore);
-        prop.setProperty("language", lang);
-        prop.store(output, null);
+        try {
+    		Properties prop = new Properties();
+   		 prop.setProperty("app_name", titolo);
+   		prop.setProperty("color_theme",colore);
+           prop.setProperty("language", lang);
+           prop.store(output, null);
+		} catch (Exception e) {
+			System.out.println("Error on set Properties: GestoreFile->setConfig"+e.getMessage());
+		};
         System.out.println("Cambiamenti effettuati");
         return vet;
 	}
@@ -86,9 +93,11 @@ public class GestoreFile {
 	public String[] readLan(String language) throws IOException {
 		System.out.println("Leggo dati lingua");	
 		int max = 32;
+		if(language==null)
+			language = "ing";
 		
-	//	Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
-		Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
+		Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
+	//	Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 		String[] config;
 		config = new String[max];
 		config[0] = prop.getProperty("WELCOME_MESSAGE");

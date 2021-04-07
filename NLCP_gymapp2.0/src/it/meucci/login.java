@@ -62,6 +62,7 @@ public class login extends HttpServlet {
 					request.getSession().setAttribute("nomeapp",datiapp[2]);
 					String[] scritte= load.readLan(datiapp[1]);
 					request.getSession().setAttribute("lang",scritte);
+					request.getSession().setAttribute("current_language",datiapp[1]);
 					System.out.println("1");
 					String pw = datidb[2];
 					String pwstatus="";

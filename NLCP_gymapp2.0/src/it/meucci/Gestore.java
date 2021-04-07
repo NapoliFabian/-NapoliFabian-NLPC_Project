@@ -316,7 +316,8 @@ public class Gestore extends HttpServlet {
 		String telefono = request.getParameter("Telefono");
 		String sesso = request.getParameter("Sesso");
 		String data = request.getParameter("DataDiNascita");
-		
+		nome.toUpperCase();
+		cognome.toUpperCase();
 		Utente i = new Utente(id, nome, cognome, telefono, sesso,data,"","","","I");
 		db.insertIstruttore(i);
 		request.getSession().removeAttribute("ELENCO_ISTRUTTORI");
@@ -413,6 +414,8 @@ public class Gestore extends HttpServlet {
 		String tel = request.getParameter("Telefono");
 		String s = request.getParameter("Sesso");
 		String datan = request.getParameter("DataDiNascita");
+		nome.toUpperCase();
+		cognome.toUpperCase();
 		Utente soc = new Utente(codf, nome, cognome, tel,s,datan,"","","","S");
 		try {
 		//	DBManager db = new DBManager();
@@ -434,11 +437,12 @@ public class Gestore extends HttpServlet {
 	if(submit.equals("INSERT_ALLENAMENTO")) {
 		//String id = request.getParameter("idAllenamento");
 		String data = request.getParameter("dataAllenamento");
-		String nomec = request.getParameter("nomeCorso");
+		String nomec = request.getParameter("NomeCorso");
 		String ids = request.getParameter("codf");
 		String t = request.getParameter("durataAllenamento");
 		//int id1 = Integer.parseInt(id);
 		allenamento al = new allenamento(0, data, nomec, ids,t);
+		//System.out.println("Preso allenamento");
 		try {
 		//	DBManager db = new DBManager();
 			db.insertAllenamento(al);
@@ -461,8 +465,8 @@ public class Gestore extends HttpServlet {
 		try {
 			Utente c;
 		    c = new Utente(request.getParameter("codf"),
-		    		request.getParameter("Nome"),
-		    		request.getParameter("Cognome"),
+		    		request.getParameter("Nome").toUpperCase(),
+		    		request.getParameter("Cognome").toUpperCase(),
 		    		request.getParameter("Telefono"),
 		    		request.getParameter("Sesso"),
 		    		request.getParameter("DataNascita"),"","","","");
