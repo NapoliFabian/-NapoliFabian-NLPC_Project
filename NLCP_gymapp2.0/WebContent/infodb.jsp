@@ -16,7 +16,7 @@ else colorstatuspw = "green";
 <meta charset="ISO-8859-1">
 <title>INFO DB</title>
 </head>
-<body>
+<body style="background-image: -webkit-linear-gradient(top right, #FFFFFF 0%, #AACFEF 100%)">
 <header style="width: 100%;
 height: 100px;
 background-image: linear-gradient(cadetblue,grey); padding-top: 20px">
