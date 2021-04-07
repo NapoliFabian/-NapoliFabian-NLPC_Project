@@ -405,6 +405,60 @@ public class Gestore extends HttpServlet {
 		request.getSession().setAttribute("ISTRUTTORI_CERCATI",ricerca);
 		response.sendRedirect("Istruttore.jsp");
 	}
+	
+	//CERCA SOCIO
+	
+	if(submit.equals("cercaSO")) {
+		String cognome = request.getParameter("socio");
+		ArrayList<Utente> soci = new ArrayList<Utente>();
+		ArrayList<Utente> ricerca = new ArrayList<Utente>();
+		Utente so;
+		System.out.println(cognome);
+		soci = (ArrayList<Utente>)request.getSession().getAttribute("ELENCO_SOCI");
+		for(int i=0;i<soci.size();i++) 
+	    {
+			so = soci.get(i);
+			System.out.println(so.getCognome());
+			if(so.getCognome().equals(cognome)){
+				ricerca.add(so);
+			}
+	    }
+		request.getSession().removeAttribute("SOCI_CERCATI");
+		request.getSession().setAttribute("SOCI_CERCATI",ricerca);
+		response.sendRedirect("socio.jsp");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	//CERCA ALLENAMENTO
+	
+	if(submit.equals("cercaALL")) {
+		String data = request.getParameter("allenamento");
+		ArrayList<allenamento> allenamenti = new ArrayList<allenamento>();
+		ArrayList<allenamento> ricerca = new ArrayList<allenamento>();
+		allenamento all;
+		System.out.println(data);
+		allenamenti = (ArrayList<allenamento>)request.getSession().getAttribute("ELENCO_ALLENAMENTI");
+		for(int i=0;i<allenamenti.size();i++) 
+	    {
+			all = allenamenti.get(i);
+			System.out.println(all.getDataallenamento());
+			if(all.getDataallenamento().equals(data)){
+				ricerca.add(all);
+			}
+	    }
+		request.getSession().removeAttribute("ALLENAMENTI_CERCATI");
+		request.getSession().setAttribute("ALLENAMENTI_CERCATI",ricerca);
+		response.sendRedirect("allenamento.jsp");
+	}
+	
+	
+	
 	//INSERT ISTRUTTORE
 	if(submit.equals("INSERT_SOCIO")) {
 		String codf = request.getParameter("codf");

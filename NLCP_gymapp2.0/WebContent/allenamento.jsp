@@ -5,11 +5,14 @@
  <%@ page import="java.sql.Date"%>    
     <%!
   ArrayList<allenamento> elenco1;
+  ArrayList<allenamento> ricerca;
   int i;
   allenamento a;
+  allenamento allc;
 %>
 <%
 	elenco1 = (ArrayList<allenamento>)session.getAttribute("ELENCO_ALLENAMENTI");
+	ricerca = (ArrayList<allenamento>)session.getAttribute("ALLENAMENTI_CERCATI");
 %>
 <%
 String color = (String)session.getAttribute("color");
@@ -22,6 +25,20 @@ String[] lang = (String[])session.getAttribute("lang");
 
 <meta charset="ISO-8859-1">
 <title><%=lang[4]%></title>
+<style>
+.bottoni{
+width:18%;
+height:20%;
+top:40%;
+right: 1%;
+text-align: center;
+background-image:url(https://i2.wp.com/novocom.top/image/Y2xpcJyYXJGFydC1saWJyYXJ5LmNvbQ==/new_gallery/191-1918749_explosion-particle-irregular-background-gold-particles-transparent-background.png);
+
+border: 1px solid black;
+position: fixed;
+} 
+ 
+ </style>
 </head>
 <body background="images\bg-01.jpg">
 
@@ -61,7 +78,26 @@ String[] lang = (String[])session.getAttribute("lang");
 		 %>
         </table>
      </div>
-
+<div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
+  <h3>ALLENAMENTI TOTALI: <strong style="color:red"><%=elenco1.size()%></strong></h3>
+<form method="POST" action="Gestore">
+  <input type="date" placeholder="Data" name="allenamento"><input type="submit" name="INSERT" value="cercaALL">
+  <%if(ricerca!=null) {%>
+  <%for(i=0;i<ricerca.size();i++) 
+  {
+	 allc=(allenamento)ricerca.get(i);
+  
+%>
+ <br><h3><%=allc.getNomecorso()%> <%=allc.getIds()%> <%=allc.getDataallenamento()%></h3>
+  
+  <%
+     }
+ %> 
+  <%
+     }
+ %> 
+ </div>
 
 </body>
 </html>

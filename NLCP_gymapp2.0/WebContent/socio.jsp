@@ -6,10 +6,14 @@
   ArrayList <Utente> elenco;
   int i;
   Utente s;
+  Utente soc;
+  ArrayList<Utente> ricerca;
 %>
 <%
 
 	elenco = (ArrayList <Utente> )session.getAttribute("ELENCO_SOCI");
+elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_SOCI");
+ricerca = (ArrayList<Utente>)session.getAttribute("SOCI_CERCATI");
 %>
 <%
 String color = (String)session.getAttribute("color");
@@ -26,7 +30,8 @@ height:20%;
 top:40%;
 right: 1%;
 text-align: center;
-
+/*background-color: white;*/
+background-image:url(https://i2.wp.com/novocom.top/image/Y2xpcJyYXJGFydC1saWJyYXJ5LmNvbQ==/new_gallery/191-1918749_explosion-particle-irregular-background-gold-particles-transparent-background.png);
 border: 1px solid black;
 position: fixed;
 } 
@@ -76,9 +81,24 @@ position: fixed;
         
  </div>
 <div class="bottoni">
-  <a href="dashboard.jsp"><img src=img/home.png height="70" width="70"></a> <br>
+  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
   <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
-        
+       <form method="POST" action="Gestore">
+  <input type="text" placeholder="Inserisci Cognome" name="socio"><input type="submit" name="INSERT" value="cercaSO">
+  <%if(ricerca!=null) {%>
+  <%for(i=0;i<ricerca.size();i++) 
+  {
+	 soc=(Utente)ricerca.get(i);
+  
+%>
+  <br><a href="Gestore?cmd=dettaglioso&id=<%=soc.getCodf()%>"><%=soc.getNome()%> <%=soc.getCognome()%></a>
+  <%
+     }
+ %> 
+  <%
+     }
+ %> 
+  </form> 
      </div>
 </body>
 </html>

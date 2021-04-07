@@ -34,8 +34,9 @@ height:20%;
 top:40%;
 right: 1%;
 text-align: center;
+background-image:url(https://i2.wp.com/novocom.top/image/Y2xpcJyYXJGFydC1saWJyYXJ5LmNvbQ==/new_gallery/191-1918749_explosion-particle-irregular-background-gold-particles-transparent-background.png);
 
-border: 2px solid black;
+border: 1px solid black;
 position: fixed;
 } 
  
@@ -81,10 +82,10 @@ position: fixed;
 </table>
 </div>
 <div class="bottoni">
-  <a href="dashboard.jsp"><img src=img/home.png height="70" width="70"></a> <br>
+  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
   <h3>ISTRUTTORI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
   <form method="POST" action="Gestore">
-  <input type="text" placeholder="Nome e Cognome" name="istruttore"><input type="submit" name="INSERT" value="cercaIS">
+  <input type="text" placeholder="Inserisci Cognome" name="istruttore"><input type="submit" name="INSERT" value="cercaIS">
   <%if(ricerca!=null) {%>
   <%for(i=0;i<ricerca.size();i++) 
   {
