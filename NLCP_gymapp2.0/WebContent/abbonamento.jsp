@@ -113,6 +113,7 @@ String filtro;
 			 <td><%=abb.getFine() %></td>
 			 <td><%=abb.getNomecorso() %></td>
 			 <td><img alt="STATO" src="<%=abb_status%>" width="100" height="50"></td>
+			  <td><a href="Gestore?cmd=rinnovaab&id=<%=abb.getIdabbonamento()%>"></a></td>
 			 
 			 <td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
 		 </tr>
@@ -123,6 +124,12 @@ String filtro;
 
         </table>
      </div>
+     <br><br><br><br><br><br><br><br>
+     <div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
+  <h3>ABBONAMENTI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+ 
+ </div>
      <hr>
      <!-- TABELLA SCADUTI -->
 	 <div class="table-users" id="disable">
@@ -161,8 +168,7 @@ String filtro;
 			 <td><%=abb.getFine() %></td>
 			 <td><%=abb.getNomecorso() %></td>
 			 <td><img alt="STATO" src="<%=abb_status%>" width="100" height="50"></td>
-			 
-			 <td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
+			 <td><a href="Gestore?cmd=rinnovaabb&id=<%=abb.getIdabbonamento()%>">Rinnova</a></td>
 		 </tr>
 		  <%
 			 }//fine if
