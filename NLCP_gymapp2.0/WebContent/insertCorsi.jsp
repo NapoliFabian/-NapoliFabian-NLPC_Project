@@ -59,7 +59,7 @@
  </form>
  <div class="link"><center>
  	<a href="Corso.jsp"><button>Elenco Corsi</button></a>
- 	<a href="dashboard.html"><button>Home</button></a></center>
+ 	<a href="dashboard.jsp"><button>Home</button></a></center>
  </div>
  
  
