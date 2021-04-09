@@ -1,6 +1,19 @@
 <%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+
+
+
+
+
+
+
+
+<%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,17 +45,17 @@
 
     <center><table class="scritte" border="0">
     <tr>
-    <th>Nome Corso</th>
+    <th><%=lang[24]%></th>
     <th><input type="text" name="NomeCorso" required> </th>
     </tr>
     
     <tr>
-    <th>Prezzo</th>
+    <th><%=lang[29]%></th>
     <th><input type="text" name="Prezzo" required></th>
     </tr>
     
     <tr>
-    <th>Descrizione</th>
+    <th><%=lang[30]%></th>
     <th><input type="text" name="Descrizione" required></th>
     </tr>
     

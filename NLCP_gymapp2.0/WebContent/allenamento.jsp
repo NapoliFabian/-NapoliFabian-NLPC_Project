@@ -24,7 +24,7 @@ String[] lang = (String[])session.getAttribute("lang");
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 
 <meta charset="ISO-8859-1">
-<title><%=lang[5]%></title>
+<title><%=lang[4]%></title>
 <style>
 .bottoni{
 width:18%;

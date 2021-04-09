@@ -1,6 +1,12 @@
 <%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +23,14 @@ try {
 } catch (Exception e) {
 	System.out.println(e.getMessage());
 }
-%>
+
+%>   
+    <% 
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+String filtro;
+%>   
+    
 <meta charset="ISO-8859-1">
 <title>Inserisci Abbonamento</title>
 </head>
@@ -48,17 +61,17 @@ try {
  </tr>
  -->
   <tr>
-	<th>Inizio</th>
+	<th><%=lang[22]%></th>
 	<th><input type="date" name="inizioabb" required  ></th>
  </tr>
  
   <tr>
-	<th>Fine</th>
+	<th><%=lang[23]%></th>
 	<th><input type="date" name="fineabb" required  ></th>
  </tr>
  
   <tr>
-	<th>Codice Fiscale</th>
+	<th><%=lang[21]%></th>
 	<th><select name="codf">
 	<%for(int i=0;i<soci.size();i++){
 		Utente s = soci.get(i);
@@ -69,7 +82,7 @@ try {
  </tr>
  
   <tr>
-	<th>Nome corso</th>
+	<th><%=lang[24]%></th>
 	<th><select name="NomeCorso">
 	<%for(int i=0;i<corsi.size();i++){
 		Corso c = corsi.get(i);

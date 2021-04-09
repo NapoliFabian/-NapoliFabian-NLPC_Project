@@ -1,6 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+ 
+ 
+ 
+ 
+ 
+ 
+    <% 
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+String filtro;
+%>   
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,22 +43,22 @@
 
     <center><table class="scritte" border="1">
     <tr>
-    <th>CODICE FISCALE</th>
+    <th><%=lang[21]%></th>
     <th><input type="text" name="IdIstruttore" required maxlength="16"></th>
     </tr>
     
     <tr>
-    <th>Nome</th>
+    <th><%=lang[11]%></th>
     <th><input type="text" name="Nome" required></th>
     </tr>
     
     <tr>
-    <th>Cognome</th>
+    <th><%=lang[10]%></th>
     <th><input type="text" name="Cognome" required></th>
     </tr>
     
     <tr>
-    <th>Telefono</th>
+    <th><%=lang[12]%></th>
     <th><input type="text" name="Telefono" required></th>
     </tr>
     

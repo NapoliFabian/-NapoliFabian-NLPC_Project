@@ -1,6 +1,13 @@
 <%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
+
+
+
+
+
+
+
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
@@ -14,6 +21,11 @@ try {
 	System.out.println(e.getMessage());
 }
 
+%>
+
+<%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
 %>
 
 
@@ -60,7 +72,7 @@ try {
  </tr>
  
   <tr>
-	<th>CORSO</th>
+	<th><%=lang[5]%></th>
 	<th><select name="NomeCorso">
 	<%for(int i=0;i<corsi.size();i++){
 		Corso c = corsi.get(i);
@@ -71,7 +83,7 @@ try {
  </tr>
  
   <tr>
-  <th>ISTRUTTORE</th>
+  <th><%=lang[2]%></th>
 	<th><select name="codf">
 	<%for(int i=0;i<soci.size();i++){
 		Utente s = soci.get(i);
@@ -82,7 +94,7 @@ try {
  </tr>
  
   <tr>
-	<th>DURATA ALLENAMENTO</th>
+	<th><%=lang[28]%></th>
 	<th><input type="text" name="durataAllenamento" ></th>
  </tr>
 

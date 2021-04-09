@@ -16,6 +16,15 @@ String[] lang = (String[])session.getAttribute("lang");
 %>
 
 
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +36,7 @@ String[] lang = (String[])session.getAttribute("lang");
 <body background="images\bg-01.jpg">
 
     <div class="table-users">
-        <div class="header"><%=lang[6]%></div>
+        <div class="header"><%=lang[5]%></div>
         
         <table cellspacing="0">
 			<tr>
