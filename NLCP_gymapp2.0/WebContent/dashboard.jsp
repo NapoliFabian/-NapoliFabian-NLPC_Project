@@ -188,7 +188,7 @@ if(username!=null){
 
 <footer>
 <br>
-<p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p>
+<center><p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p></center>
 <br>
 </footer>
 </body>
