@@ -101,10 +101,11 @@ header{
     right: 10%;
     top:30%;
     padding-top: 1%;
+    padding-bottom: 1%;
 }
 .box{
     width: 20%;
-    height: 50%;
+    height: 45%;
     background-color: white;
     float: left;
     text-align: center;
@@ -122,6 +123,53 @@ footer{
     position: absolute;
   /*  bottom: 1px;*/
   top:1000px;
+}
+table{
+width: 100%;
+height: auto;
+}
+td{
+width: 33%;
+text-align: center;
+padding:16px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 </style>
 <title>DASHBOARD</title>
@@ -141,11 +189,15 @@ if(username!=null){
 </div>-->
 </header>
 <ul>
-    <li><a class="active" href="Gestore?cmd=logout">LOGOUT</a></li>
+    <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
     <li><a href="#news">UPDATE</a></li>
     <li><a href="#contact">CONTACT</a></li>
     <li><a href="#about">ABOUT US</a></li>
-      <li><a href="optionpage.html">OPTION</a></li>
+      <li><div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="optionpage.html">OPTION</a>
+  <a class="active" href="Gestore?cmd=logout">LOGOUT</a>
+</div></li>
   </ul>
 <div class="centrale">
 <a href="Gestore?cmd=allsoc">
@@ -188,9 +240,24 @@ if(username!=null){
 
 <footer>
 <br>
-<center><p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p></center>
+<table>
+<tr>
+<td><p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p></td>
+<td><video src="img/icon/animatedicon.mp4" autoplay="autoplay" width="100" height="100"></video></td>
+<td><p style="color:white">OUR WEBSITE <br></p></td>
+</tr>
+</table>
 <br>
 </footer>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </body>
 <% 
 }

@@ -543,6 +543,46 @@ public class Gestore extends HttpServlet {
 				System.out.println(e.getMessage());
 			}
 		}
+	
+	
+	if(submit.equals("RINNOVA ABBONAMENTO")) {
+		try {
+			abbonamento abb=new abbonamento();
+			int id = Integer.parseInt(request.getParameter("idabbonamento"));
+		    abb.setIdabbonamento(id);
+		    abb.setInizio(request.getParameter("inizio"));
+		    abb.setFine(request.getParameter("fine"));
+		    
+		    //	DBManager db;
+		   // 	db = new DBManager();
+		    	System.out.println(abb.toString()+" nella servlet");
+		    	db.rinnovaAbbonamento(abb);
+		    	request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
+		    	ArrayList<abbonamento> elenco= new ArrayList<abbonamento>();
+		    	elenco =db.allAbbonamenti();
+		    	request.getSession().setAttribute("ELENCO_ABBONAMENTI", elenco);
+		    	response.sendRedirect("abbonamento.jsp");
+		}
+		    catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		}catch (Exception e) {
 			String errore = "ERRORE ALL AVVIO DEL DB";
 			request.getSession().setAttribute("ERROR",errore);

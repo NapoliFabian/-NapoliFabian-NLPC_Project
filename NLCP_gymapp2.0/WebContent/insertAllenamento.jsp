@@ -7,6 +7,7 @@
 
 
 
+
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
