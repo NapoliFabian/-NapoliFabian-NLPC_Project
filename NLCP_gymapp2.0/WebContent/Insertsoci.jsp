@@ -24,7 +24,7 @@ String[] lang = (String[])session.getAttribute("lang");
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
 
-<div class="header">
+<!--  <div class="header">
 <div class="icon">
 
 <img src="img\icona.png" width="100" height="70">
@@ -34,7 +34,7 @@ String[] lang = (String[])session.getAttribute("lang");
     <h1 class="titolo">GYM APP</h1>
     </div>
 </div>
-	 
+	--> 
  <br>
  <br>
  <br>
@@ -42,7 +42,7 @@ String[] lang = (String[])session.getAttribute("lang");
 
 
  <div class="insert">
-
+<!-- VECHHIA INSERT
     <center><table class="scritte" border="0">
     <tr>
     <th><%=lang[21]%></th>
@@ -53,7 +53,7 @@ String[] lang = (String[])session.getAttribute("lang");
     <th><%=lang[11]%></th>
     <th><input type="text" name="Nome" required></th>
     </tr>
-    <!--  -->
+    
     <tr>
     <th><%=lang[10]%></th>
     <th><input type="text" name="Cognome" required></th>
@@ -90,7 +90,13 @@ String[] lang = (String[])session.getAttribute("lang");
  
  
 </table></center>
- 
+  -->
+  <div class="scritte">
+  <h2><%=lang[21]%></h2>
+  <input type="text" name="codf" required maxlength="16">
+  <hr>
+  </div>
+  
  </div>
  </form>
  <div class="link"><center>

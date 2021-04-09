@@ -9,7 +9,7 @@
 	background-image:url(https://www.solidbackgrounds.com/images/1920x1200/1920x1200-dim-gray-solid-color-background.jpg);
     
 }*/
-.logo{
+/*.logo{
     width: 30%;
     height: 100%;
     float: left;
@@ -22,16 +22,16 @@
     float: left;
     padding: 16px;
 }
-
-.titolo{
+*/
+/*.titolo{
 /*color: #7B002C;*/
 /*color: crimson;*/
-color: gold;
+/*color: gold;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 position: absolute;
 top: 5px;
-}
-select{
+}*/
+/*select{
 	width:250px;
 	height:30px;
 	border-radius: 50px;
@@ -40,7 +40,7 @@ select{
 	text-align:center;
 	margin-right:80px;	
 	
-}
+}*/
 
 .insert{
 	/*text-align:center;*/
@@ -54,7 +54,8 @@ select{
   	 position: absolute;
     left: 20%;
     right: 20%;
-    top:30%;
+    top:20%;
+    bottom:20%;
     padding-top: 1%;
     padding-bottom: 1%;
     background: linear-gradient(to right,blueviolet,blue);
@@ -62,19 +63,23 @@ select{
 
 .scritte{
 	width: 50%;
+	float: left;
+	text-align: center;
 	/*float: left;*/
-	text-align:right;
-	padding-right: 20px;
-	font-family: Century Gothic;
-  	font-size: 170%;
-  	margin-left: 30px;
+	/*text-align:right;
+	padding-right: 20px;*/
+	font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	color: white;
+  	/*font-size: 170%;
+  	margin-left: 30px;*/
   
 }
 
 input  {
-	width:250px;
-	height:30px;
-	border-radius: 50px;
+	margin-left:15%;
+	width:300px;
+	height:50px;
+	/*border-radius: 50px;*/
     outline-style: none;
 	border: 0;
 	text-align:center;
