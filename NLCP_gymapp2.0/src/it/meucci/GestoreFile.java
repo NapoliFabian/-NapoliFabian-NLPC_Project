@@ -23,19 +23,15 @@ public class GestoreFile {
 		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 */
     //percorso f
-	/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-	this.default_config ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-*/
+	this.db_settings ="C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+	this.default_config ="C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+
 		
 
 
 		
 	//	this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-	//	this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-	
-		this.db_settings = "/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/dbsettings.properties";
-		this.default_config ="/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/defaultconf.properties";
-		
+	//	this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project01\\NLCP_gymapp2.0\\config\\defaultconf.properties";	
 		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 */
 /*
@@ -96,7 +92,7 @@ public class GestoreFile {
 		if(language==null)
 			language = "ing";
 		
-		Properties prop = readLanguage("/home/fabian/eclipse-workspace/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/config/Language/"+language+".properties");
+		Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 	//	Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 		String[] config;
 		config = new String[max];
