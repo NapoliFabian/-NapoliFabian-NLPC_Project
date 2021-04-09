@@ -28,7 +28,7 @@
 <form method="POST" action="Gestore">
 
 
- <div class="insert" >
+ <div class="insert">
 
     <center><table class="scritte" border="0">
     <tr>
