@@ -30,6 +30,20 @@ String filtro;
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+.bottoni{
+width:18%;
+height:22%;
+top:40%;
+right: 1%;
+text-align: center;
+/*background-color: white;*/
+background-image:url(https://i2.wp.com/novocom.top/image/Y2xpcJyYXJGFydC1saWJyYXJ5LmNvbQ==/new_gallery/191-1918749_explosion-particle-irregular-background-gold-particles-transparent-background.png);
+border: 1px solid black;
+position: fixed;
+} 
+ 
+ </style>
 	<script>
 
 	function visualizza(){
@@ -87,7 +101,7 @@ String filtro;
 				<th><%=lang[23]%></th>
 				<th><%=lang[24]%></th>
 				<th>STATO</th>
-				<th><a href = "insertabbonamento.jsp"><img src=img/add.png height="30" width="30"></a> </th>
+				<th colspan="6"><a href = "insertabbonamento.jsp"><img src=img/add.png height="30" width="30"></a> </th>
 			</tr>
 		   
      
@@ -113,7 +127,7 @@ String filtro;
 			 <td><%=abb.getFine() %></td>
 			 <td><%=abb.getNomecorso() %></td>
 			 <td><img alt="STATO" src="<%=abb_status%>" width="100" height="50"></td>
-			  <td><a href="Gestore?cmd=rinnovaab&id=<%=abb.getIdabbonamento()%>"></a></td>
+			  <td><a href="rinnovaAbbonamento.jsp?id=<%=abb.getIdabbonamento()%>">Rinnova</a></td>
 			 
 			 <td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
 		 </tr>
@@ -168,7 +182,7 @@ String filtro;
 			 <td><%=abb.getFine() %></td>
 			 <td><%=abb.getNomecorso() %></td>
 			 <td><img alt="STATO" src="<%=abb_status%>" width="100" height="50"></td>
-			 <td><a href="Gestore?cmd=rinnovaabb&id=<%=abb.getIdabbonamento()%>">Rinnova</a></td>
+			 <td><a href="rinnovaAbbonamento.jsp?id=<%=abb.getIdabbonamento()%>">Rinnova</a></td>
 		 </tr>
 		  <%
 			 }//fine if
@@ -219,7 +233,7 @@ String filtro;
 			 <td><%=abb.getNomecorso() %></td>
 			 <td><img alt="STATO" src="<%=abb_status%>" width="100" height="50"></td>
 			 
-			 <td><a href="Gestore?cmd=dettaglioabb&id=<%=abb.getIdabbonamento()%>"></a></td>
+			 <td><a href="rinnovaAbbonamento.jsp?id=<%=abb.getIdabbonamento()%>">Rinnova</a></td>
 		 </tr>
 		 		  <%
 			 }//fine if

@@ -280,7 +280,26 @@ public class DBManager {
 			psc.executeUpdate();
 	}
 	
-	
+	public void rinnovaAbbonamento(abbonamento abb) throws SQLException
+	{
+		System.out.println(abb.toString()+" nel db");
+		String cmd;
+		cmd = "update abbonamento set Inizio=?,fine=? where abbonamento.IdAbbonamento='"+abb.getIdabbonamento()+"'";
+		    PreparedStatement psc;
+		    psc = connessione.prepareStatement(cmd);
+			
+			
+			psc.setString(1,abb.getInizio());
+			psc.setString(2,abb.getFine());
+			/*psc.setString(4,c.getSesso());
+			psc.setString(5,c.getDataNascita());
+			psc.setString(7,c.getPostalCode());
+			psc.setString(8,c.getCountry());
+			psc.setString(9,c.getPhone());
+			psc.setString(10,c.getFax());
+			psc.setString(11,c.getId());*/
+			psc.executeUpdate();
+	}
 	
 	
 
