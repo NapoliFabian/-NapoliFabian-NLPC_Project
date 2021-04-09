@@ -61,7 +61,7 @@ String filtro;
 	</script>
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
-<title><%=lang[4]%></title>
+<title><%=lang[3]%></title>
 
 </head>
 
