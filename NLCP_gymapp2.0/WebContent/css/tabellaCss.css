@@ -24,6 +24,7 @@ float:left;
 	 box-sizing: border-box;
 }
  .header {
+ /*modificato background*/
 	 background-color: gold;
 	 background:linear-gradient(to right,blueviolet,blue);
 	 color: black;
