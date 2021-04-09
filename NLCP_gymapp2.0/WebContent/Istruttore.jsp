@@ -19,6 +19,7 @@ String[] lang = (String[])session.getAttribute("lang");
     ricerca = (ArrayList<Utente>)session.getAttribute("ISTRUTTORI_CERCATI");
 %>
 
+
 <!DOCTYPE html>
 <html>
 <head>

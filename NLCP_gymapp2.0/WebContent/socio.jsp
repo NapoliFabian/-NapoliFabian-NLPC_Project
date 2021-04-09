@@ -38,7 +38,7 @@ position: fixed;
  
  </style>
 <meta charset="ISO-8859-1">
-<title>Socio</title>
+<title><%=lang[2]%></title>
 </head>
 <body background="images\bg-01.jpg">
 

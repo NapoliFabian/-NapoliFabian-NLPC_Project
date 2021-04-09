@@ -75,7 +75,7 @@ position: fixed;
 	</script>
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
-<title>Abbonamento</title>
+<title><%=lang[4]%></title>
 
 </head>
 
@@ -141,7 +141,7 @@ position: fixed;
      <br><br><br><br><br><br><br><br>
      <div class="bottoni">
   <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
-  <h3>ABBONAMENTI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
+  <h3><%=lang[19]%>: <strong style="color:red"><%=elenco.size()%></strong></h3>
  
  </div>
      <hr>

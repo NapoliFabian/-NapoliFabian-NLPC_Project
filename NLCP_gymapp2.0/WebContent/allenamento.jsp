@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <%@ page import="java.util.*"%>
 <%@ page import="it.meucci.*"%> 
@@ -24,7 +24,7 @@ String[] lang = (String[])session.getAttribute("lang");
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 
 <meta charset="ISO-8859-1">
-<title><%=lang[4]%></title>
+<title><%=lang[5]%></title>
 <style>
 .bottoni{
 width:18%;
@@ -43,14 +43,14 @@ position: fixed;
 <body background="images\bg-01.jpg">
 
     <div class="table-users">
-        <div class="header">ALLENAMENTI</div>
+        <div class="header"><%=lang[4]%></div>
         
         <table cellspacing="0"><!--  -->
 			<tr>
 				<th>ID</th>
-				<th>DATA</th>
-				<th>NOME CORSO</th>
-				<th>DURATA ALLENAMENTO</th>
+				<th><%=lang[5]%></th>
+				<th><%=lang[2]%></th>
+				<th><%=lang[28]%></th>
 				<th colspan="3">
 				<a href = "insertAllenamento.jsp"><img src=img/add.png height="30" width="30"></a> 
 				</th>
@@ -80,7 +80,7 @@ position: fixed;
      </div>
 <div class="bottoni">
   <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
-  <h3>ALLENAMENTI TOTALI: <strong style="color:red"><%=elenco1.size()%></strong></h3>
+  <h3><%=lang[4]%>: <strong style="color:red"><%=elenco1.size()%></strong></h3>
 <form method="POST" action="Gestore">
   <input type="date" placeholder="Data" name="allenamento"><input type="submit" name="INSERT" value="cercaALL">
   <%if(ricerca!=null) {%>

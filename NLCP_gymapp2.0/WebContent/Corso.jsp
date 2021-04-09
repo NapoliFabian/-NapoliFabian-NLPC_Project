@@ -10,7 +10,10 @@
 
 	elenco = (ArrayList<Corso>)session.getAttribute("ELENCO_CORSI");
 %>
-
+<%
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>
 
 
 <!DOCTYPE html>
@@ -19,18 +22,18 @@
  <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
 
 <meta charset="ISO-8859-1">
-<title>Gestione corsi</title>
+<title><%=lang[5]%></title>
 </head>
 <body background="images\bg-01.jpg">
 
     <div class="table-users">
-        <div class="header">CORSI</div>
+        <div class="header"><%=lang[6]%></div>
         
         <table cellspacing="0">
 			<tr>
-				<th>NOME CORSO</th>
-				<th>PREZZO</th>
-				<th width="200px">DESCRIZIONE</th>
+				<th><%=lang[24]%></th>
+				<th><%=lang[29]%></th>
+				<th width="200px"><%=lang[30]%></th>
 				<th colspan="2">
 				<a href = "insertCorsi.jsp"><img src=img/add.png height="30" width="30"></a> 
 				</th>
