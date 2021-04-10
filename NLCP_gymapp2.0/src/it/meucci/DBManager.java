@@ -195,6 +195,7 @@ public class DBManager {
 		ps.setString(3,ab.getCodf());
 		ps.setString(4,ab.getNomecorso());
 		ps.setString(5,stato);
+		
 		try {
 			ps.executeUpdate();
 		}catch (Exception e) {
@@ -280,17 +281,17 @@ public class DBManager {
 			psc.executeUpdate();
 	}
 	
-	public void rinnovaAbbonamento(abbonamento abb) throws SQLException
+	public void rinnovaAbbonamento(String inizio,String fine,int id) throws SQLException
 	{
-		System.out.println(abb.toString()+" nel db");
+		//System.out.println(abb.toString()+" nel db");
 		String cmd;
-		cmd = "update abbonamento set Inizio=?,fine=? where abbonamento.IdAbbonamento='"+abb.getIdabbonamento()+"'";
+		cmd = "update abbonamento set Inizio=?,fine=? where abbonamento.IdAbbonamento="+id;
 		    PreparedStatement psc;
 		    psc = connessione.prepareStatement(cmd);
 			
 			
-			psc.setString(1,abb.getInizio());
-			psc.setString(2,abb.getFine());
+			psc.setString(1,inizio);
+			psc.setString(2,fine);
 			/*psc.setString(4,c.getSesso());
 			psc.setString(5,c.getDataNascita());
 			psc.setString(7,c.getPostalCode());

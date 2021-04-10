@@ -303,7 +303,7 @@ public class Gestore extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String submit = request.getParameter("INSERT");	
-		System.out.println(submit);
+		System.out.println(submit+" nel post del gestore");
 		try {
 			
 			GestoreFile load = new GestoreFile();
@@ -548,15 +548,17 @@ public class Gestore extends HttpServlet {
 	if(submit.equals("RINNOVA ABBONAMENTO")) {
 		try {
 			abbonamento abb=new abbonamento();
-			int id = Integer.parseInt(request.getParameter("idabbonamento"));
-		    abb.setIdabbonamento(id);
+		/*	String idcambia=(String)request.getSession().getAttribute("id_abb1");
+			int id = Integer.parseInt(idcambia);*/
+			int id = (int) request.getSession().getAttribute("id_abb1");
+		   /* abb.setIdabbonamento(id);
 		    abb.setInizio(request.getParameter("inizio"));
-		    abb.setFine(request.getParameter("fine"));
+		    abb.setFine(request.getParameter("fine"));*/
 		    
 		    //	DBManager db;
 		   // 	db = new DBManager();
 		    	System.out.println(abb.toString()+" nella servlet");
-		    	db.rinnovaAbbonamento(abb);
+		    	db.rinnovaAbbonamento(request.getParameter("inizio"),request.getParameter("fine"),id);
 		    	request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
 		    	ArrayList<abbonamento> elenco= new ArrayList<abbonamento>();
 		    	elenco =db.allAbbonamenti();

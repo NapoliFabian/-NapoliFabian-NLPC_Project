@@ -17,7 +17,7 @@ elenco = (ArrayList <abbonamento> )session.getAttribute("ELENCO_ABBONAMENTI");
 	}
 		
 }
-
+session.setAttribute("id_abb1", abb1.getIdabbonamento());
 	
 	
 	

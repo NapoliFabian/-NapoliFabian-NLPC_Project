@@ -167,11 +167,11 @@ iframe {
 }
 
 .container-login100 {
-  animation-duration: 2s;
+ /* animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-delay: 0s;
     animation-iteration-count: 1;
-    animation-name: slideInLeft;
+    animation-name: slideInLeft;*/
   min-height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
