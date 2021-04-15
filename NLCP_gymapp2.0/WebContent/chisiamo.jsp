@@ -75,21 +75,23 @@ header{
 .centrale{
 
     position: absolute;
-    left: 10%;
-    right: 10%;
+    left: 1%;
+    right: 1%;
     top:30%;
     padding-top: 1%;
     padding-bottom: 1%;
+    
+    
 }
 .box{
-    width: 20%;
+    width: 15%;
     height: 45%;
     background-color: white;
     float: left;
     text-align: center;
     border-radius: 50px;
     padding: 7px;
-    margin-left: 9%;
+    margin-left: 7%;
     margin-top: 2%;
 }
 .box:hover{
@@ -150,7 +152,7 @@ padding:16px;
   .sidenav a {font-size: 18px;}
 }
 </style>
-<title>DASHBOARD</title>
+<title>CHI SIAMO</title>
 <%
 String username = (String)session.getAttribute("username");
 String nomeapp = (String)session.getAttribute("nomeapp");
@@ -161,16 +163,14 @@ if(username!=null){
 <body style="background-image: url(https://undesigns.net/wp-content/uploads/2018/02/blue-violet-motion-background-free-download-undesigns.jpg);">
 <header>
 <center><h1>GYM APP</h1></center>
-<center><h3 class="sottotitolo"><%=lang[0]%> <%=username%></h3></center>
+<center><h3 class="sottotitolo">CHI SIAMO</h3></center>
 <!--<div class="link">
  <a>OPTION</a>   
 </div>-->
 </header>
 <ul>
     <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
-    <li><a href="#news">UPDATE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-    <li><a href="chisiamo.jsp">ABOUT US</a></li>
+    <li><a href="dashboard.jsp">HOME</a></li>
       <li><div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="optionpage.html">OPTION</a>
@@ -178,43 +178,48 @@ if(username!=null){
 </div></li>
   </ul>
 <div class="centrale">
-<a href="Gestore?cmd=allsoc">
+
+
+
+
     <div class="box">
-    <img src="https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-people-icon-business-corporate-team-working-together-social-network-png-image_448381.jpg" width="150" height="150"> 
+    <img src="https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-people-icon-business-corporate-team-working-together-social-network-png-image_448381.jpg" width="250" height="250"> 
     <hr>
-    <h3><%=lang[1]%></h3>    
+    <h3>FABIAN NAPOLI</h3>    
     </div>
 </a>  
-<a href="Gestore?cmd=allis">
+
+
     <div class="box">     
-    <img src="https://pngimage.net/wp-content/uploads/2018/06/member-icon-png-5.png" width="150" height="150">
+    <img src="https://pngimage.net/wp-content/uploads/2018/06/member-icon-png-5.png" width="250" height="250">
     <hr>
-    <h3><%=lang[2]%></h3> 
+    <h3>CRISTIAN LONGO</h3> 
     </div></a>
-<a href="Gestore?cmd=allabb">
+    
+    
     <div class="box">
-        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="150" height="150"> 
+        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="250" height="250"> 
         <hr>
-        <h3><%=lang[3]%></h3>    
+        <h3>SAMUEL PRIMICERI</h3>    
         </div></a>   
-<a href="Gestore?cmd=allal"> <div class="box">
-        <img src="https://www.mfsano.it/wp-content/uploads/2019/05/icona-corsi-collettivi.png" width="150" height="150"> 
+
+
+
+    <div class="box">
+        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="250" height="250"> 
         <hr>
-        <h3><%=lang[4]%></h3>    
-        </div></a>
-<a href="Gestore?cmd=allco"><div class="box">
-        <img src="https://th.bing.com/th/id/R5441f608cebb76e0d993f1ca69f529d5?rik=1hbECR3MWxppMg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_498796.png&ehk=cYG%2fRrv7wQmlB3SWFl%2f0CxMf50J38SIQboJj15cjxBQ%3d&risl=&pid=ImgRaw" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[5]%></h3>    
+        <h3>SIMONE CATALDO</h3>    
         </div></a>   
-        
-<a>
-<div class="box">
-        <img src="https://www.fitcoachonline.it/wp-content/uploads/2020/05/icone-fitcoach-02.png" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[6]%></h3>    
-        </div></a>
-</div>
+
+
+
+
+
+
+
+
+
+
 
 <footer>
 <br>
@@ -244,4 +249,3 @@ else{
 }
 %>
 
-</html>
