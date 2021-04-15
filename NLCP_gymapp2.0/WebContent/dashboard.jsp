@@ -208,7 +208,7 @@ if(username!=null){
         <h3><%=lang[5]%></h3>    
         </div></a>   
         
-<a>
+<a href="creaSchede.jsp">
 <div class="box">
         <img src="https://www.fitcoachonline.it/wp-content/uploads/2020/05/icone-fitcoach-02.png" width="150" height="150"> 
         <hr>
