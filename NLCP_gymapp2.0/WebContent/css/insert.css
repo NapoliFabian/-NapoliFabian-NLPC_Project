@@ -89,7 +89,7 @@ input  {
 input:hover{
 	text-decoration: none;
 	/*background-color:  gold;*/
-	background: linear-gradient(to right, gold, white, gold);
+	background: linear-gradient(to right,blueviolet,blue);
 }
 
 
@@ -98,7 +98,7 @@ input:hover{
 button:hover{
 	text-decoration: none;
 	/*background-color:  gold;*/
-	background: linear-gradient(to right, gold, darkgrey, gold);
+background: linear-gradient(to right,blueviolet,blue);
 }
 
 
@@ -116,12 +116,11 @@ button {
 
 .link{
 	background: #ffd700;
-  	background: linear-gradient(to right, gold,dimgray,gold);
-  	border-radius: 50px;
+  	background: linear-gradient(to right,blueviolet,blue);
   	width:40%;
   	height: 40px;
   	margin-left: 30%;
-  	margin-top: 50px;
+  	
 }
 
 
