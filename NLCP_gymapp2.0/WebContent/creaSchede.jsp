@@ -3,15 +3,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--  <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"/>-->
 <meta charset="ISO-8859-1">
+<title>Insert title here</title>
 <%
-String color = (String)session.getAttribute("color");
-String[] lang = (String[])session.getAttribute("lang"); 
-%>
-<style>
+ArrayList<Utente> soci = new ArrayList<Utente>();
+try {
+	GestoreFile load = new GestoreFile();
+	String[] datidb = load.DBSettings();
+	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+	soci= db.allSocio();	
+} catch (Exception e) {
+	System.out.println(e.getMessage());
+}
 
-  }
+%>  
+<style>
   html {
   scroll-behavior: smooth;
 }
@@ -100,9 +106,9 @@ footer{
     background-color: black;
     position: absolute;
   /*  bottom: 1px;*/
-  top:1000px;
+  top:1299;
 }
-table{
+.tableFoother{
 width: 100%;
 height: auto;
 }
@@ -150,75 +156,45 @@ padding:16px;
   .sidenav a {font-size: 18px;}
 }
 </style>
-<title>DASHBOARD</title>
-<%
+<% 
+String[] lang = (String[])session.getAttribute("lang");
 String username = (String)session.getAttribute("username");
-String nomeapp = (String)session.getAttribute("nomeapp");
-if(username!=null){
-	%>
+%>
 </head>
-<!-- <body style="background-image: url(images/bg-00.jpg);"> -->
-<body style="background-image: url(https://undesigns.net/wp-content/uploads/2018/02/blue-violet-motion-background-free-download-undesigns.jpg);">
-<header>
+
+<body>
+
+	<header>
 <center><h1>GYM APP</h1></center>
 <center><h3 class="sottotitolo"><%=lang[0]%> <%=username%></h3></center>
 <!--<div class="link">
  <a>OPTION</a>   
 </div>-->
 </header>
-<ul>
-    <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
-    <li><a href="#news">UPDATE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-    <li><a href="chisiamo.jsp">ABOUT US</a></li>
-      <li><div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="optionpage.html">OPTION</a>
-  <a class="active" href="Gestore?cmd=logout">LOGOUT</a>
-</div></li>
-  </ul>
-<div class="centrale">
-<a href="Gestore?cmd=allsoc">
-    <div class="box">
-    <img src="https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-people-icon-business-corporate-team-working-together-social-network-png-image_448381.jpg" width="150" height="150"> 
-    <hr>
-    <h3><%=lang[1]%></h3>    
-    </div>
-</a>  
-<a href="Gestore?cmd=allis">
-    <div class="box">     
-    <img src="https://pngimage.net/wp-content/uploads/2018/06/member-icon-png-5.png" width="150" height="150">
-    <hr>
-    <h3><%=lang[2]%></h3> 
-    </div></a>
-<a href="Gestore?cmd=allabb">
-    <div class="box">
-        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[3]%></h3>    
-        </div></a>   
-<a href="Gestore?cmd=allal"> <div class="box">
-        <img src="https://www.mfsano.it/wp-content/uploads/2019/05/icona-corsi-collettivi.png" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[4]%></h3>    
-        </div></a>
-<a href="Gestore?cmd=allco"><div class="box">
-        <img src="https://th.bing.com/th/id/R5441f608cebb76e0d993f1ca69f529d5?rik=1hbECR3MWxppMg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_498796.png&ehk=cYG%2fRrv7wQmlB3SWFl%2f0CxMf50J38SIQboJj15cjxBQ%3d&risl=&pid=ImgRaw" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[5]%></h3>    
-        </div></a>   
-        
-<a href="creaSchede.jsp">
-<div class="box">
-        <img src="https://www.fitcoachonline.it/wp-content/uploads/2020/05/icone-fitcoach-02.png" width="150" height="150"> 
-        <hr>
-        <h3><%=lang[6]%></h3>    
-        </div></a>
-</div>
 
-<footer>
+	<ul>
+    <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
+    <li><a href="dashboard.jsp">DASHBOARD</a></li>
+    <li><a href="schede.jsp">SCHEDE</a></li>
+    <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
+    <br><br>
+	
+	<table border="2"> 
+<%
+for(int i=0;i<20;i++){
+%>
+<tr>
+<td><input type="text" name="es<%=i%>"></td>
+<td><input type = "text" name="rip<%=i%>"></td>
+</tr>
+<%
+}
+%>
+
+</table>
+	<footer>
 <br>
-<table>
+<table class="tableFoother">
 <tr>
 <td><p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p></td>
 <td><video src="img/icon/animatedicon.mp4" autoplay="autoplay" width="100" height="100"></video></td>
@@ -227,21 +203,6 @@ if(username!=null){
 </table>
 <br>
 </footer>
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
+  </ul>
 </body>
-<% 
-}
-else{
-	response.sendRedirect("error.jsp");
-}
-%>
-
 </html>
