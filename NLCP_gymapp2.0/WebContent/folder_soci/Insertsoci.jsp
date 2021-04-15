@@ -92,9 +92,39 @@ String[] lang = (String[])session.getAttribute("lang");
 </table></center>
   -->
   <div class="scritte">
+  
   <h2><%=lang[21]%></h2>
   <input type="text" name="codf" required maxlength="16">
-  <hr>
+  
+  <h2><%=lang[11]%></h2>
+  <input type="text" name="Nome" required>
+  
+  <h2><%=lang[10]%></h2>
+  <input type="text" name="Cognome" required>
+  
+  <h2><%=lang[12]%></h2>
+  <input type="text" name="Telefono" required>
+  </div>
+  <div class="scritte">
+  <h2 >SESSO</h2>
+  <select name="Sesso" style="	width:300px;height:50px;">
+    		<option value="Vuoto"></option>
+    		<option value="M">Male</option>
+    		<option value="F">Female</option>
+    		<option value="Altro">Altro</option> 	
+    	</select>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    	<br>
+    <input type="reset" value="ANNULLA">
+    <input type="submit" name="INSERT" value="INSERT_SOCIO">
+    
   </div>
   
  </div>
