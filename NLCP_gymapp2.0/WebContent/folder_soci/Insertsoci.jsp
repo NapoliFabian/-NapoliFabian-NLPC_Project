@@ -10,7 +10,7 @@
 
 
 <%
-// 
+// dd
 String color = (String)session.getAttribute("color");
 String[] lang = (String[])session.getAttribute("lang"); 
 %>
