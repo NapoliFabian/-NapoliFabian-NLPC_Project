@@ -10,26 +10,13 @@ String color = (String)session.getAttribute("color");
 String[] lang = (String[])session.getAttribute("lang"); 
 %>
 <style>
-    @keyframes slideInLeft {
-    0% {
-     /* transform: translateX(-100%);*/
-     transform: translateY(-100%);
-    }
-    100% {
-    /*  transform: translateX(0);*/
-    transform: translateY(0);
-    }
+
   }
   html {
   scroll-behavior: smooth;
 }
   
 ul {
-animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-name: slideInLeft;
 list-style-type: none;
 margin: 0;
 padding: 0;
@@ -75,11 +62,7 @@ body{
     margin: 0px;
 }
 header{
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-name: slideInLeft;
+
     background: linear-gradient(to right,blueviolet,blue);
     opacity: 0.8;
   height:100px; 
@@ -90,12 +73,7 @@ header{
     height: auto;
 }
 .centrale{
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    animation-name: slideInLeft;
-    background-color: blueviolet;
+
     position: absolute;
     left: 10%;
     right: 10%;
