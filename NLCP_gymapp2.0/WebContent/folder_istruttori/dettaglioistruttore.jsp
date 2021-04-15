@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+<link href="../css/dashboardcss20.css" rel="stylesheet"  type="text/css">
 <%
 Utente is;
 is = (Utente)session.getAttribute("ISTRUTTORE_DETTAGLIO");
@@ -21,7 +21,7 @@ is = (Utente)session.getAttribute("ISTRUTTORE_DETTAGLIO");
 <div class="header">
 <div class="icon">
 
-<img src="img\nuovaicona.png" width="100" height="70">
+<img src="../img\nuovaicona.png" width="100" height="70">
 
 </div>
 <div class="logo">

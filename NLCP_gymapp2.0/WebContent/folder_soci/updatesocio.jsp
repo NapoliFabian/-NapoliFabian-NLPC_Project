@@ -22,7 +22,7 @@
  <br><br><a href="socio.jsp">Elenco Clienti</a><br><br>
  <br><br><a href="dashboard.jsp">Home</a><br><br>
  
-  <form class="transparent" method="POST" action="Gestore">
+  <form class="transparent" method="POST" action="../Gestore">
   <table border="3" bordercolor="brown" bgcolor="white">
  
  <tr>

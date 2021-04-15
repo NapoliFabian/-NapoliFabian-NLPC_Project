@@ -19,7 +19,7 @@
    
 <h1>Aggiornamento istruttori</h1>
  <br><br><a href="Istruttore.jsp">Elenco Istruttori</a><br><br>
- <br><br><a href="dashboard.jsp">Home</a><br><br>
+ <br><br><a href="../dashboard.jsp">Home</a><br><br>
  
   <form class="transparent" method="POST" action="Gestore">
   <table border="3" bordercolor="brown" bgcolor="white">

@@ -49,7 +49,7 @@ public class Gestore extends HttpServlet {
 			//	db = new DBManager();
 				istruttori = db.allIstruttori();
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
-				response.sendRedirect("Istruttore.jsp");
+				response.sendRedirect("folder_istruttori/Istruttore.jsp");
 						
 			} catch (Exception e) {
 				
@@ -87,7 +87,7 @@ public class Gestore extends HttpServlet {
 			//	db = new DBManager();
 				soci= db.allSocio();
 				request.getSession().setAttribute("ELENCO_SOCI",soci);
-				response.sendRedirect("socio.jsp");
+				response.sendRedirect("folder_soci/socio.jsp");
 						
 			} catch (Exception e) {
 				
@@ -150,7 +150,7 @@ public class Gestore extends HttpServlet {
 				is = istruttori.get(i);
 				if(is.getCodf().equals(id)) {
 				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
-				response.sendRedirect("dettaglioistruttore.jsp");
+				response.sendRedirect("folder_istruttori/dettaglioistruttore.jsp");
 				}
 			}//fine for
 		}// //FINE
@@ -184,20 +184,6 @@ public class Gestore extends HttpServlet {
 				}
 			}//fine for
 		}//FINE
-		//DETTAGLIO SOCIO
-		if(cmd.equals("dettaglioso")) {
-			String codf = request.getParameter("id");
-			ArrayList<Utente> soci = new ArrayList<Utente>();
-			soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
-			Utente is;
-			for(int i=0;i<soci.size();i++) {
-				is = soci.get(i);
-				if(is.getCodf().equals(codf)) {
-				request.getSession().setAttribute("SOCIO_DETTAGLIO",is);	
-				response.sendRedirect("dettagliosocio.jsp");
-				}
-			}
-		}//FINE
 		
 		
 		
@@ -212,7 +198,7 @@ public class Gestore extends HttpServlet {
 				is = istruttori.get(i);
 				if(is.getCodf().equals(id)){
 				request.getSession().setAttribute("ISTRUTTORE_ELIMINA",is);	
-				response.sendRedirect("confermais.jsp");
+				response.sendRedirect("folder_istruttori/confermais.jsp");
 				}
 			}	
 		}
@@ -225,7 +211,7 @@ public class Gestore extends HttpServlet {
 				ArrayList<Utente> istruttori = new ArrayList<Utente>();
 				istruttori = db.allIstruttori();
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
-				response.sendRedirect("Istruttore.jsp");
+				response.sendRedirect("folder_istruttori/Istruttore.jsp");
 			} catch (Exception e) {
 				
 				String errore = "";
@@ -237,9 +223,9 @@ public class Gestore extends HttpServlet {
 		}
 		if(cmd.equals("noelis")) {
 			request.getSession().removeAttribute("ISTRUTTORE_ELIMINA");
-			response.sendRedirect("Istruttore.jsp");
+			response.sendRedirect("folder_istruttori/Istruttore.jsp");
 		}
-		if(cmd.equals("eliminaso")) {
+		/*if(cmd.equals("eliminaso")) {
 			String codf = request.getParameter("id");	
 			ArrayList<Utente> soci = new ArrayList<Utente>();
 			soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
@@ -252,19 +238,31 @@ public class Gestore extends HttpServlet {
 				}
 			}//fine for
 			
-		}
+		}*/
 		if(cmd.equals("confermaso")) {
-			Utente is =(Utente)request.getSession().getAttribute("SOCIO_ELIMINA");
+			
+			//Utente is =(Utente)request.getSession().getAttribute("SOCIO_ELIMINA");
+			String codf = request.getParameter("id");	
 			try {
+				ArrayList<Utente> soci = new ArrayList<Utente>();
+				soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");
+				Utente u = null;
+				for(int i=0;i<soci.size();i++) {
+					u = soci.get(i);
+					if(u.getCodf().equals(codf)) {
+						break;
+				/*	request.getSession().setAttribute("SOCIO_ELIMINA",is);	
+					response.sendRedirect("confermaso.jsp");*/
+					}
+				}
 			//	db = new DBManager();
-				db.eliminaSocio(is);
+				db.eliminaSocio(u);
 				request.getSession().removeAttribute("ELENCO_SOCI");
 				ArrayList<Utente> istruttori = new ArrayList<Utente>();
 				istruttori = db.allSocio();
 				request.getSession().setAttribute("ELENCO_SOCI",istruttori);
-				response.sendRedirect("socio.jsp");
+				response.sendRedirect("folder_soci/socio.jsp");
 			} catch (Exception e) {
-				
 				String errore = "";
 				request.getSession().setAttribute("ERROR",errore);
 				response.sendRedirect("errore.jsp");
@@ -281,7 +279,7 @@ public class Gestore extends HttpServlet {
 				is = soci.get(i);
 				if(is.getCodf().equals(codf)) {
 				request.getSession().setAttribute("SOCIO_CAMBIA",is);	
-				response.sendRedirect("updatesocio.jsp");
+				response.sendRedirect("folder_soci/updatesocio.jsp");
 				}
 			}
 		}
@@ -328,7 +326,7 @@ public class Gestore extends HttpServlet {
 		ArrayList<Utente>istruttori = new ArrayList<Utente>();
 		istruttori = db.allIstruttori();
 		request.getSession().setAttribute("ELENCO_ISTRUTTORI", istruttori);
-		response.sendRedirect("Istruttore.jsp");
+		response.sendRedirect("folder_istruttori/Istruttore.jsp");
 	} catch (Exception e) {
 		
 		String errore = "";
@@ -408,7 +406,7 @@ public class Gestore extends HttpServlet {
 	    }
 		request.getSession().removeAttribute("ISTRUTTORI_CERCATI");
 		request.getSession().setAttribute("ISTRUTTORI_CERCATI",ricerca);
-		response.sendRedirect("Istruttore.jsp");
+		response.sendRedirect("folder_istruttori/Istruttore.jsp");
 	}
 	
 	//CERCA SOCIO
@@ -537,7 +535,7 @@ public class Gestore extends HttpServlet {
 		    	ArrayList<Utente> elenco= new ArrayList<Utente>();
 		    	elenco =db.allSocio();
 		    	request.getSession().setAttribute("ELENCO_SOCI", elenco);
-		    	response.sendRedirect("socio.jsp");
+		    	response.sendRedirect("folder_soci/socio.jsp");
 		}
 		    catch (Exception e) {
 				System.out.println(e.getMessage());

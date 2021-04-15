@@ -15,17 +15,17 @@ String filtro;
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/insert.css" rel="stylesheet"  type="text/css">
+<link href="../css/insert.css" rel="stylesheet"  type="text/css">
 <!--<link href="css/elenchi.css" rel="stylesheet"  type="text/css">-->
 <meta charset="ISO-8859-1">
 <title>Inserisci Istruttori</title>
 </head>
-<body style="background-image: url(images/bg-01.jpg);">
+<body style="background-image: url(../images/bg-01.jpg);">
 
 <div class="header">
 <div class="icon">
 
-<img src="img\icona.png" width="100" height="70">
+<img src="../img\icona.png" width="100" height="70">
 
 </div>
 <div class="logo">
@@ -36,7 +36,7 @@ String filtro;
  <br>
  <br>
  <br>
-<form method="POST" action="Gestore">
+<form method="POST" action="../Gestore">
 
 
  <div class="insert" >
@@ -92,7 +92,7 @@ String filtro;
  </form>
  <div class="link"><center>
  	<a href="Istruttore.jsp"><button>Elenco Istruttori</button></a>
- 	<a href="dashboard.jsp"><button>Home</button></a></center>
+ 	<a href="../dashboard.jsp"><button>Home</button></a></center>
  </div>
  
  

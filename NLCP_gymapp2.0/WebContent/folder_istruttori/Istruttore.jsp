@@ -24,7 +24,7 @@ String[] lang = (String[])session.getAttribute("lang");
 <html>
 <head>
 
- <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
+ <link href="../css/tabellaCss.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>Gestione Istruttore</title>
 
@@ -44,7 +44,7 @@ position: fixed;
  </style>
 
 </head>
-<body background="images\bg-01.jpg">
+<body background="../images\bg-01.jpg">
 
     <div class="table-users">
         <div class="header"><%=lang[2]%></div>
@@ -56,7 +56,7 @@ position: fixed;
 				<th><%=lang[15]%></th>
 				
 				<th colspan="3">
-				<a href = "insertIstruttori.jsp"><img src=img/add.png height="30" width="30">
+				<a href = "insertIstruttori.jsp"><img src="../img/add.png" height="30" width="30">
 				</a> </th>
 			</tr>
      
@@ -70,9 +70,9 @@ position: fixed;
  	<td><%=is.getNome()%></td>
  	<td><%=is.getCognome() %></td>
  	<td><%=is.getTelefono() %></td>
-    <td><a href="Gestore?cmd=dettagliois&id=<%=is.getCodf()%>"><img alt="" src="img\lente.png" width="28px"></a></td>
-    <td><a href="Gestore?cmd=eliminais&id=<%=is.getCodf()%>"><img alt="" src="img\cestino.png" width="28px"></a></td>
-    <td><a href="Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="img\update.png" width="28px"></a></td>
+    <td><a href="../Gestore?cmd=dettagliois&id=<%=is.getCodf()%>"><img alt="" src="../img\lente.png" width="28px"></a></td>
+    <td><a href="../Gestore?cmd=eliminais&id=<%=is.getCodf()%>"><img alt="" src="../img\cestino.png" width="28px"></a></td>
+    <td><a href="../Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td>
  </tr>
  <%
      }
@@ -83,7 +83,7 @@ position: fixed;
 </table>
 </div>
 <div class="bottoni">
-  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
+  <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>
   <h3>ISTRUTTORI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
   <form method="POST" action="Gestore">
   <input type="text" placeholder="Inserisci Cognome" name="istruttore"><input type="submit" name="INSERT" value="cercaIS">

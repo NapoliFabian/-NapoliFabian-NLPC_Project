@@ -5,8 +5,13 @@
 <head>
 <!-- <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"> -->
 <%
-Utente s;
-s = (Utente)session.getAttribute("SOCIO_DETTAGLIO");
+Utente s = null;
+ArrayList <Utente> elenco;
+String id = request.getParameter("id");
+elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_SOCI");
+for(int i=0;i<elenco.size();i++){
+	s = elenco.get(i);
+	if(s.getCodf().equals(id)){break;}}
 %>
 
 

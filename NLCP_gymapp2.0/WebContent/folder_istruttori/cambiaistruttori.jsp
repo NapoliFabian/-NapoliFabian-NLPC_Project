@@ -18,7 +18,7 @@
 	 <h1>Aggiornamento Istruttori </h1>
  <br><br><a href="Istruttore.jsp">Home</a><br><br>
  
-<form method="POST" action="GestioneIstruttore?cmd=aggiorna">
+<form method="POST" action="../GestioneIstruttore?cmd=aggiorna">
  <table border="3" bordercolor="brown" bgcolor="white">
 
      

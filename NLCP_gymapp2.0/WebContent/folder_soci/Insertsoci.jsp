@@ -17,12 +17,12 @@ String[] lang = (String[])session.getAttribute("lang");
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/insert.css" rel="stylesheet"  type="text/css">
+<link href="../css/insert.css" rel="stylesheet"  type="text/css">
 <!--<link href="css/elenchi.css" rel="stylesheet"  type="text/css">-->
 <meta charset="ISO-8859-1">
 <title>Inserisci Soci</title>
 </head>
-<body style="background-image: url(images/bg-01.jpg);">
+<body style="background-image: url(../images/bg-01.jpg);">
 
 <!--  <div class="header">
 <div class="icon">
@@ -101,7 +101,7 @@ String[] lang = (String[])session.getAttribute("lang");
  </form>
  <div class="link"><center>
  	<a href="socio.jsp"><button>Elenco Soci</button></a>
- 	<a href="dashboard.jsp"><button>Home</button></a></center>
+ 	<a href="../dashboard.jsp"><button>Home</button></a></center>
  </div>
  
  

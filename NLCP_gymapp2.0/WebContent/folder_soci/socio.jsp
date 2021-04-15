@@ -11,7 +11,7 @@
 %>
 <%
 
-	elenco = (ArrayList <Utente> )session.getAttribute("ELENCO_SOCI");
+elenco = (ArrayList <Utente> )session.getAttribute("ELENCO_SOCI");
 elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_SOCI");
 ricerca = (ArrayList<Utente>)session.getAttribute("SOCI_CERCATI");
 %>
@@ -22,7 +22,7 @@ String[] lang = (String[])session.getAttribute("lang");
 <!DOCTYPE html>
 <html>
 <head>
- <link href="css/tabellaCss.css" rel="stylesheet"  type="text/css">
+ <link href="../css/tabellaCss.css" rel="stylesheet"  type="text/css">
  <style>
 .bottoni{
 width:18%;
@@ -40,7 +40,7 @@ position: fixed;
 <meta charset="ISO-8859-1">
 <title><%=lang[1]%></title>
 </head>
-<body background="images\bg-01.jpg">
+<body background="../images\bg-01.jpg">
 
     <div class="table-users">
         <div class="header"><%=lang[1]%></div>
@@ -52,7 +52,7 @@ position: fixed;
               <th><%=lang[15]%></th>
               <th><%=lang[13]%></th>
               <th colspan="3">
-              <a href="Insertsoci.jsp"><img alt="" src="img\add.png" width="30px"></a>
+              <a href="Insertsoci.jsp"><img alt="" src="../img\add.png" width="30px"></a>
               </th>
            </tr>
      
@@ -67,9 +67,9 @@ position: fixed;
 			<td><%=s.getNome()%></td>
 			<td><%=s.getTelefono()%></td>
 			<td><%=s.getDataNascita()%></td>
-			<td><a href="Gestore?cmd=dettaglioso&id=<%=s.getCodf()%>"><img alt="" src="img\lente.png" width="28px"></a></td>
-			<td><a href="Gestore?cmd=eliminaso&id=<%=s.getCodf()%>"><img alt="" src="img\cestino.png" width="28px"></a></td>
-			<td><a href="Gestore?cmd=updateso&id=<%=s.getCodf()%>"><img alt="" src="img\update.png" width="28px"></a></td>
+			<td><a href="dettagliosocio.jsp?id=<%=s.getCodf()%>"><img alt="" src="../img\lente.png" width="28px"></a></td>
+			<td><a href="confermaso.jsp?id=<%=s.getCodf()%>"><img alt="" src="../img\cestino.png" width="28px"></a></td>
+			<td><a href="../Gestore?cmd=updateso&id=<%=s.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td>
 		</tr>
 		
 		<%
@@ -81,9 +81,9 @@ position: fixed;
         
  </div>
 <div class="bottoni">
-  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
+  <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>
   <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
-       <form method="POST" action="Gestore">
+       <form method="POST" action="../Gestore">
   <input type="text" placeholder="Inserisci Cognome" name="socio"><input type="submit" name="INSERT" value="cercaSO">
   <%if(ricerca!=null) {%>
   <%for(i=0;i<ricerca.size();i++) 
@@ -91,7 +91,7 @@ position: fixed;
 	 soc=(Utente)ricerca.get(i);
   
 %>
-  <br><a href="Gestore?cmd=dettaglioso&id=<%=soc.getCodf()%>"><%=soc.getNome()%> <%=soc.getCognome()%></a>
+  <br><a href="../Gestore?cmd=dettaglioso&id=<%=soc.getCodf()%>"><%=soc.getNome()%> <%=soc.getCognome()%></a>
   <%
      }
  %> 
