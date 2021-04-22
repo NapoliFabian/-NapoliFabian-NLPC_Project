@@ -45,7 +45,6 @@ position: fixed;
  
  </style>
 	<script>
-
 	function visualizza(){
 		var selettore = document.getElementById("tiporicerca").value;
 		//alert(selettore);

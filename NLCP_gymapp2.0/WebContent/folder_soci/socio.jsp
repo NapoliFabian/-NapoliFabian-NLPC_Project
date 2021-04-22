@@ -12,8 +12,7 @@
 <%
 
 elenco = (ArrayList <Utente> )session.getAttribute("ELENCO_SOCI");
-elenco = (ArrayList<Utente>)session.getAttribute("ELENCO_SOCI");
-ricerca = (ArrayList<Utente>)session.getAttribute("SOCI_CERCATI");
+
 %>
 <%
 String color = (String)session.getAttribute("color");
@@ -45,7 +44,7 @@ position: fixed;
     <div class="table-users">
         <div class="header"><%=lang[1]%></div>
         
-        <table cellspacing="0">
+        <table cellspacing="0" id="myTable">
            <tr>
               <th><%=lang[10]%></th>
               <th><%=lang[11]%></th>
@@ -83,22 +82,27 @@ position: fixed;
 <div class="bottoni">
   <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>
   <h3>SOCI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
-       <form method="POST" action="../Gestore">
-  <input type="text" placeholder="Inserisci Cognome" name="socio"><input type="submit" name="INSERT" value="cercaSO">
-  <%if(ricerca!=null) {%>
-  <%for(i=0;i<ricerca.size();i++) 
-  {
-	 soc=(Utente)ricerca.get(i);
-  
-%>
-  <br><a href="../Gestore?cmd=dettaglioso&id=<%=soc.getCodf()%>"><%=soc.getNome()%> <%=soc.getCognome()%></a>
-  <%
-     }
- %> 
-  <%
-     }
- %> 
-  </form> 
+  <input type="text" placeholder="Inserisci Cognome" name="socio" id="ricerca" onkeyup="myFunction()">
      </div>
+      <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("ricerca");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
 </body>
 </html>

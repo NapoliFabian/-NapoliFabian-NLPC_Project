@@ -479,7 +479,7 @@ public class Gestore extends HttpServlet {
 			request.getSession().removeAttribute("ELENCO_SOCI");
 			ArrayList<Utente> soci = db.allSocio();
 			request.getSession().setAttribute("ELENCO_SOCI",soci);
-			response.sendRedirect("socio.jsp");
+			response.sendRedirect("folder_soci/socio.jsp");
 		} catch (Exception e) {
 			
 			String errore = "";

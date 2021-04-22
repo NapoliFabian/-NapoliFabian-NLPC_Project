@@ -26,18 +26,22 @@ public class GestoreFile {
     //percorso f
 	//this.db_settings ="C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 	//this.default_config ="C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
-
+/*
 		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 		
-		
+		*/
 		
 		/*this.db_settings ="C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 */
 
 
+/*
 		this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		 this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+*/
+//		this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+//		this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 
 /*
 		this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
@@ -45,16 +49,17 @@ public class GestoreFile {
 */
 
 
-		// this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-		// this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+		 this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+		 this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 
 
-/*
-		this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-		this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+
+	//	this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+	//	this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\defaultconf.properties";
 		
-		*/
+
 		/*
+
 		this.db_settings ="C:\\Users\\Samuel\\git\\-NapoliFabian-NLPC_Project\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\Samuel\\git\\-NapoliFabian-NLPC_Project\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";*/
 	}
@@ -112,6 +117,9 @@ public class GestoreFile {
 		
 
 
+	//	Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
+
+
 		//Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 
 	//	Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
@@ -122,7 +130,7 @@ public class GestoreFile {
 	Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 
 	
-	//	Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
+		//Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
 		
 	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");// simone
 

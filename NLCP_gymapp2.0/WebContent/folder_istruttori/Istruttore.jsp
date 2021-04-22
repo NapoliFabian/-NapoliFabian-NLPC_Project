@@ -49,10 +49,10 @@ position: fixed;
     <div class="table-users">
         <div class="header"><%=lang[2]%></div>
         
-        <table cellspacing="0">
+        <table cellspacing="0" id="myTable">
 			<tr>
+			    <th><%=lang[10]%></th>
 				<th><%=lang[11]%></th>
-				<th><%=lang[10]%></th>
 				<th><%=lang[15]%></th>
 				
 				<th colspan="3">
@@ -67,8 +67,8 @@ position: fixed;
  %>
  
   <tr>
+  	<td><%=is.getCognome() %></td>
  	<td><%=is.getNome()%></td>
- 	<td><%=is.getCognome() %></td>
  	<td><%=is.getTelefono() %></td>
     <td><a href="../Gestore?cmd=dettagliois&id=<%=is.getCodf()%>"><img alt="" src="../img\lente.png" width="28px"></a></td>
     <td><a href="../Gestore?cmd=eliminais&id=<%=is.getCodf()%>"><img alt="" src="../img\cestino.png" width="28px"></a></td>
@@ -85,22 +85,28 @@ position: fixed;
 <div class="bottoni">
   <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>
   <h3>ISTRUTTORI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
-  <form method="POST" action="Gestore">
-  <input type="text" placeholder="Inserisci Cognome" name="istruttore"><input type="submit" name="INSERT" value="cercaIS">
-  <%if(ricerca!=null) {%>
-  <%for(i=0;i<ricerca.size();i++) 
-  {
-	 isc=(Utente)ricerca.get(i);
-  
-%>
-  <br><a href="Gestore?cmd=dettagliois&id=<%=isc.getCodf()%>"><%=isc.getNome()%> <%=isc.getCognome()%></a>
-  <%
-     }
- %> 
-  <%
-     }
- %> 
-  </form>
+ 
+  <input type="text" placeholder="Inserisci Cognome" name="socio" id="ricerca" onkeyup="myFunction()">
+      <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("ricerca");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
  </div>
 
 </body>

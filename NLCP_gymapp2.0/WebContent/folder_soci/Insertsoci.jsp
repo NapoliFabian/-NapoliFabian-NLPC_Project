@@ -39,7 +39,7 @@ String[] lang = (String[])session.getAttribute("lang");
  <br>
  <br>
  <br>
-<form method="POST" action="Gestore">
+<form method="POST" action="../Gestore">
 
 
  <div class="insert">
