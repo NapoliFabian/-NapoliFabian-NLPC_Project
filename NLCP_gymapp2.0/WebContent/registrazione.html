@@ -163,7 +163,7 @@ input:-moz-placeholder {
 
 <div class="container">
 
-    <form id="signup">
+    <form id="signup" action="Registrazione" method = "POST">
 
         <div class="header">
         
@@ -177,18 +177,20 @@ input:-moz-placeholder {
 
         <div class="inputs">
         
-        	<input type="text" placeholder="Codice Fiscale">
+        	<input type="text" name = "codf" placeholder="Codice Fiscale">
+       
+       		<input type="text" name = "username" placeholder="USERNAME">
         
+            <input type="email" name = "email" placeholder="e-mail" autofocus="">
         
-            <input type="email" placeholder="e-mail" autofocus="">
-        
-            <input type="password" placeholder="Password">
+            <input type="password" name ="pw" placeholder="Password">
             
             <div class="checkboxy">
                 <input name="cecky" id="checky" value="1" type="checkbox"><label class="terms">I accept the terms of use</label>
             </div>
             
             <a id="submit" href="#">REGISTRATI</a>
+            <input type="submit" value="INVIA">
         
         </div>
 

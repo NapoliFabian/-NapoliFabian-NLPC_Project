@@ -73,10 +73,14 @@ public class login extends HttpServlet {
 						pwstatus ="YES";
 					}
 					request.getSession().setAttribute("pwdb", pwstatus);
-				 esito =db.Login(username, password);
-				 if(esito==true) {
+				String vet[]=db.Login(username, password);
+				 if(vet [0]=="true") {
 					 request.getSession().setAttribute("username",username);
+					 System.out.println("ruolo "+vet[1]);
+					 if(vet[1].equals("A"))
 					 response.sendRedirect("dashboard.jsp");
+					 if(vet[1].equals("S"))
+						 response.sendRedirect("sociodashboard.jsp"); ;
 					 
 				 }
 				 else {

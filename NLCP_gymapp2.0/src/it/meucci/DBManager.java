@@ -157,22 +157,27 @@ public class DBManager {
 		}
 		return ris;
 	}
-	public boolean Login(String username, String password) {
-		boolean esito= false;
-		String q = "SELECT username,password FROM utente WHERE (username='"+username+"' AND password='"+password+"') and tipou='A';";
+	public String[] Login(String username, String password) {
+		String esito= "false";
+		String q = "SELECT username,password,tipoU FROM utente WHERE username='"+username+"' AND password='"+password+"';";
 		System.out.println(q);
+		String vet[];
+		vet = new String[2];
 		try {
 			rs = query.executeQuery(q);
 			rs.next();
 			String user = rs.getString(1);
 			String pw = rs.getString(2);
-			esito=true;
+			String ruolo = rs.getString(3);
+			esito="true";
+			vet[0] = esito;
+			vet[1] = ruolo;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-		return esito;	
+		return vet;	
 		}
 	public ArrayList<abbonamento> allAbbonamenti() throws SQLException {
 		ArrayList<abbonamento> abbonamenti = new ArrayList<abbonamento>();
@@ -301,6 +306,54 @@ public class DBManager {
 			psc.setString(11,c.getId());*/
 			psc.executeUpdate();
 	}
+	
+	public boolean registraSocio(String codf,String email,String pw,String username)throws SQLException {
+		
+		if(codf == "" || email == "" || pw == "")
+		return false;
+		
+		String cmd,codFiscaleDaSql;
+		cmd = "SELECT codf from utente where codf = '"+codf+"';";
+		rs = query.executeQuery("SELECT EMAIL FROM UTENTE WHERE EMAIL = '"+email+"';");
+		int k = 0;
+		while(rs.next()) {
+			k++;
+		}
+		if(k>0)return false;
+		rs = query.executeQuery("SELECT username FROM UTENTE WHERE username = '"+username+"';");
+		int J = 0;
+		while(rs.next()) {
+			J++;
+		}
+		if(J>0)return false;
+		
+		
+		
+		rs = query.executeQuery(cmd);
+		int i = 0;
+		while(rs.next()) {
+			i++;
+			codFiscaleDaSql = rs.getString(1);
+		}
+		if(i>0) {
+			System.out.println("Codice fiscale trovato");
+			String cmdRegistra = "update utente set email=?,password=?,username=? where codf = '"+codf+"'";
+			 PreparedStatement psc;
+			    psc = connessione.prepareStatement(cmdRegistra);
+			    psc.setString(1,email);
+			    psc.setString(2, pw);
+			    psc.setString(3,username);
+			    psc.executeUpdate();
+			    return true;
+			    
+			
+		}
+		return false;
+		
+		
+		
+		
+	};
 	
 	
 

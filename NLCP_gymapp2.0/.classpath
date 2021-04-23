@@ -7,5 +7,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
+	<classpathentry kind="lib" path="/-NapoliFabian-NLPC_Project/NLCP_gymapp2.0/src/it/meucci"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
