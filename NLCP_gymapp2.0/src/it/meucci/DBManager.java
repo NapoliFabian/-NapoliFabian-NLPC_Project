@@ -355,6 +355,22 @@ public class DBManager {
 		
 	};
 	
-	
+	public void RemindMeFunction(String data) throws SQLException {
+		
+	String	cmdSQL = "select utente.email,abbonamento.NomeCorso,utente.cognome,abbonamento.IdAbbonamento from utente join abbonamento on abbonamento.codf = utente.codf where abbonamento.stato=0";
+	rs = query.executeQuery(cmdSQL);
+	while(rs.next()) {
+		String email = rs.getString(1);
+		String corso = rs.getString(2);
+		String cognome = rs.getString(3);
+		int id = rs.getInt(4);
+		String[] manda = {
+				email
+		};
+		Email RemindMe = new Email();
+		RemindMe.mandaEmail(manda, cognome, corso, id);
+		
+	}
+	}
 
 }

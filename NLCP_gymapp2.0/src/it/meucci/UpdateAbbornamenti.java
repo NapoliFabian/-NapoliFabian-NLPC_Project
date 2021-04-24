@@ -17,6 +17,7 @@ public void run() {
 		int g=dat.getDate();
 		String data = anno+"-"+mese+"-"+g;
 		db.aggiornaAbbonamenti(data);
+		db.RemindMeFunction(data);
 		System.out.println("Aggiornamento completato");
 		Thread.sleep(300000);
 		//5 minuti 300000
