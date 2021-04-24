@@ -5,6 +5,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Vector;
 public class DBManager {
 
@@ -189,6 +190,12 @@ public class DBManager {
 			abbonamenti.add(b);
 		}
 		rs.close();
+		Date dat = new Date();
+		int mese =  dat.getMonth()+1;
+		int anno = dat.getYear()+1900;
+		int g=dat.getDate();
+		String data = anno+"-"+mese+"-"+g;
+		aggiornaAbbonamenti(data);
 		return abbonamenti;
 	}
 	public void insertAbbonamento(abbonamento ab) throws SQLException {
@@ -202,6 +209,12 @@ public class DBManager {
 		ps.setString(5,stato);
 		
 		try {
+			Date dat = new Date();
+			int mese =  dat.getMonth()+1;
+			int anno = dat.getYear()+1900;
+			int g=dat.getDate();
+			String data = anno+"-"+mese+"-"+g;
+			aggiornaAbbonamenti(data);
 			ps.executeUpdate();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -223,7 +236,7 @@ public class DBManager {
 		ps.setString(9,"");
 		ps.setString(10,"S");
 		try {
-			ps.executeUpdate();	
+			ps.executeUpdate();
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
