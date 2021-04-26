@@ -80,7 +80,7 @@ public class login extends HttpServlet {
 					 if(vet[1].equals("A"))
 					 response.sendRedirect("dashboard.jsp");
 					 if(vet[1].equals("S"))
-						 response.sendRedirect("sociodashboard.jsp"); ;
+						 response.sendRedirect("dashboardsocio.jsp"); ;
 					 
 				 }
 				 else {

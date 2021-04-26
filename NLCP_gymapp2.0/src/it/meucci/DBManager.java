@@ -50,6 +50,19 @@ public class DBManager {
 		query = connessione.createStatement();
 	}
 	
+	public ArrayList<String> returnCourse(String username) throws SQLException{
+			ArrayList<String> corsi = new ArrayList<String>();
+			String cmd = "SELECT corso.NomeCorso,corso.Descrizione,corso.foto "
+					+ "from abbonamento join utente on abbonamento.codf = utente.codf"
+					+ "join corso on corso.NomeCorso = abbonamento.NomeCorso"
+					+ "where utente.username = '"+username+"'";
+			rs=query.executeQuery(cmd);
+			while(rs.next()) {
+				corsi.add(rs.getString(1));
+			}
+			return corsi;
+		
+	}
 	public ArrayList<Utente> allIstruttori() throws SQLException{
 		String cmd = "select * from utente where tipou='I'";
 		ArrayList<Utente> istruttori = new ArrayList<Utente>();
@@ -144,7 +157,7 @@ public class DBManager {
 		return ris;
 	}
 	public int insertCorso(Corso c) throws SQLException {
-		String comando = "insert into corso values(?,?,?)";
+		String comando = "insert into corso (NomeCorso,Prezzo,Descrizione) values(?,?,?)";
 		int ris =0;
 		PreparedStatement ps = connessione.prepareStatement(comando);
 		ps.setString(1, c.getNomecorso());

@@ -1,0 +1,93 @@
+body{
+    margin: 0px;
+ /*   background-image: url(https://undesigns.net/wp-content/uploads/2018/02/blue-violet-motion-background-free-download-undesigns.jpg);*/
+    
+    background-repeat: no-repeat;
+    background-size:cover ;
+}
+
+header{
+    background-color: black;
+    width: 100%;
+    height: 100px;
+}
+
+header .icon{
+    width: 10%;
+    height: 100%;
+    float: left;
+
+}
+header .title{
+color: white;
+font-family: fantasy;
+height: 100%;
+padding-top: 1%;
+font-size: 50px;
+}
+
+.immaginecentrale{
+    width: 60%;
+    height: auto;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+-webkit-box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+}
+
+.schede{
+    text-align: center;
+    float: left;
+    width: 50%;
+    height: 400px;
+    text-align: center;
+
+
+    
+}
+.imgschede{
+    transition: transform .2s;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+-webkit-box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+box-shadow:
+    0px 5px 5px blueviolet,
+    inset 0px 1px 0px blueviolet;
+}
+.imgschede:hover{
+    transform: scale(1.1);
+}
+.bottoni{
+    border: 5px solid white;
+    background-color: rgba(240, 248, 255,0);
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-stretch: expanded;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+footer{
+  background-color: black;
+  margin-top: 60%;  
+}
+
+table{
+    width: 100%;
+}
+td{
+    color: white;
+    width: 50%;
+}
