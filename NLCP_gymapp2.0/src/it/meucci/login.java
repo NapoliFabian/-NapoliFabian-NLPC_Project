@@ -51,10 +51,8 @@ public class login extends HttpServlet {
 					System.out.println("1");
 					String[] datidb = load.DBSettings();
 					DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
-					System.out.println("1");
 					request.getSession().setAttribute("urldb", datidb[0]);
 					request.getSession().setAttribute("userdb", datidb[1]);
-					System.out.println("1");
 					String datiapp[] = load.getConfig();
 					System.out.println("Lingua"+datiapp[1]);
 					request.getSession().setAttribute("color", datiapp[0]);

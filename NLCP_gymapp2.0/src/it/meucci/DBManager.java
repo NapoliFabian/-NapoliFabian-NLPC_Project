@@ -50,15 +50,19 @@ public class DBManager {
 		query = connessione.createStatement();
 	}
 	
-	public ArrayList<String> returnCourse(String username) throws SQLException{
-			ArrayList<String> corsi = new ArrayList<String>();
+	public ArrayList<String[]> returnCourse(String username) throws SQLException{
+			ArrayList<String[]> corsi = new ArrayList<String[]>();
 			String cmd = "SELECT corso.NomeCorso,corso.Descrizione,corso.foto "
-					+ "from abbonamento join utente on abbonamento.codf = utente.codf"
-					+ "join corso on corso.NomeCorso = abbonamento.NomeCorso"
-					+ "where utente.username = '"+username+"'";
+					+ " from abbonamento join utente on abbonamento.codf = utente.codf"
+					+ " join corso on corso.NomeCorso = abbonamento.NomeCorso"
+					+ " where utente.username = '"+username+"'";
 			rs=query.executeQuery(cmd);
 			while(rs.next()) {
-				corsi.add(rs.getString(1));
+				String vet[]; vet = new String[3];
+				vet[0] = rs.getString(1);
+				vet[1] = rs.getString(2);
+				vet[2] = rs.getString(3);
+				corsi.add(vet);
 			}
 			return corsi;
 		

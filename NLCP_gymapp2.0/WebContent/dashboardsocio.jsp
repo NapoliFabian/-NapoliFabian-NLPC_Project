@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import="java.util.*,it.meucci.*,java.sql.Date" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +14,11 @@
 
 <%
 String username = (String)session.getAttribute("username");
+/*GestoreFile load = new GestoreFile();
+String[] datidb = load.DBSettings();
+DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
+ArrayList<String[]> corsi = new ArrayList<String[]>();
+corsi = db.returnCourse(username);*/
 %>
 
 function mostrallemanti(){
@@ -41,8 +46,9 @@ function mostracorsi(){
         <img src="img/allenamentoimg.jpg" alt="" width="80%" height="100%" class="imgschede" onclick="mostrallemanti()">
     </div>
     <div class="schede">
+    
         <button class="bottoni">CORSI</button><br><br><br>
-        <img src="img/corsoimg.jpg" alt="" width="80%" height="100%" class="imgschede" onclick="mostracorsi()">
+        <a href="corsiSocio.jsp"><img src="img/corsoimg.jpg" alt="" width="80%" height="100%" class="imgschede" onclick="mostracorsi()"></a>
     </div>
     </div>
 	<footer>

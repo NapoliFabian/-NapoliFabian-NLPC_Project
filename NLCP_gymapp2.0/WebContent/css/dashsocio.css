@@ -91,3 +91,25 @@ td{
     color: white;
     width: 50%;
 }
+.corso{
+	position:absolute;
+	left:20%;
+	right:20%;
+	height: 450px;
+	
+}
+.immaginecorso{
+	text-align:center;
+	float: left;
+	width:50%;
+	height: 100%;
+}
+.corso h1{
+	color: white;
+	font-family: fantasy;
+}
+.corso p{
+	color: white;
+	font-family: arial;
+	
+}
