@@ -19,6 +19,7 @@ public class Email {
 	//CAMBIARE QUI L'EMAIL
 	//CAMBIARE QUI L'EMAIL
 	//CAMBIARE QUI L'EMAIL
+	
 	public Email() {
 		 da = "";
 		 pas = "";
@@ -63,4 +64,77 @@ public  void mandaEmail(String[] dest,String cognome,String corso,int idabb) {
 	}
 	System.out.println("Email inviata!");
 }
+
+
+
+
+
+
+
+
+
+
+
+public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, Date inizio, Date fine) {
+	String og = "GYM APP-AVVISO";
+	String mex =  "Signor "+cognome+" il tuo abbonamento al sito GymApp del  "+corso+" è scaduto,il giorno"
+			+"Il suo abbonamento è stato aggiornato dal giorno"+inizio+"al giorno"+fine+"del"+corso+"!"
+			+ "Si prega di effettuare il rinnovo in palestra appena.Buonagiornata!"
+			+ "Cod abbonamento:"+idabb +";";
+			
+	Properties props = System.getProperties();
+	String host = "smtp.gmail.com";
+	props.put("mail.smtp.starttls.enable", "true");
+	props.put("mail.smtp.host", host);
+	props.put("mail.smtp.user",da);
+	props.put("mail.smtp.password",pas);
+	props.put("mail.smtp.port","587");
+	props.put("mail.smtp.autch","true");
+	Session ses = Session.getDefaultInstance(props);
+	Message mess = new MimeMessage(ses);
+	
+	try {
+		mess.setFrom(new InternetAddress(da));
+		InternetAddress[] indirizzodest = new InternetAddress[dest.length];
+		for (int i = 0; i < dest.length; i++) {
+			indirizzodest[i] = new InternetAddress(dest[i]);
+		}
+		for (int i = 0; i < indirizzodest.length; i++) {
+			mess.addRecipient(Message.RecipientType.TO,indirizzodest[i]);
+		}
+		mess.setSubject(og);
+		mess.setText(mex);
+		Transport trasporto = ses.getTransport("smtp");
+		trasporto.connect(host,da,pas);
+		trasporto.sendMessage(mess, mess.getAllRecipients());
+		trasporto.close();
+		
+	}
+	
+	catch (Exception e) {
+		System.err.println("Error on sending the email"+e.getMessage());
+	}
+	System.out.println("Email inviata!");
 }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
