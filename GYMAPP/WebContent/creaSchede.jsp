@@ -244,7 +244,7 @@ String username = (String)session.getAttribute("username");
 			<input class="headerTbl" name="region" size="40" placeholder="INSERISCI LA REGIONE MUSCOLARE">
 		</th>
 	</tr>
-	
+	<!--  -->
 	<tr>
 		<th>
 			ESERCIZIO
