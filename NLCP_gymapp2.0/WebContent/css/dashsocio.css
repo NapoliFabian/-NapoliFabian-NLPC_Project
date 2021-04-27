@@ -113,3 +113,22 @@ td{
 	font-family: arial;
 	
 }
+nav{
+	padding-top: 10px;
+	background-color: black;
+	width: 100%;
+	height: 40px;
+}
+nav a{
+	margin-right:3%;
+	color: white;
+	font-family: fantasy;
+	text-decoration: none;
+	height: 100%;
+}
+nav a:hover{
+	color: blueviolet;
+	  background: -webkit-linear-gradient(blue, blueviolet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

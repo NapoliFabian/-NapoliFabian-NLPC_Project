@@ -24,15 +24,19 @@ corsi = db.returnCourse(username);*/
 function mostrallemanti(){
 
 }
-function mostracorsi(){
-    
-}
+
 
 </script>
     <header>
     <div class="icon"><img src="img/angolo.png" alt="" width="100%" height="100%"></div>
     <div class="title">GYM APP</div>
     </header>
+    <nav style="text-align: right;">
+    <i class="flag flag-italy"></i>
+    <a href="">CHI SIAMO</a>
+    <a  href="Gestore?cmd=logout">LOGOUT</a>
+   <!-- <img alt="" src="img/flags/ita.png" width="25" height="25"  style="border-radius: 50px"> -->
+    </nav>
     <div style="text-align: center;width:100%;margin-top: 5%;">
            <center><div class="immaginecentrale"><center><img src="img/nopainnogain.jpg" alt="" width="100%" height="50%" style="border: 1px solid blueviolet;"></center></div> </center>
     </div>
