@@ -179,7 +179,7 @@ String username = (String)session.getAttribute("username");
     <li><a href="schede.jsp">SCHEDE</a></li>
     <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
     <br><br>
-	
+<form action ="pdfclienti" method="POST">
 	<table border="2"> 
 <%
 for(int i=0;i<20;i++){
@@ -193,6 +193,8 @@ for(int i=0;i<20;i++){
 %>
 
 </table>
+<input type="submit" name ="CREA">
+</form>
 	<footer>
 <br>
 <table class="tableFoother">
