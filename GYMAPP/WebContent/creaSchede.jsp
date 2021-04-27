@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <meta charset="ISO-8859-1">
 <title>Crea Schede</title>
 <%
@@ -15,6 +16,7 @@ try {
 } catch (Exception e) {
 	System.out.println(e.getMessage());
 }
+
 
 %>  
 <style>
@@ -230,6 +232,7 @@ String username = (String)session.getAttribute("username");
     <li><a href="schede.jsp">SCHEDE</a></li>
     <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
     <br><br>
+<<<<<<< HEAD
     
     
 	<form>
@@ -256,6 +259,12 @@ String username = (String)session.getAttribute("username");
 	
 	<%
 for(int i=0;i<5;i++){
+=======
+<form action ="pdfclienti" method="POST">
+	<table border="2"> 
+<%
+for(int i=0;i<20;i++){
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 %>
 <tr>
 <td><input type="" name="es<%=i%>" placeholder="INSERISCI L'ESERCIZIO"></td>
@@ -266,6 +275,7 @@ for(int i=0;i<5;i++){
 %>
 	
 
+<<<<<<< HEAD
 </table></center>
 </form>
 
@@ -274,6 +284,11 @@ for(int i=0;i<5;i++){
 
 
 
+=======
+</table>
+<input type="submit" name ="CREA">
+</form>
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 	<footer>
 <br>
 <table class="tableFoother">

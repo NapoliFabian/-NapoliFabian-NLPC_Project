@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%
 String urldb = (String)session.getAttribute("urldb");
 String user = (String)session.getAttribute("userdb");

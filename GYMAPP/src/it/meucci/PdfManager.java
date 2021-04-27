@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-/*import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -13,16 +13,16 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 import be.quodlibet.boxable.*;
 import be.quodlibet.boxable.line.LineStyle;
-*/
+
 public class PdfManager {
-/*	
+
 	public PdfManager() throws Exception {
 		System.out.println("Stampa Eseguita");
 	}
 	
-	public void stampaElencoScheda (ArrayList<Scheda> elenco) throws Exception{
-		
-		String outputFileName = "C:\\Users\\Samuel\\Desktop\\eclipse\\prjLoginWebApp_Primiceri\\WebContent\\pdf\\clienti.pdf";
+	public void creaScheda (String[]ripetizioni, String[]esercizi) throws Exception{
+		System.out.println(System.getProperty("user.dir"));
+		String outputFileName =System.getProperty("user.dir")+"/schedaAllenamento.pdf";
 		// Create a new font object selecting one of the PDF base fonts
 	    PDFont fontPlain = PDType1Font.HELVETICA;
 	    PDFont fontBold = PDType1Font.HELVETICA_BOLD;
@@ -54,7 +54,7 @@ public class PdfManager {
 	    float yPosition = 550;
 	
 	    BaseTable table = new BaseTable(yPosition, yStartNewPage,
-	        bottomMargin, tableWidth, margin, document, page, true, drawContent);
+	       bottomMargin, tableWidth, margin, document, page, true, drawContent);
 	
 	    // the parameter is the row height
 	    Row<PDPage> headerRow = table.createRow(50);
@@ -71,32 +71,33 @@ public class PdfManager {
 	    table.addHeaderRow(headerRow);
 	
 	    Row<PDPage> row = table.createRow(20);
-	    cell = row.createCell(30, "Clienti");
+	    cell = row.createCell(30, "ESERCIZI");
 	    cell.setFontSize(15);
 	    cell = row.createCell(70, new Date().toString());
 	    cell.setFontSize(15);
 	    cell.setFont(fontBold);
 	
 	    row = table.createRow(20);
-	    cell = row.createCell(50, "A4");
+	    cell = row.createCell(50, "Esercizi");
 	    cell.setTextColor(Color.RED);
 	    cell.setFontSize(15);
 	    cell.setFont(fontMono);
 	    // horizontal alignment
-	    cell.setAlign(HorizontalAlignment.RIGHT);
+	    cell.setAlign(HorizontalAlignment.CENTER);
 	    cell.setBottomBorderStyle(new LineStyle(Color.RED, 5));
-	    cell = row.createCell(50, "green centered italic");
+	    cell = row.createCell(50, "Ripetizioni");
 	    cell.setTextColor(Color.GREEN);
 	    cell.setFontSize(15);
 	    cell.setFont(fontItalic);
 	    cell.setAlign(HorizontalAlignment.CENTER);
 	    cell.setBottomBorderStyle(new LineStyle(Color.GREEN, 5));
 	
-	    
-	    for(int i=0;i<elenco.size();i++)
+	   int max = 20;
+	    for(int i=0;i<max;i++)
 	    {
-	    	Scheda c;
-	    	c=(Scheda) elenco.get(i);
+	    	
+	    	String ripetizione = ripetizioni[i];
+	    	String esercizio = esercizi[i];
 	        row = table.createRow(20);
 	        cell = row.createCell(6, ""+(i+1));
 	        cell.setFontSize(15);
@@ -104,21 +105,28 @@ public class PdfManager {
 	        cell.setTextRotated(false);
 	        cell.setAlign(HorizontalAlignment.RIGHT);
 	        cell.setValign(VerticalAlignment.MIDDLE);
-	        String id=String.valueOf(c.getIdscheda());
-	        cell = row.createCell(32,id);
-	        cell.setFontSize(12);
-	        // long text that wraps, with more line spacing
-	        cell = row.createCell(32,c.getIds());
-	        cell.setFontSize(12);
-	        // long text that wraps, with more line spacing
-	        cell = row.createCell(30,c.getCodf());
-	        cell.setFontSize(12);
-	        //cell.setLineSpacing(2);
-	    }
-	    
-	    
-	    table.draw();
+
 	
+	        if(ripetizione == null) {
+	        	
+	        }
+	        else {
+	        	cell = row.createCell(44,ripetizione);
+		        cell.setFontSize(12);
+	        }
+	        
+	        if(esercizio == null) {
+	        	
+	        }
+	        else {
+	        	cell = row.createCell(50,esercizio);
+		        cell.setFontSize(12);	
+	        }
+
+
+	    }
+	        
+	    table.draw();
 	    float tableHeight = table.getHeaderAndDataHeight();
 	    System.out.println("tableHeight = "+tableHeight);
 	
@@ -130,7 +138,7 @@ public class PdfManager {
 		document.close();
 	}
 	
-public void stampaElencoAbbonamenti (ArrayList<abbonamento> elenco) throws Exception{
+/*public void stampaElencoAbbonamenti (ArrayList<abbonamento> elenco) throws Exception{
 		
 		String outputFileName = "C:\\Users\\Samuel\\Desktop\\eclipse\\prjLoginWebApp_Primiceri\\WebContent\\pdf\\prodotti.pdf";
 		// Create a new font object selecting one of the PDF base fonts

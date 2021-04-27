@@ -4,6 +4,7 @@
 <html>
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%
 ArrayList<Utente> Utente;
 allenamento a;
@@ -23,6 +24,7 @@ for(int i=0;i<Utente.size();i++)
 
 </style>
 
+ 
 
 
 <meta charset="ISO-8859-1">

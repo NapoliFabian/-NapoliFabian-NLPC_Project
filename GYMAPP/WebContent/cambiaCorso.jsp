@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%@ page import="java.util.*"%>
 <%@ page import="it.meucci.*"%>
  <style type="text/css">
@@ -47,6 +48,7 @@ padding:16px;
  	  c=(Corso)session.getAttribute("CORSO_DETTAGLIO");
       
      
+ 	  
       
 %>
 <form action="CambiaCorso" method="POST">
