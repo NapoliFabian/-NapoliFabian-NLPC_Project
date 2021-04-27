@@ -47,7 +47,8 @@ padding:16px;
 <% 
  		abbonamento a=null;
 		a=(abbonamento)session.getAttribute("ALLENAMENTO_DETTAGLIO");
-      
+    
+		
      
       
 %>

@@ -26,6 +26,7 @@ for(int i=0;i<Utente.size();i++)
 
 
 
+
 <meta charset="ISO-8859-1">
 <title>DETTAGLIO</title>
 </head>

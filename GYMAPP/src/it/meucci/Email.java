@@ -110,6 +110,7 @@ public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, St
 		trasporto.sendMessage(mess, mess.getAllRecipients());
 		trasporto.close();
 		
+		
 	}
 	
 	catch (Exception e) {

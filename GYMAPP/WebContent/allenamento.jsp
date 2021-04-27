@@ -58,6 +58,7 @@ position: fixed;
 			</tr>
 		   
      
+     
 			<% for(i=0;i<elenco1.size();i++) 
 			{
 			 a=(allenamento)elenco1.get(i);

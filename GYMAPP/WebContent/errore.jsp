@@ -8,6 +8,7 @@
 <% 
 String errore = (String)session.getAttribute("ERROR");
 
+
 %>
 body {
   background-color: #2F3242;

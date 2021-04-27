@@ -18,6 +18,7 @@ try{
 	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
 	soci = db.allSocio();
 	
+	
 }
 catch(Exception e){
 	

@@ -16,6 +16,7 @@ ab = (abbonamento)session.getAttribute("ABBONAMENTO_DETTAGLIO");
 
 
 
+
 <meta charset="ISO-8859-1">
 <title>DETTAGLIO</title>
 </head>

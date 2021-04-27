@@ -48,6 +48,7 @@ padding:16px;
  	  c=(Corso)session.getAttribute("CORSO_DETTAGLIO");
       
      
+ 	  
       
 %>
 <form action="CambiaCorso" method="POST">

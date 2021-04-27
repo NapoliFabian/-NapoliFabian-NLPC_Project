@@ -351,6 +351,7 @@ public class DBManager {
 			
 		
 			
+			
 	}
 	
 	public boolean registraSocio(String codf,String email,String pw,String username)throws SQLException {

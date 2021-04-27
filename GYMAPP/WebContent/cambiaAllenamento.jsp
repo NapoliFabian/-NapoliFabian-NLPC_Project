@@ -47,6 +47,7 @@ padding:16px;
  		allenamento a=null;
 		a=(allenamento)session.getAttribute("ALLENAMENTO_DETTAGLIO");
       
+		
      
       
 %>
