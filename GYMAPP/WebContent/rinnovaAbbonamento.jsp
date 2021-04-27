@@ -26,7 +26,7 @@ session.setAttribute("id_abb1", abb1.getIdabbonamento());
 <!DOCTYPE html>
 <html>
 <head>
-
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <style>
 
 

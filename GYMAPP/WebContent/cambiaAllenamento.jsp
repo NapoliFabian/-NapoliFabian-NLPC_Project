@@ -39,6 +39,7 @@ padding:16px;
 } 
 </style>
 <meta charset="ISO-8859-1">
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <title>Cambia Cliente</title>
 </head>
 <body>

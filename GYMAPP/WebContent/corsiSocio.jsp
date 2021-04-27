@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <link href="css/dashsocio.css" rel="stylesheet"  type="text/css">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>

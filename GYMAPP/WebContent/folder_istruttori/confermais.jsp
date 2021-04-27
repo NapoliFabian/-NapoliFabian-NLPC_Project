@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%Utente is = (Utente)session.getAttribute("ISTRUTTORE_ELIMINA"); %>
 <meta charset="ISO-8859-1">
 <link href="../css/confermais.css" rel="stylesheet"  type="text/css">

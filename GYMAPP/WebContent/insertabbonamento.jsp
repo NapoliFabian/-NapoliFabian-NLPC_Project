@@ -11,6 +11,7 @@
 <html>
 <head>
 <link href="css/insert.css" rel="stylesheet"  type="text/css">
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();

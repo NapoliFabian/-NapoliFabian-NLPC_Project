@@ -30,6 +30,7 @@ String filtro;
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <style>
 .bottoni{
 width:18%;

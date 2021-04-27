@@ -42,6 +42,7 @@ padding:16px;
 <meta charset="ISO-8859-1">
 <title>Cambia Cliente</title>
 </head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <body>
 <% 
  		abbonamento a=null;

@@ -15,6 +15,7 @@
 <meta charset="ISO-8859-1">
 <title>Aggiornamento istruttori</title>
 </head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <body class="bg-img">
    
 <h1>Aggiornamento istruttori</h1>

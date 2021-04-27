@@ -75,7 +75,8 @@ public  void mandaEmail(String[] dest,String cognome,String corso,int idabb) {
 
 
 
-public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, Date inizio, Date fine) {
+
+public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, String inizio, String fine) {
 	String og = "GYM APP-AVVISO";
 	String mex =  "Signor "+cognome+" il tuo abbonamento al sito GymApp del  "+corso+" è scaduto,il giorno"
 			+"Il suo abbonamento è stato aggiornato dal giorno"+inizio+"al giorno"+fine+"del"+corso+"!"
@@ -116,6 +117,7 @@ public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, Da
 	}
 	System.out.println("Email inviata!");
 }
+
 
 
 

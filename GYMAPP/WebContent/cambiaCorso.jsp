@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%@ page import="java.util.*"%>
 <%@ page import="it.meucci.*"%>
  <style type="text/css">

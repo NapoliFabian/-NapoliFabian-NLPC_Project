@@ -335,6 +335,22 @@ public class DBManager {
 			psc.setString(10,c.getFax());
 			psc.setString(11,c.getId());*/
 			psc.executeUpdate();
+			
+			cmd = "select email,cognome,abbonamento.corso from utente join abbonamento on utente.codf=abbonamento.codf  where abbonamento.IdAbbonamento"+id;
+			rs = query.executeQuery(cmd);
+			rs.next();
+			String email,cognome,corso;
+			email=rs.getString(1);
+			cognome=rs.getString(2);
+			corso=rs.getString(3);
+			String[] dest = {email};
+			
+			
+			Email emailavviso=new Email();
+			emailavviso.avvisaEmail(dest, cognome, corso, id, inizio, fine);
+			
+		
+			
 	}
 	
 	public boolean registraSocio(String codf,String email,String pw,String username)throws SQLException {
