@@ -106,10 +106,10 @@ public class PdfManager {
 	        cell.setAlign(HorizontalAlignment.RIGHT);
 	        cell.setValign(VerticalAlignment.MIDDLE);
 	        // long text that wraps, with more line spacing
-	        cell = row.createCell(32,ripetizione);
+	        cell = row.createCell(50,ripetizione);
 	        cell.setFontSize(12);
 	        // long text that wraps, with more line spacing
-	        cell = row.createCell(30,esercizio);
+	        cell = row.createCell(50,esercizio);
 	        cell.setFontSize(12);
 	        //cell.setLineSpacing(2);
 	    }
