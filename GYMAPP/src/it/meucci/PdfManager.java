@@ -54,7 +54,7 @@ public class PdfManager {
 	    float yPosition = 550;
 	
 	    BaseTable table = new BaseTable(yPosition, yStartNewPage,
-	        bottomMargin, tableWidth, margin, document, page, true, drawContent);
+	       bottomMargin, tableWidth, margin, document, page, true, drawContent);
 	
 	    // the parameter is the row height
 	    Row<PDPage> headerRow = table.createRow(50);
