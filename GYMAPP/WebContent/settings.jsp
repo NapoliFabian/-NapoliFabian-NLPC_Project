@@ -7,7 +7,7 @@
 <style>
 body{
 margin:0px;
-}
+} 
 .box{
 width:60%;
 height:100px;

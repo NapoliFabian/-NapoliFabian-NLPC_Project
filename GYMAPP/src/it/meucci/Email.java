@@ -19,7 +19,7 @@ public class Email {
 	//CAMBIARE QUI L'EMAIL
 	//CAMBIARE QUI L'EMAIL
 	//CAMBIARE QUI L'EMAIL
-	
+	 
 	public Email() {
 		 da = "";
 		 pas = "";

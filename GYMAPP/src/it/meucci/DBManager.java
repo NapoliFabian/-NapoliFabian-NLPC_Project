@@ -349,7 +349,7 @@ public class DBManager {
 			Email emailavviso=new Email();
 			emailavviso.avvisaEmail(dest, cognome, corso, id, inizio, fine);
 			
-		
+		 
 			
 			
 	}
