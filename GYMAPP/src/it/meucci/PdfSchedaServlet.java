@@ -28,7 +28,7 @@ public class PdfSchedaServlet extends HttpServlet {
      */
     public PdfSchedaServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 	/**
@@ -86,8 +86,27 @@ public class PdfSchedaServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		int max=20;
+		String ripetizioni[];
+		String esercizi[];
+		esercizi= new String[max];
+		ripetizioni=new String[max];
+		
+		for(int i=0;i<max;i++) {
+			ripetizioni[i]= request.getParameter("rip"+i);
+			esercizi[i]= request.getParameter("es"+i);
+			
+		}
+		
+		PdfManager pdf;
+		try {
+			pdf = new PdfManager();
+			pdf.creaScheda(ripetizioni,esercizi);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
 	}
 
 }
