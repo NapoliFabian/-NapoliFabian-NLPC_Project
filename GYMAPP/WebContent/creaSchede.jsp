@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Crea Schede</title>
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
 try {
@@ -87,7 +87,7 @@ header{
     padding-top: 1%;
     padding-bottom: 1%;
 }
-.box{
+/*.box{
     width: 20%;
     height: 45%;
     background-color: white;
@@ -100,7 +100,19 @@ header{
 }
 .box:hover{
     background-color: dodgerblue;
+}*/
+
+.img{
+
+position: absolute;
+width: 15%;
+height: 15%;
+border: 1px solid black;
+right:5%;
+top:40%;
+
 }
+
 footer{
     width: 100%;
     background-color: black;
@@ -108,14 +120,54 @@ footer{
   /*  bottom: 1px;*/
   top:1299;
 }
+
+
+
+ th input{
+color: blue;
+
+}
+input{
+
+font-family: Century Gothic;
+font-weight: bold;
+background: transparent;
+border: 0px;
+text-align: center;
+
+}
+table{
+border-collapse:collapse;
+margin-top:50px ;
+margin-bottom: 50px;
+font-family: Century Gothic;
+box-shadow: 10px 10px 5px rgba(210, 215, 211,0.2);
+border-color:bluviolet;
+border-width: inherit;
+}
+
 .tableFoother{
 width: 100%;
 height: auto;
 }
 td{
+
 width: 33%;
 text-align: center;
 padding:16px;
+
+}
+
+td {
+background-color: #A0D2EE
+}
+
+th{
+color:blue;
+font-weight: bold;
+background: linear-gradient(to right,blueviolet,#A0D2EE,blueviolet );
+/*background: linear-gradient(to right,blueviolet,blue)*/
+
 }
 .sidenav {
   height: 100%;
@@ -178,20 +230,50 @@ String username = (String)session.getAttribute("username");
     <li><a href="schede.jsp">SCHEDE</a></li>
     <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
     <br><br>
+    
+    
+	<form>
+	<div class="img">
+    <img alt="" src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
+    <input type="submit" name="stampa" value="STAMPA SCHEDA">
+    
+    </div>
+	<center><table border="1"> 
+	<tr>
+		<th colspan="2">
+			<input class="headerTbl" name="region" size="40" placeholder="INSERISCI LA REGIONE MUSCOLARE">
+		</th>
+	</tr>
 	
-	<table border="2"> 
-<%
-for(int i=0;i<20;i++){
+	<tr>
+		<th>
+			ESERCIZIO
+		</th>
+		<th>
+			SERIE E RIPETIZIONI
+		</th>
+	</tr>
+	
+	<%
+for(int i=0;i<5;i++){
 %>
 <tr>
-<td><input type="text" name="es<%=i%>"></td>
-<td><input type = "text" name="rip<%=i%>"></td>
+<td><input type="" name="es<%=i%>" placeholder="INSERISCI L'ESERCIZIO"></td>
+<td><input type = "text" name="rip<%=i%>" placeholder="SERIE E RIPETIZIONI "></td>
 </tr>
 <%
 }
 %>
+	
 
-</table>
+</table></center>
+</form>
+
+
+
+
+
+
 	<footer>
 <br>
 <table class="tableFoother">
