@@ -10,7 +10,7 @@ String color = (String)session.getAttribute("color");
 String[] lang = (String[])session.getAttribute("lang"); 
 %>
 <style>
-
+  
   }
   html {
   scroll-behavior: smooth;
@@ -89,13 +89,10 @@ header{
     background-color: white;
     float: left;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 0px;
     padding: 7px;
     margin-left: 7%;
     margin-top: 2%;
-}
-.box:hover{
-    background-color: dodgerblue;
 }
 footer{
     width: 100%;
@@ -182,8 +179,14 @@ if(username!=null){
 
 
 
+
+
+
+
+
+
     <div class="box">
-    <img src="https://png.pngtree.com/png-vector/20190214/ourlarge/pngtree-people-icon-business-corporate-team-working-together-social-network-png-image_448381.jpg" width="250" height="250"> 
+    <img src="img/imagine napoli.jpg" width="250" height="250"> 
     <hr>
     <h3>FABIAN NAPOLI</h3>    
     </div>
@@ -191,14 +194,14 @@ if(username!=null){
 
 
     <div class="box">     
-    <img src="https://pngimage.net/wp-content/uploads/2018/06/member-icon-png-5.png" width="250" height="250">
+    <img src="img/immagine longo.PNG" width="250" height="250">
     <hr>
     <h3>CRISTIAN LONGO</h3> 
     </div></a>
     
     
     <div class="box">
-        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="250" height="250"> 
+        <img src="img/immagine primiceri.PNG" width="250" height="250"> 
         <hr>
         <h3>SAMUEL PRIMICERI</h3>    
         </div></a>   
@@ -207,7 +210,7 @@ if(username!=null){
 
 
     <div class="box">
-        <img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="250" height="250"> 
+        <img src="img/immagine cataldo.jpg" width="250" height="250"> 
         <hr>
         <h3>SIMONE CATALDO</h3>    
         </div></a>   
