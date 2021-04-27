@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <script type="text/javascript">
 function avvisa(){
 	var language = document.querySelector('input[name="flag"]:checked').value;
@@ -34,6 +35,7 @@ body{
 width:50px;
 height:50px;
 }
+
 
 .header{
 width: 100%;

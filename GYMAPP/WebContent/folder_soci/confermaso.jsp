@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%String codf = request.getParameter("id");	
 ArrayList<Utente> soci = new ArrayList<Utente>();
 soci =(ArrayList<Utente> )request.getSession().getAttribute("ELENCO_SOCI");

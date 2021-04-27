@@ -78,14 +78,14 @@ public class PdfManager {
 	    cell.setFont(fontBold);
 	
 	    row = table.createRow(20);
-	    cell = row.createCell(50, "A4");
+	    cell = row.createCell(50, "Esercizi");
 	    cell.setTextColor(Color.RED);
 	    cell.setFontSize(15);
 	    cell.setFont(fontMono);
 	    // horizontal alignment
-	    cell.setAlign(HorizontalAlignment.RIGHT);
+	    cell.setAlign(HorizontalAlignment.CENTER);
 	    cell.setBottomBorderStyle(new LineStyle(Color.RED, 5));
-	    cell = row.createCell(50, "green centered italic");
+	    cell = row.createCell(50, "Ripetizioni");
 	    cell.setTextColor(Color.GREEN);
 	    cell.setFontSize(15);
 	    cell.setFont(fontItalic);
@@ -105,12 +105,13 @@ public class PdfManager {
 	        cell.setTextRotated(false);
 	        cell.setAlign(HorizontalAlignment.RIGHT);
 	        cell.setValign(VerticalAlignment.MIDDLE);
+
 	
 	        if(ripetizione == null) {
 	        	
 	        }
 	        else {
-		        cell = row.createCell(50,ripetizione);
+	        	cell = row.createCell(44,ripetizione);
 		        cell.setFontSize(12);
 	        }
 	        
@@ -118,10 +119,11 @@ public class PdfManager {
 	        	
 	        }
 	        else {
-		        cell = row.createCell(50,esercizio);
+	        	cell = row.createCell(50,esercizio);
 		        cell.setFontSize(12);	
 	        }
-	        //cell.setLineSpacing(2);
+
+
 	    }
 	        
 	    table.draw();

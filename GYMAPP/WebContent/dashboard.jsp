@@ -158,6 +158,7 @@ if(username!=null){
 	%>
 </head>
 <!-- <body style="background-image: url(images/bg-00.jpg);"> -->
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <body style="background-image: url(https://undesigns.net/wp-content/uploads/2018/02/blue-violet-motion-background-free-download-undesigns.jpg);">
 <header>
 <center><h1>GYM APP</h1></center>

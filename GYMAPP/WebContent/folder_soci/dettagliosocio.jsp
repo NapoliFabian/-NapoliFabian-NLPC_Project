@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <!-- <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"> -->
 <%
 Utente s = null;

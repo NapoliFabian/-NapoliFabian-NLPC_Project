@@ -5,6 +5,7 @@
 <html>
 <head>
 <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css">
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <%
 abbonamento ab;
 ab = (abbonamento)session.getAttribute("ABBONAMENTO_DETTAGLIO");
@@ -12,6 +13,7 @@ ab = (abbonamento)session.getAttribute("ABBONAMENTO_DETTAGLIO");
 <style>
 
 </style>
+
 
 
 

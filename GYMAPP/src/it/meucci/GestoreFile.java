@@ -118,14 +118,13 @@ public class GestoreFile {
 	Properties prop = readLanguage("C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
 
 
-<<<<<<< HEAD
 
-=======
+
+
 			//SIMONE
->>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone
 		//SAMUEL
-		Properties prop = readLanguage("C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language"+"\\ing"+".properties"); //Samuel
+	//	Properties prop = readLanguage("C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language"+"\\ing"+".properties"); //Samuel
 
 	
 		String[] config;

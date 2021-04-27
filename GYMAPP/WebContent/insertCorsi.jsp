@@ -9,6 +9,7 @@
 
 
 
+
 <%
 String color = (String)session.getAttribute("color");
 String[] lang = (String[])session.getAttribute("lang"); 
@@ -19,6 +20,7 @@ String[] lang = (String[])session.getAttribute("lang");
 <head>
 <link href="css/insert.css" rel="stylesheet"  type="text/css">
 <!--<link href="css/elenchi.css" rel="stylesheet"  type="text/css">-->
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <meta charset="ISO-8859-1">
 <title>Inserisci Corsi</title>
 </head>

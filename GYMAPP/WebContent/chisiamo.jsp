@@ -4,6 +4,7 @@
 <html>
 <head>
 <!--  <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"/>-->
+<link rel="icon" type="image/png" href="img/icona.png"/>
 <meta charset="ISO-8859-1">
 <%
 String color = (String)session.getAttribute("color");
@@ -27,6 +28,7 @@ background: linear-gradient(to right,blueviolet,blue);
 li {
 float: left;
 }
+
 
 li a {
 display: block;
@@ -148,6 +150,7 @@ padding:16px;
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 </style>
 <title>CHI SIAMO</title>
 <%
