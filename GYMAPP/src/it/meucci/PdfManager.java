@@ -105,18 +105,28 @@ public class PdfManager {
 	        cell.setTextRotated(false);
 	        cell.setAlign(HorizontalAlignment.RIGHT);
 	        cell.setValign(VerticalAlignment.MIDDLE);
-	        // long text that wraps, with more line spacing
-	        cell = row.createCell(44,ripetizione);
-	        cell.setFontSize(12);
-	        // long text that wraps, with more line spacing
-	        cell = row.createCell(50,esercizio);
-	        cell.setFontSize(12);
-	        //cell.setLineSpacing(2);
-	    }
-	    
-	    
-	    table.draw();
+
 	
+	        if(ripetizione == null) {
+	        	
+	        }
+	        else {
+	        	cell = row.createCell(44,ripetizione);
+		        cell.setFontSize(12);
+	        }
+	        
+	        if(esercizio == null) {
+	        	
+	        }
+	        else {
+	        	cell = row.createCell(50,esercizio);
+		        cell.setFontSize(12);	
+	        }
+
+
+	    }
+	        
+	    table.draw();
 	    float tableHeight = table.getHeaderAndDataHeight();
 	    System.out.println("tableHeight = "+tableHeight);
 	

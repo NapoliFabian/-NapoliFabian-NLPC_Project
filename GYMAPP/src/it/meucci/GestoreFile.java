@@ -17,9 +17,29 @@ public class GestoreFile {
 	public GestoreFile() {
 
 
-       //SIMONE
+
+/* CATALDO
+		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+		*/
+		
+// 	NAPOLI
+		 this.db_settings = "C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
+		 this.default_config = "C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";
+
+
+/*
 		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\dbsettings.properties";
 		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\defaultconf.properties";
+*/
+       //SIMONE
+<<<<<<< HEAD
+		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\dbsettings.properties";
+		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\defaultconf.properties";
+=======
+	/*	this.db_settings ="C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
+		this.default_config ="C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";*/
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 		
 /*   //FABIAN
 		 this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
@@ -96,13 +116,35 @@ public class GestoreFile {
 	
 		//LONGO
 	//	Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project20\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
+<<<<<<< HEAD
 		//FABIAN
 	//Properties prop = readLanguage("C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");
+=======
+		//SIMONE
+	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");// simone
+		
+		
+	//FABIAN
+	Properties prop = readLanguage("C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 
+<<<<<<< HEAD
 			//SIMONE
 		Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone
+=======
+
+
+
+
+			//SIMONE
+	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 		//SAMUEL
+<<<<<<< HEAD
 		//Properties prop = readLanguage("C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language"+"\\ing"+".properties"); //Samuel
+=======
+	//	Properties prop = readLanguage("C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language"+"\\ing"+".properties"); //Samuel
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 
 	
 		String[] config;

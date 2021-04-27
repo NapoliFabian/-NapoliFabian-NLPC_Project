@@ -67,6 +67,24 @@ public class DBManager {
 			return corsi;
 		
 	}
+	public ArrayList<String[]> returnTraining(String username) throws SQLException{
+		ArrayList<String[]> allenamenti = new ArrayList<String[]>();
+		String cmd = "select dataAllenamento,durata,allenamento.NomeCorso "
+				+ "from allenamento join abbonamento "
+				+ "on abbonamento.NomeCorso = allenamento.NomeCorso"
+				+ " join utente on abbonamento.codf = utente.codf"
+				+ " where utente.username = '"+username+"'";
+		rs=query.executeQuery(cmd);
+		while(rs.next()) {
+			String vet[]; vet = new String[3];
+			vet[0] =String.valueOf(rs.getDate(1));
+			vet[1] = String.valueOf(rs.getTime(2));
+			vet[2] = rs.getString(3);
+			allenamenti.add(vet);
+		}
+		return allenamenti;
+		
+	}
 	public ArrayList<Utente> allIstruttori() throws SQLException{
 		String cmd = "select * from utente where tipou='I'";
 		ArrayList<Utente> istruttori = new ArrayList<Utente>();
