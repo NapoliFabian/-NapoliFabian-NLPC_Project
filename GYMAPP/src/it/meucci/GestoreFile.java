@@ -51,13 +51,13 @@ public class GestoreFile {
 		this.default_config ="C:\\Users\\Samuel\\Desktop\\eclipse\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";*/
 	
 		//FABIAN
-		 this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
-		 this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";
+		/* this.db_settings = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\dbsettings.properties";
+		 this.default_config = "C:\\Users\\thema\\Desktop\\progetti\\java eclipse napoli\\-NapoliFabian-NLPC_Project\\NLCP_gymapp2.0\\config\\defaultconf.properties";*/
 
 
 
 /*      LONGO*/
-<<<<<<< HEAD
+
 		 /*
 		this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
 =======
@@ -131,11 +131,11 @@ public class GestoreFile {
 	
 		//LONGO
 
-<<<<<<< HEAD
+
 	//Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
-=======
+
 //	Properties prop = readLanguage("C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
->>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
+//github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 		//SIMONE
 	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project000\\NLCP_gymapp2.0\\config\\Language\\"+language+".properties");// simone
 
@@ -148,7 +148,7 @@ public class GestoreFile {
 		
 		
 	//FABIAN
-	Properties prop = readLanguage("C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
+	//Properties prop = readLanguage("C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\Language\\"+language+".properties");
 
 			//SIMONE
 	//	Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone

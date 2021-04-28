@@ -241,6 +241,7 @@ String username = (String)session.getAttribute("username");
    <input type="submit" style="background: url(https://img.icons8.com/ios/452/print--v1.png))">-->
      <input type="image" name="stampa" value="STAMPA SCHEDA"  src="img/stampa.png" width="70" height="70">
     
+    
     </div>
 	<center><table border="1"> 
 	<tr>
