@@ -51,7 +51,7 @@ position: fixed;
               <th><%=lang[10]%></th>
               <th><%=lang[11]%></th>
               <th><%=lang[12]%></th>
-              <th><%=lang[13]%></th>
+              <th><%=lang[27]%></th>
               <th colspan="3">
               <a href="Insertsoci.jsp"><img alt="" src="../img\add.png" width="30px"></a>
               </th>
