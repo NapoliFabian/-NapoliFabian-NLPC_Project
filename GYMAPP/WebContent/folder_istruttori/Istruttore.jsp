@@ -54,8 +54,7 @@ position: fixed;
 			<tr>
 			    <th><%=lang[10]%></th>
 				<th><%=lang[11]%></th>
-				<th><%=lang[15]%></th>
-				
+				<th><%=lang[12]%></th>
 				<th colspan="3">
 				<a href = "insertIstruttori.jsp"><img src="../img/add.png" height="30" width="30">
 				</a> </th>
