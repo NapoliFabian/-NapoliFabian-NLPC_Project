@@ -72,7 +72,7 @@ position: fixed;
 			 <td><%= a.getDurata() %></td>
 			 <td><a href="Gestore?cmd=dettaglioall&id=<%=a.getIdallenamento()%>"><img alt="" src="img\lente.png" width="28px"></a></td>
 			<td><a href="Gestore?cmd=eliminaall&id=<%=a.getIdallenamento()%>"><img alt="" src="img\cestino.png" width="28px"></a></td>
-			<td><a href="Gestore?cmd=aggiornaall&id=<%=a.getIdallenamento()%>"><img alt="" src="img\update.png" width="28px"></a></td>
+			<!--  <td><a href="Gestore?cmd=aggiornaall&id=<%=a.getIdallenamento()%>"><img alt="" src="img\update.png" width="28px"></a></td>-->
 		 </tr>
 		 
 		 <%

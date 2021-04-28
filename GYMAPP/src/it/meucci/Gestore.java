@@ -150,7 +150,7 @@ public class Gestore extends HttpServlet {
 				is = istruttori.get(i);
 				if(is.getCodf().equals(id)) {
 				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
-				response.sendRedirect("folder_istruttori/cambiaistruttori.jsp");
+				response.sendRedirect("folder_istruttori/dettaglioistruttore.jsp");
 				
 				}
 			}//fine for
@@ -376,6 +376,7 @@ public class Gestore extends HttpServlet {
 		try {
 	//	DBManager db = new DBManager();
 		db.insertAbbonamento(ab);
+		Email email = new Email();
 		request.getSession().removeAttribute("ELENCO_ABBONAMENTI");
 		ArrayList<abbonamento> abbonamenti = db.allAbbonamenti();
 		request.getSession().setAttribute("ELENCO_ABBONAMENTI",abbonamenti);

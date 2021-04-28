@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/insert.css" rel="stylesheet"  type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <link rel="icon" type="image/png" href="img/icona.png"/>
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
@@ -37,68 +37,63 @@ String filtro;
 <title>Inserisci Abbonamento</title>
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
+<<<<<<< HEAD
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+     <a class="nav-link active" aria-current="page" href="abbonamento.jsp">INDIETRO</a>
+  </li>
+</ul>
+
 <div class="header">
 <div class="icon">
 
 
 </div>
 </div>
+
 	 
- <br>
- <br>
- <br>
-	  <div class="insert">
  
 <form method="POST" action="Gestore">
- <center><table class="scritte" border="0">
-
- <!--    
-  <tr>
-	<th>ID abbonamento</th>
-	<th><input type="text" name="IdAbbonamento" required  ></th>
- </tr>
- -->
-  <tr>
-	<th><%=lang[22]%></th>
-	<th><input type="date" name="inizioabb" required  ></th>
- </tr>
- 
-  <tr>
-	<th><%=lang[23]%></th>
-	<th><input type="date" name="fineabb" required  ></th>
- </tr>
- 
-  <tr>
-	<th><%=lang[21]%></th>
-	<th><select name="codf">
+<div  style="width: 60%; margin-left: 20%">
+ <div style="background-color: white;border: 1px solid black;width: 100%;">
+ <center>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label"><%=lang[22]%></label>
+    <input type="date" class="form-control" id="inputEmail4"  name="inizioabb" required  value="" maxlength="16" required="required">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label"><%=lang[23]%></label>
+    <input type="date" class="form-control" id="inputEmail4"     name="fineabb" required  value="" required="required">
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label"><%=lang[21]%></label>
+  	<select name="codf">
 	<%for(int i=0;i<soci.size();i++){
 		Utente s = soci.get(i);
 		%>
 		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
 	<%} %>
-	</select></th>
- </tr>
- 
-  <tr>
-	<th><%=lang[24]%></th>
-	<th><select name="NomeCorso">
+	</select>
+  </div>
+   <div class="col-md-6">
+    <label for="inputEmail4" class="form-label"><%=lang[24]%></label>
+   <select name="NomeCorso">
 	<%for(int i=0;i<corsi.size();i++){
 		Corso c = corsi.get(i);
 		%>
 		<option value="<%=c.getNomecorso()%>"><%=c.getNomecorso()%></option>
 	<%} %>
-	</select></th>
- </tr>
-
-
-  <tr>
-	<th colspan="2"><input type="submit" name="INSERT" value="INSERT_ABBONAMENTO"></th>
-	<th><input type="submit" value="ANNULLA"></th>
- </tr>
-
- </table></center>
+	</select>
   </div>
+
+<br><br><br>
+<input type="submit" class="btn btn-primary" name="INSERT" value="INSERT_ABBONAMENTO">
+ </center>
+ </div>
+ </div>
  </form>
+ <br>
+ <br>
     <div class="link"><center>
  	<a href="abbonamento.jsp"><button>Elenco Abbonamenti</button></a>
  	<a href="dashboard.jsp"><button>Home</button></a></center>
