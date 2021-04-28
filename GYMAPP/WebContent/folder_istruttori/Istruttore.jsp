@@ -50,6 +50,7 @@ position: fixed;
     <div class="table-users">
         <div class="header"><%=lang[2]%></div>
         
+        
         <table cellspacing="0" id="myTable">
 			<tr>
 			    <th><%=lang[10]%></th>
