@@ -73,7 +73,7 @@ position: fixed;
  	<td><%=is.getTelefono() %></td>
     <td><a href="../Gestore?cmd=dettagliois&id=<%=is.getCodf()%>"><img alt="" src="../img\lente.png" width="28px"></a></td>
     <td><a href="../Gestore?cmd=eliminais&id=<%=is.getCodf()%>"><img alt="" src="../img\cestino.png" width="28px"></a></td>
-    <td><a href="../Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td>
+    <!-- <td><a href="../Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td> -->
  </tr>
  <%
      }

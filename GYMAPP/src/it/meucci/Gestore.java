@@ -150,7 +150,8 @@ public class Gestore extends HttpServlet {
 				is = istruttori.get(i);
 				if(is.getCodf().equals(id)) {
 				request.getSession().setAttribute("ISTRUTTORE_DETTAGLIO",is);	
-				response.sendRedirect("folder_istruttori/dettaglioistruttore.jsp");
+				response.sendRedirect("folder_istruttori/cambiaistruttori.jsp");
+				
 				}
 			}//fine for
 		}// //FINE
