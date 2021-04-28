@@ -3,23 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!--  <link href="css/dashboardcss20.css" rel="stylesheet"  type="text/css"/>-->
 <link rel="icon" type="image/png" href="img/icona.png"/>
 <meta charset="ISO-8859-1">
-<title>Crea Schede</title>
 <%
-ArrayList<Utente> soci = new ArrayList<Utente>();
-try {
-	GestoreFile load = new GestoreFile();
-	String[] datidb = load.DBSettings();
-	DBManager db = new DBManager(datidb[0],datidb[1],datidb[2]);
-	soci= db.allSocio();	
-} catch (Exception e) {
-	System.out.println(e.getMessage());
-}
-
-
-%>  
+String color = (String)session.getAttribute("color");
+String[] lang = (String[])session.getAttribute("lang"); 
+%>
 <style>
+  
+  }
   html {
   scroll-behavior: smooth;
 }
@@ -35,6 +28,7 @@ background: linear-gradient(to right,blueviolet,blue);
 li {
 float: left;
 }
+
 
 li a {
 display: block;
@@ -83,93 +77,40 @@ header{
 .centrale{
 
     position: absolute;
-    left: 10%;
-    right: 10%;
+    left: 1%;
+    right: 1%;
     top:30%;
     padding-top: 1%;
     padding-bottom: 1%;
+    
+    
 }
-/*.box{
+.box{
     width: 20%;
     height: 45%;
     background-color: white;
     float: left;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 0px;
     padding: 7px;
-    margin-left: 9%;
+    margin-left:3%;
     margin-top: 2%;
 }
-.box:hover{
-    background-color: dodgerblue;
-}*/
-
-.img{
-
-position: absolute;
-width: 15%;
-height: 15%;
-border: 1px solid black;
-right:5%;
-top:40%;
-
-}
-
 footer{
     width: 100%;
     background-color: black;
     position: absolute;
   /*  bottom: 1px;*/
-  top:1299;
-}
-
-
-
- th input{
-color: blue;
-
-}
-input{
-
-font-family: Century Gothic;
-font-weight: bold;
-background: transparent;
-border: 0px;
-text-align: center;
-
+  top:1000px;
 }
 table{
-border-collapse:collapse;
-margin-top:50px ;
-margin-bottom: 50px;
-font-family: Century Gothic;
-box-shadow: 10px 10px 5px rgba(210, 215, 211,0.2);
-border-color:bluviolet;
-border-width: inherit;
-}
-
-.tableFoother{
 width: 100%;
 height: auto;
 }
 td{
-
 width: 33%;
 text-align: center;
 padding:16px;
-
-}
-
-td {
-background-color: #A0D2EE
-}
-
-th{
-color:blue;
-font-weight: bold;
-background: linear-gradient(to right,blueviolet,#A0D2EE,blueviolet );
-/*background: linear-gradient(to right,blueviolet,blue)*/
-
 }
 .sidenav {
   height: 100%;
@@ -209,76 +150,73 @@ background: linear-gradient(to right,blueviolet,#A0D2EE,blueviolet );
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 </style>
-<% 
-String[] lang = (String[])session.getAttribute("lang");
+<title>CHI SIAMO</title>
+<%
 String username = (String)session.getAttribute("username");
-%>
+String nomeapp = (String)session.getAttribute("nomeapp");
+if(username!=null){
+	%>
 </head>
-
-<body>
-
-	<header>
+<!-- <body style="background-image: url(images/bg-00.jpg);"> -->
+<body style="background-image: url(https://undesigns.net/wp-content/uploads/2018/02/blue-violet-motion-background-free-download-undesigns.jpg);">
+<header>
 <center><h1>GYM APP</h1></center>
-<center><h3 class="sottotitolo"><%=lang[0]%> <%=username%></h3></center>
+<center><h3 class="sottotitolo">CHI SIAMO</h3></center>
 <!--<div class="link">
  <a>OPTION</a>   
 </div>-->
 </header>
-
-	<ul>
+<ul>
     <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
-    <li><a href="dashboard.jsp">DASHBOARD</a></li>
-    <br><br>
+    <li><a href="dashboardsocio.jsp">HOME</a></li>
+      <li><div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="optionpage.html">OPTION</a>
+  <a class="active" href="Gestore?cmd=logout">LOGOUT</a>
+</div></li>
+  </ul>
+<div class="centrale">
 
-    
-    
-	<form action ="pdfclienti" method="POST">
-	<div class="img">
-  <!--  <img alt="" src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
-    <input type="submit" name="stampa" value="STAMPA SCHEDA">
-   <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
-   <input type="submit" style="background: url(https://img.icons8.com/ios/452/print--v1.png))">-->
-     <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
-    
+
+
+
+
+
+
+
+
+
+    <div class="box">
+    <img src="img/imagine napoli.jpg" width="250" height="250"> 
+    <hr>
+    <h3>FABIAN NAPOLI</h3>    
     </div>
-	<center><table border="1"> 
-	<tr>
-		<th colspan="2">
-			<input class="headerTbl" name="region" size="40" placeholder="INSERISCI LA REGIONE MUSCOLARE">
-		</th>
-	</tr>
-	<!--  -->
-	<tr>
-		<th>
-			ESERCIZIO
-		</th>
-		<th>
-			SERIE E RIPETIZIONI
-		</th>
-	</tr>
-	
-	<%
-for(int i=0;i<5;i++){
-%>
-	 
-	
-	
-<%
-//for(int i=0;i<20;i++){
-
-%>
-<tr>
-<td><input type="" name="es<%=i%>" placeholder="INSERISCI L'ESERCIZIO"></td>
-<td><input type = "text" name="rip<%=i%>" placeholder="SERIE E RIPETIZIONI "></td>
-</tr>
-<%
-}
-%>
-	
+</a>  
 
 
-</table></center>
+    <div class="box">     
+    <img src="img/immagine longo.PNG" width="250" height="250">
+    <hr>
+    <h3>CRISTIAN LONGO</h3> 
+    </div></a>
+    
+    
+    <div class="box">
+        <img src="img/immagine primiceri.PNG" width="250" height="250"> 
+        <hr>
+        <h3>SAMUEL PRIMICERI</h3>    
+        </div></a>   
+
+
+
+
+    <div class="box">
+        <img src="img/immagine cataldo.jpg" width="250" height="250"> 
+        <hr>
+        <h3>SIMONE CATALDO</h3>    
+        </div></a>   
 
 
 
@@ -286,12 +224,17 @@ for(int i=0;i<5;i++){
 
 
 
-</table>
-</form>
 
-	<footer>
+
+
+
+
+
+
+
+<footer>
 <br>
-<table class="tableFoother">
+<table>
 <tr>
 <td><p style="color:white">CREATED BY<br> CATALDO, NAPOLI, LONGO, PRIMICERI<br> ALL RIGHT RESERVERD 2021</p></td>
 <td><video src="img/icon/animatedicon.mp4" autoplay="autoplay" width="100" height="100"></video></td>
@@ -300,6 +243,20 @@ for(int i=0;i<5;i++){
 </table>
 <br>
 </footer>
-  </ul>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
 </body>
-</html>
+<% 
+}
+else{
+	response.sendRedirect("error.jsp");
+}
+%>
+
