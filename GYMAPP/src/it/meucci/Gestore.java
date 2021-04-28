@@ -51,7 +51,7 @@ public class Gestore extends HttpServlet {
 				request.getSession().setAttribute("ELENCO_ISTRUTTORI",istruttori);
 				response.sendRedirect("folder_istruttori/Istruttore.jsp");
 						
-			} catch (Exception e) {
+			} catch (Exception e) { 
 				
 				String errore = "ISTRUTTORE NON TROVATO";
 				request.getSession().setAttribute("ERROR",errore);
