@@ -36,6 +36,7 @@ border: 1px solid black;
 position: fixed;
 } 
  
+ 
  </style>
 <meta charset="ISO-8859-1">
 <title><%=lang[1]%></title>
