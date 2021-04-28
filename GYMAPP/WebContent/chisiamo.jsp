@@ -11,6 +11,9 @@ String color = (String)session.getAttribute("color");
 String[] lang = (String[])session.getAttribute("lang"); 
 %>
 <style>
+.box:hover{
+    transform: scale(1.1);
+}
   
   }
   html {
