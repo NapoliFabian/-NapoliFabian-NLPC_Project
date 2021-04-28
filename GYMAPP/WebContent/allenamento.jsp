@@ -49,8 +49,8 @@ position: fixed;
         <table cellspacing="0"><!--  -->
 			<tr>
 				<th>ID</th>
-				<th><%=lang[5]%></th>
-				<th><%=lang[2]%></th>
+				<th><%=lang[27]%></th>
+				<th><%=lang[24]%></th>
 				<th><%=lang[28]%></th>
 				<th colspan="3">
 				<a href = "insertAllenamento.jsp"><img src=img/add.png height="30" width="30"></a> 

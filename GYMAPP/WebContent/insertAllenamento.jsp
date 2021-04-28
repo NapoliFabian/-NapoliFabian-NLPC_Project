@@ -1,14 +1,6 @@
 <%@ page language="java" import="java.util.*,it.meucci.*" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
-
-
-
-
-
-
-
 <%
 ArrayList<Utente> soci = new ArrayList<Utente>();
 ArrayList<Corso> corsi = new ArrayList<Corso>();
@@ -23,6 +15,7 @@ try {
 }
 
 %>
+
 
 <%
 String color = (String)session.getAttribute("color");

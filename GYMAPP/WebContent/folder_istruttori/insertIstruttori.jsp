@@ -48,7 +48,6 @@ String filtro;
  <br>
  <br>
  <br>
->>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 <form method="POST" action="../Gestore">
 <div  style="width: 60%; margin-left: 20%">
  <div style="background-color: white;border: 1px solid black;width: 100%;">
