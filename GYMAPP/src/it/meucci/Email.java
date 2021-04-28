@@ -21,8 +21,8 @@ public class Email {
 	//CAMBIARE QUI L'EMAIL
 	 
 	public Email() {
-		 da = "";
-		 pas = "";
+		 da = "youremail";
+		 pas = "yourpassword";
 	}
 public  void mandaEmail(String[] dest,String cognome,String corso,int idabb) {
 	String og = "GYM APP-AVVISO";
@@ -78,9 +78,7 @@ public  void mandaEmail(String[] dest,String cognome,String corso,int idabb) {
 
 public  void avvisaEmail(String[] dest,String cognome,String corso,int idabb, String inizio, String fine) {
 	String og = "GYM APP-AVVISO";
-	String mex =  "Signor "+cognome+" il tuo abbonamento al sito GymApp del  "+corso+" è scaduto,il giorno"
-			+"Il suo abbonamento è stato aggiornato dal giorno"+inizio+"al giorno"+fine+"del"+corso+"!"
-			+ "Si prega di effettuare il rinnovo in palestra appena.Buonagiornata!"
+	String mex =  "Signor "+cognome+" ,"+"Il suo abbonamento è stato aggiornato dal giorno "+inizio+" al giorno "+fine+" del corso "+corso+"!"
 			+ "Cod abbonamento:"+idabb +";";
 			
 	Properties props = System.getProperties();

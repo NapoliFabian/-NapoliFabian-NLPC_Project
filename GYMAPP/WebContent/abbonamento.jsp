@@ -142,7 +142,7 @@ position: fixed;
      <br><br><br><br><br><br><br><br>
      <div class="bottoni">
   <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
-  <h3><%=lang[19]%>: <strong style="color:red"><%=elenco.size()%></strong></h3>
+  <h3>ABBONAMENTI TOTALI: <strong style="color:red"><%=elenco.size()%></strong></h3>
  
  </div>
      <hr>

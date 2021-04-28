@@ -354,7 +354,7 @@ public class DBManager {
 			psc.setString(11,c.getId());*/
 			psc.executeUpdate();
 			
-			cmd = "select email,cognome,abbonamento.corso from utente join abbonamento on utente.codf=abbonamento.codf  where abbonamento.IdAbbonamento='"+id+"'";
+			cmd = "select email,cognome,abbonamento.Nomecorso from utente join abbonamento on utente.codf=abbonamento.codf  where abbonamento.IdAbbonamento='"+id+"'";
 			rs = query.executeQuery(cmd);
 			rs.next();
 			String email,cognome,corso;
