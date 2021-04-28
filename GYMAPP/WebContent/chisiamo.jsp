@@ -86,14 +86,14 @@ header{
     
 }
 .box{
-    width: 15%;
+    width: 20%;
     height: 45%;
     background-color: white;
     float: left;
     text-align: center;
     border-radius: 0px;
     padding: 7px;
-    margin-left: 7%;
+    margin-left:3%;
     margin-top: 2%;
 }
 footer{
