@@ -54,8 +54,7 @@ position: fixed;
 			<tr>
 			    <th><%=lang[10]%></th>
 				<th><%=lang[11]%></th>
-				<th><%=lang[15]%></th>
-				
+				<th><%=lang[12]%></th>
 				<th colspan="3">
 				<a href = "insertIstruttori.jsp"><img src="../img/add.png" height="30" width="30">
 				</a> </th>
@@ -73,7 +72,7 @@ position: fixed;
  	<td><%=is.getTelefono() %></td>
     <td><a href="../Gestore?cmd=dettagliois&id=<%=is.getCodf()%>"><img alt="" src="../img\lente.png" width="28px"></a></td>
     <td><a href="../Gestore?cmd=eliminais&id=<%=is.getCodf()%>"><img alt="" src="../img\cestino.png" width="28px"></a></td>
-    <td><a href="../Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td>
+    <!-- <td><a href="../Gestore?cmd=aggiornais&id=<%=is.getCodf()%>"><img alt="" src="../img\update.png" width="28px"></a></td> -->
  </tr>
  <%
      }

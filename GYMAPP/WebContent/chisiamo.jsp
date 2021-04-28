@@ -170,7 +170,7 @@ if(username!=null){
 </header>
 <ul>
     <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
-    <li><a href="dashboardsocio.jsp">HOME</a></li>
+    <li><a href="dashboard.jsp">HOME</a></li>
       <li><div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="optionpage.html">OPTION</a>

@@ -36,6 +36,7 @@ border: 1px solid black;
 position: fixed;
 } 
  
+ 
  </style>
 <meta charset="ISO-8859-1">
 <title><%=lang[1]%></title>
@@ -78,7 +79,6 @@ position: fixed;
      
            
         </table>
-        
  </div>
 <div class="bottoni">
   <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>

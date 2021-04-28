@@ -27,6 +27,8 @@ session.setAttribute("id_abb1", abb1.getIdabbonamento());
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 <link rel="icon" type="image/png" href="img/icona.png"/>
 <style>
 
@@ -73,9 +75,11 @@ color: purple;
 
 .h3{
 position: absolute;
-top:45%;
+top:15%;
 left:5%;
-font-style: 
+color:white;
+font-family: fantasy;
+font-size: 40px;
 }
 
 
@@ -88,19 +92,34 @@ font-style:
 <title>Rinnova Abbonamento</title>
 </head>
 <body style="background-image: url(images/bg-01.jpg)";>
-
+ <ul class="nav justify-content-center">
+  <li class="nav-item">
+  
+  </li>
+  <li class="nav-item">
+     <a class="nav-link active" aria-current="page" href="abbonamento.jsp">INDIETRO</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+  </li>
+</ul>
+<br>
+<br> 
 
 <div class="rinnova">
 
 	<form action="Gestore" method="POST">
 		<img src="https://maxcdn.icons8.com/Share/icon/nolan/Finance/bank_cards1600.png" width="140" height="140">
-		<h2 class="h2">NOME SOCIO, COGNOME SOCIO</h2>
+		
 		<h3 class="h3">
-		INSERISCI L'INIZIO DELL'ABBONAMENTO<input type="date" name="inizio" required><br>
-		INSERISCI LA FINE DELL'ABBONAMENTO<input type="date" name="fine" required></h3>
+		INIZIO<br>
+		<input type="date" name="inizio" required><br>
+		FINE<br><input type="date" name="fine" required></h3>
 		<input class="button" type="submit" name="INSERT" value="RINNOVA ABBONAMENTO">
 	</form>
-	
 	</div>
 </body>
 </html>

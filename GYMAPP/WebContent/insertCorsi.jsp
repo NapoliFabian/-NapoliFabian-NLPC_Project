@@ -29,12 +29,8 @@ String[] lang = (String[])session.getAttribute("lang");
 <div class="header">
 <div class="icon">
 
-<img src="img\icona.png" width="100" height="70">
 
 </div>
-<div class="logo">
-    <h1 class="titolo">GYM APP</h1>
-    </div>
 </div>
 	 
  <br>
