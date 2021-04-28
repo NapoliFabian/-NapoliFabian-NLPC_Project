@@ -18,6 +18,9 @@ try {
 }
 
 
+
+
+
 %>  
 <style>
   html {
@@ -109,7 +112,7 @@ header{
 position: absolute;
 width: 15%;
 height: 15%;
-border: 1px solid black;
+border: 0px solid black;
 right:5%;
 top:40%;
 
@@ -239,7 +242,18 @@ String username = (String)session.getAttribute("username");
     <input type="submit" name="stampa" value="STAMPA SCHEDA">
    <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
    <input type="submit" style="background: url(https://img.icons8.com/ios/452/print--v1.png))">-->
-     <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
+     <input type="image" name="stampa" value="STAMPA SCHEDA"  src="img/stampa.png" width="70" height="70">
+    
+    
+    <select name="codf">
+	<%for(int i=0;i<soci.size();i++){
+		Utente s = soci.get(i);
+		%>
+		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
+	<%} %>
+	</select>
+    
+    
     
     </div>
 	<center><table border="1"> 
@@ -257,7 +271,7 @@ String username = (String)session.getAttribute("username");
 			SERIE E RIPETIZIONI
 		</th>
 	</tr>
-	
+	<!--  -->
 	<%
 for(int i=0;i<5;i++){
 %>

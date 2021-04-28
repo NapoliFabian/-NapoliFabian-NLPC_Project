@@ -40,6 +40,15 @@ String filtro;
   </li>
 </ul>
 
+
+</div>
+    </div>
+</div>
+	 
+ <br>
+ <br>
+ <br>
+>>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
 <form method="POST" action="../Gestore">
 <div  style="width: 60%; margin-left: 20%">
  <div style="background-color: white;border: 1px solid black;width: 100%;">
@@ -78,56 +87,11 @@ String filtro;
  </center>
 </div>
  </div>
- <!--  <div class="insert" >
 
-    <center><table class="scritte" border="1">
-    <tr>
-    <th><%=lang[21]%></th>
-    <th><input type="text" name="IdIstruttore" required maxlength="16"></th>
-    </tr>
-    
-    <tr>
-    <th><%=lang[11]%></th>
-    <th><input type="text" name="Nome" required></th>
-    </tr>
-    
-    <tr>
-    <th><%=lang[10]%></th>
-    <th><input type="text" name="Cognome" required></th>
-    </tr>
-    
-    <tr>
-    <th><%=lang[12]%></th>
-    <th><input type="text" name="Telefono" required></th>
-    </tr>
-    
-    <tr>
-    <th>Sesso</th>
-    <th><select name="Sesso">
-    		<option value="Vuoto"></option>
-    		<option value="M">Male</option>
-    		<option value="F">Female</option>
-    		<option value="Altro">Altro</option> 	
-    	</select>
-    </th>
-    </tr>
-    
-    <tr>
-    <th>Data di nascita</th>
-    <th><input type="date" name="DataDiNascita" required></th>
-    </tr>
-    
-    
-    <tr>
-    <th><input type="reset" value="ANNULLA"></th>
-    <th><input type="submit" name="INSERT" value="INSERT_ISTRUTTORE"></th>
-    </tr>
-
- <!--  -->
  
 </table></center>
  
- </div>-->
+ </div>
  
  </form>
  <div class="link"><center>
