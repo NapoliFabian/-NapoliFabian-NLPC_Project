@@ -232,13 +232,16 @@ String username = (String)session.getAttribute("username");
     <li><a href="schede.jsp">SCHEDE</a></li>
     <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
     <br><br>
-<<<<<<< HEAD
+
     
     
-	<form>
+	<form action ="pdfclienti" method="POST">
 	<div class="img">
-    <img alt="" src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
+  <!--  <img alt="" src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
     <input type="submit" name="stampa" value="STAMPA SCHEDA">
+   <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
+   <input type="submit" style="background: url(https://img.icons8.com/ios/452/print--v1.png))">-->
+     <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
     
     </div>
 	<center><table border="1"> 
@@ -259,12 +262,13 @@ String username = (String)session.getAttribute("username");
 	
 	<%
 for(int i=0;i<5;i++){
-=======
-<form action ="pdfclienti" method="POST">
-	<table border="2"> 
+%>
+	 
+	
+	
 <%
-for(int i=0;i<20;i++){
->>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
+//for(int i=0;i<20;i++){
+
 %>
 <tr>
 <td><input type="" name="es<%=i%>" placeholder="INSERISCI L'ESERCIZIO"></td>
@@ -275,20 +279,18 @@ for(int i=0;i<20;i++){
 %>
 	
 
-<<<<<<< HEAD
+
 </table></center>
-</form>
 
 
 
 
 
 
-=======
+
 </table>
-<input type="submit" name ="CREA">
 </form>
->>>>>>> branch 'master30' of https://github.com/NapoliFabian/-NapoliFabian-NLPC_Project.git
+
 	<footer>
 <br>
 <table class="tableFoother">
