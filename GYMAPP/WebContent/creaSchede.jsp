@@ -271,7 +271,7 @@ String username = (String)session.getAttribute("username");
 			SERIE E RIPETIZIONI
 		</th>
 	</tr>
-	
+	<!--  -->
 	<%
 for(int i=0;i<5;i++){
 %>
