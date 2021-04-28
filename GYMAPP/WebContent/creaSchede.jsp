@@ -18,6 +18,9 @@ try {
 }
 
 
+
+
+
 %>  
 <style>
   html {
@@ -242,6 +245,16 @@ String username = (String)session.getAttribute("username");
      <input type="image" name="stampa" value="STAMPA SCHEDA"  src="img/stampa.png" width="70" height="70">
     
     
+    <select name="codf">
+	<%for(int i=0;i<soci.size();i++){
+		Utente s = soci.get(i);
+		%>
+		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
+	<%} %>
+	</select>
+    
+    
+    
     </div>
 	<center><table border="1"> 
 	<tr>
@@ -258,7 +271,7 @@ String username = (String)session.getAttribute("username");
 			SERIE E RIPETIZIONI
 		</th>
 	</tr>
-	
+	<!--  -->
 	<%
 for(int i=0;i<5;i++){
 %>
