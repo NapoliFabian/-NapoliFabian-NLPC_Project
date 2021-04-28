@@ -38,7 +38,7 @@ function togliallenanti(){
     </header>
     <nav style="text-align: right;">
     <i class="flag flag-italy"></i>
-    <a href="chisiamo.jsp">CHI SIAMO</a>
+    <a href="chisiamo1.jsp">CHI SIAMO</a>
     <a  href="Gestore?cmd=logout">LOGOUT</a>
    <!-- <img alt="" src="img/flags/ita.png" width="25" height="25"  style="border-radius: 50px"> -->
     </nav>
