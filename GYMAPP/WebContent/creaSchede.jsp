@@ -229,8 +229,6 @@ String username = (String)session.getAttribute("username");
 	<ul>
     <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
     <li><a href="dashboard.jsp">DASHBOARD</a></li>
-    <li><a href="schede.jsp">SCHEDE</a></li>
-    <li><a href="chiSiamo.jsp">CHI SIAMO</a></li>
     <br><br>
 
     
