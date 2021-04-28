@@ -1,5 +1,7 @@
 package it.meucci;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -140,6 +142,24 @@ public class PdfManager {
 	    // Save the results and ensure that the document is properly closed:
 		document.save(outputFileName);
 		document.close();
-	}
+	      try {
+
+	          File pdfFile = new File(System.getProperty("user.dir")+"/scheda "+regioni+" per "+socio+".pdf");
+	          if (pdfFile.exists()) {
+
+	              if (Desktop.isDesktopSupported()) {
+	                  Desktop.getDesktop().open(pdfFile);
+	              } else {
+	                  System.out.println("Awt Desktop is not supported!");
+	              }
+
+	          } else {
+	              System.out.println("File is not exists!");
+	          }
 	
+	}catch (Exception e) {
+		System.out.println(e.getMessage());
+	}
 }
+}
+
