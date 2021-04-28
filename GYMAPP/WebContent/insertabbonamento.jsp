@@ -37,7 +37,6 @@ String filtro;
 <title>Inserisci Abbonamento</title>
 </head>
 <body style="background-image: url(images/bg-01.jpg);">
-<<<<<<< HEAD
 <ul class="nav justify-content-center">
   <li class="nav-item">
      <a class="nav-link active" aria-current="page" href="abbonamento.jsp">INDIETRO</a>

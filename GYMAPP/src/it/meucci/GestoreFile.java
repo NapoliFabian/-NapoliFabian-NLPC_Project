@@ -17,12 +17,15 @@ public class GestoreFile {
 	public GestoreFile() {
 
 
-
+  
+		
 		//CATALDO
-		//this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\dbsettings.properties";
-		//this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\defaultconf.properties";
+		this.db_settings ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\dbsettings.properties";
+		this.default_config ="C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\defaultconf.properties";
 
-		//NAPOLI
+		
+		
+		///NAPOLI
 		//this.db_settings = "C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
 		// this.default_config = "C:\\Users\\thema\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";
 
@@ -35,8 +38,8 @@ public class GestoreFile {
 
 	
 		//LONGO
-		this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
-		this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";;
+		//this.db_settings ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\dbsettings.properties";
+		//this.default_config ="C:\\Users\\user\\git\\-NapoliFabian-NLPC_Project\\GYMAPP\\config\\defaultconf.properties";;
 
 
 
@@ -105,7 +108,7 @@ public class GestoreFile {
 
 				
 				//SIMONE
-				//Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone
+				Properties prop = readLanguage("C:\\Users\\CATALDO SIMONE\\git\\-NapoliFabian-NLPC_Project00\\GYMAPP\\config\\Language\\"+language+".properties");// simone
 
 
 				//SAMUEL
