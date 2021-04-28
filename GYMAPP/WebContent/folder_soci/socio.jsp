@@ -78,7 +78,6 @@ position: fixed;
      
            
         </table>
-        
  </div>
 <div class="bottoni">
   <a href="../dashboard.jsp"><img src=../img/ritornohome.png height="70" width="70"></a> <br>

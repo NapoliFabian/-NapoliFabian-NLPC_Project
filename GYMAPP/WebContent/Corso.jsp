@@ -16,7 +16,20 @@ String[] lang = (String[])session.getAttribute("lang");
 %>
 
 
-
+ <style>
+.bottoni{
+width:18%;
+height:20%;
+top:40%;
+right: 1%;
+text-align: center;
+/*background-color: white;*/
+/*background-image:url(https://i2.wp.com/novocom.top/image/Y2xpcJyYXJGFydC1saWJyYXJ5LmNvbQ==/new_gallery/191-1918749_explosion-particle-irregular-background-gold-particles-transparent-background.png)*/;
+border: 0px solid black;
+position: fixed;
+} 
+ 
+ </style>
 
 
 
@@ -75,7 +88,9 @@ String[] lang = (String[])session.getAttribute("lang");
         </table>
      </div>
 
-
+		 <div class="bottoni">
+  <a href="dashboard.jsp"><img src=img/ritornohome.png height="70" width="70"></a> <br>
+     </div>
 </body>
 
 </html>
