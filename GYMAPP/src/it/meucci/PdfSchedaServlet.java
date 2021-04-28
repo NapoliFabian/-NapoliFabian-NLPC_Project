@@ -108,6 +108,7 @@ public class PdfSchedaServlet extends HttpServlet {
 		try {
 			pdf = new PdfManager();
 			pdf.creaScheda(ripetizioni,esercizi,regioni,socio);
+			response.sendRedirect("creaSchede.jsp");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
