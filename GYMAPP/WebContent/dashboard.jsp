@@ -170,7 +170,6 @@ if(username!=null){
 <ul>
     <li><span style="font-size:30px;cursor:pointer;color: white" onclick="openNav()">&#9776;</span></li>
     <li><a href="#news">UPDATE</a></li>
-    <li><a href="#contact">CONTACT</a></li>
     <li><a href="chisiamo.jsp">ABOUT US</a></li>
       <li><div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
