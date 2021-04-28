@@ -18,6 +18,9 @@ try {
 }
 
 
+
+
+
 %>  
 <style>
   html {
@@ -242,6 +245,16 @@ String username = (String)session.getAttribute("username");
    <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
    <input type="submit" style="background: url(https://img.icons8.com/ios/452/print--v1.png))">-->
      <input type="image" name="stampa" value="STAMPA SCHEDA"  src="https://img.icons8.com/ios/452/print--v1.png" width="70" height="70">
+    
+    <select name="codf">
+	<%for(int i=0;i<soci.size();i++){
+		Utente s = soci.get(i);
+		%>
+		<option value="<%=s.getCodf()%>"><%=s.getCodf()%>-<%=s.getCognome()%> <%=s.getNome()%></option>
+	<%} %>
+	</select>
+    
+    
     
     </div>
 	<center><table border="1"> 

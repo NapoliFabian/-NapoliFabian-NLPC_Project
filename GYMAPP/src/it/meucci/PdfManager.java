@@ -20,9 +20,9 @@ public class PdfManager {
 		System.out.println("Stampa Eseguita");
 	}
 	
-	public void creaScheda (String[]ripetizioni, String[]esercizi) throws Exception{
+	public void creaScheda (String[]ripetizioni, String[]esercizi, String regioni,String socio) throws Exception{
 		System.out.println(System.getProperty("user.dir"));
-		String outputFileName =System.getProperty("user.dir")+"/schedaAllenamento.pdf";
+		String outputFileName =System.getProperty("user.dir")+"/scheda "+regioni+" per "+socio+".pdf";
 		// Create a new font object selecting one of the PDF base fonts
 	    PDFont fontPlain = PDType1Font.HELVETICA;
 	    PDFont fontBold = PDType1Font.HELVETICA_BOLD;
@@ -59,19 +59,19 @@ public class PdfManager {
 	    // the parameter is the row height
 	    Row<PDPage> headerRow = table.createRow(50);
 	    // the first parameter is the cell width
-	    Cell<PDPage> cell = headerRow.createCell(100, "Clienti");
+	    Cell<PDPage> cell = headerRow.createCell(100, regioni);
 	    cell.setFont(fontBold);
 	    cell.setFontSize(20);
 	    // vertical alignment
 	    cell.setValign(VerticalAlignment.MIDDLE);
 	    cell.setAlign(HorizontalAlignment.CENTER);
-	    cell.setTextColor(Color.MAGENTA);
+	    cell.setTextColor(Color.BLACK);
 	    // border style
 	    cell.setTopBorderStyle(new LineStyle(Color.BLACK, 10));
 	    table.addHeaderRow(headerRow);
 	
 	    Row<PDPage> row = table.createRow(20);
-	    cell = row.createCell(30, "ESERCIZI");
+	    cell = row.createCell(30, "SCHEDA ALLENAMENTO");
 	    cell.setFontSize(15);
 	    cell = row.createCell(70, new Date().toString());
 	    cell.setFontSize(15);
@@ -84,15 +84,16 @@ public class PdfManager {
 	    cell.setFont(fontMono);
 	    // horizontal alignment
 	    cell.setAlign(HorizontalAlignment.CENTER);
-	    cell.setBottomBorderStyle(new LineStyle(Color.RED, 5));
+	    cell.setBottomBorderStyle(new LineStyle(Color.ORANGE, 5));
+	    
 	    cell = row.createCell(50, "Ripetizioni");
-	    cell.setTextColor(Color.GREEN);
+	    cell.setTextColor(Color.RED);
 	    cell.setFontSize(15);
-	    cell.setFont(fontItalic);
+	    cell.setFont(fontMono);
 	    cell.setAlign(HorizontalAlignment.CENTER);
-	    cell.setBottomBorderStyle(new LineStyle(Color.GREEN, 5));
+	    cell.setBottomBorderStyle(new LineStyle(Color.ORANGE, 5));
 	
-	   int max = 20;
+	   int max = 5;
 	    for(int i=0;i<max;i++)
 	    {
 	    	
@@ -103,7 +104,7 @@ public class PdfManager {
 	        cell.setFontSize(15);
 	        // rotate the text
 	        cell.setTextRotated(false);
-	        cell.setAlign(HorizontalAlignment.RIGHT);
+	        cell.setAlign(HorizontalAlignment.CENTER);
 	        cell.setValign(VerticalAlignment.MIDDLE);
 
 	
@@ -111,16 +112,19 @@ public class PdfManager {
 	        	
 	        }
 	        else {
-	        	cell = row.createCell(44,ripetizione);
+	        	cell = row.createCell(44,esercizio);
 		        cell.setFontSize(12);
+		        cell.setValign(VerticalAlignment.MIDDLE);
 	        }
 	        
 	        if(esercizio == null) {
 	        	
 	        }
 	        else {
-	        	cell = row.createCell(50,esercizio);
-		        cell.setFontSize(12);	
+	        	cell = row.createCell(50,ripetizione);
+		        cell.setFontSize(12);
+		        cell.setAlign(HorizontalAlignment.CENTER);
+		        cell.setValign(VerticalAlignment.MIDDLE);
 	        }
 
 

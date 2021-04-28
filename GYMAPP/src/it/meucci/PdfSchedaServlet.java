@@ -89,19 +89,25 @@ public class PdfSchedaServlet extends HttpServlet {
 		int max=20;
 		String ripetizioni[];
 		String esercizi[];
+		String regioni;
+		String socio;
+		
 		esercizi= new String[max];
 		ripetizioni=new String[max];
+		regioni= request.getParameter("region");
+		socio= request.getParameter("codf");
 		
 		for(int i=0;i<max;i++) {
 			ripetizioni[i]= request.getParameter("rip"+i);
 			esercizi[i]= request.getParameter("es"+i);
+			
 			
 		}
 		
 		PdfManager pdf;
 		try {
 			pdf = new PdfManager();
-			pdf.creaScheda(ripetizioni,esercizi);
+			pdf.creaScheda(ripetizioni,esercizi,regioni,socio);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
